@@ -1,13 +1,39 @@
 <?php
-// Real server uchun Telegram webhook handler
-// Bu fayl api/telegram.php sifatida saqlanishi kerak
+// Telegram webhook / blog-checker server proxy
+// Maxfiy kalitlar faqat shu server tomonda — client kodi token ko'rmaydi.
 
-// Error reporting (development uchun)
 error_reporting(E_ALL);
-ini_set('display_errors', 0); // Production'da 0 bo'lishi kerak
+ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 
-header('Access-Control-Allow-Origin: *');
+// --- .env yuklash (api/.env) ---
+$envFile = __DIR__ . '/.env';
+if (file_exists($envFile)) {
+    foreach (file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
+        if ($line[0] === '#' || strpos($line, '=') === false) continue;
+        [$k, $v] = explode('=', $line, 2);
+        $_ENV[trim($k)] = trim($v, " \t\n\r\0\x0B\"'");
+    }
+}
+
+$TOKEN   = $_ENV['TELEGRAM_BOT_TOKEN'] ?? '';
+$CHAT_ID = $_ENV['TELEGRAM_CHAT_ID']   ?? '';
+$SITE_URL = 'https://tashgiprogor.uz';
+
+// --- CORS: faqat o'z domeniga ---
+$allowedOrigins = ['https://tashgiprogor.uz', 'https://www.tashgiprogor.uz'];
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+if ($origin !== '') {
+    if (in_array($origin, $allowedOrigins, true)) {
+        header("Access-Control-Allow-Origin: $origin");
+        header('Vary: Origin');
+    } else {
+        http_response_code(403);
+        echo json_encode(['error' => 'CORS: ruxsat yo\'q']);
+        exit;
+    }
+}
+
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 header('Content-Type: application/json');
@@ -44,10 +70,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Telegram Bot konfiguratsiyasi
-$TOKEN = "8314016456:AAFx4hDqN3WtZKK_4qGT3VoKk90RBEX4CN4";
-$CHAT_ID = "-1002696318657";
-$SITE_URL = "https://tashgiprogor.uz";
+if (empty($TOKEN) || empty($CHAT_ID)) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Server konfiguratsiya xatolik: .env da TELEGRAM_BOT_TOKEN va TELEGRAM_CHAT_ID kerak']);
+    exit;
+}
 
 try {
     // Body'ni olish

@@ -1,9 +1,7 @@
-// Telegram Blog Checker - Webhook'siz yechim
-// Bu fayl frontend'da blogs API'ni tekshirib, yangi blog'larni Telegram'ga yuboradi
+// Telegram Blog Checker
+// Yangi blog'larni aniqlaydi va server (api/telegram.php) orqali Telegram'ga yuboradi.
+// Token va chat_id faqat serverda (.env) saqlanadi — bu faylda yo'q.
 
-const TELEGRAM_TOKEN = "8241722112:AAELqsade6qDEyZJpM96KvcC_GPidMZqP2U";
-const TELEGRAM_CHAT_ID = "-1002723401340";
-const SITE_URL = "https://tashgiprogor.uz";
 // blogs.js faylida ham BLOGS_GRAPHQL_API_URL bor, shuning uchun boshqa nom ishlatamiz
 const TELEGRAM_BLOGS_API_URL =
   "https://eu-west-2.cdn.hygraph.com/content/cm5hkvhzr011507ulay5rda62/master";
@@ -210,142 +208,30 @@ function getBlogIdentifier(blog) {
   return blog.id || blog.slug;
 }
 
-// Telegram'ga blog yuborish va ID'sini saqlash
+// Blog ma'lumotlarini server orqali Telegram'ga yuborish
+// Token/chat_id client'da yo'q — faqat api/telegram.php da (.env orqali)
 async function sendBlogToTelegram(blog) {
-  const blogUrl = `${SITE_URL}/blog-details.html?slug=${blog.slug}`;
-  const author = blog.author || "Tashgiprogor";
-  const blogDate = blog.blogDate || "Noma'lum";
   const blogIdentifier = getBlogIdentifier(blog);
 
-  // Har doim barcha 3 ta tilni ko'rsatish (admin panelda majburiy)
-  // Format: UZ → RU → EN (har doim to'liq - birinchi marta ham)
-  let message = ``;
+  const response = await fetch("/api/telegram.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(blog),
+  });
 
-  // Uzbek tilida ma'lumotlar (har doim ko'rsatish - majburiy)
-  const titleUz = blog.titleUz || "";
-  const descUz = blog.descriptionUz?.text || "";
-  const descUzShort =
-    descUz.length > 200 ? descUz.substring(0, 200) + "..." : descUz;
-
-  message += `🇺🇿 <b>UZ:</b>\n`;
-  message += `📰 <b>${titleUz || ""}</b>\n`;
-  if (descUzShort) {
-    message += `${descUzShort}\n`;
-  }
-  message += `\n`;
-
-  // Russian tilida ma'lumotlar (har doim ko'rsatish - majburiy)
-  const titleRu = blog.titleRu || "";
-  const descRu = blog.descriptionRu?.text || "";
-  const descRuShort =
-    descRu.length > 200 ? descRu.substring(0, 200) + "..." : descRu;
-
-  message += `🇷🇺 <b>RU:</b>\n`;
-  message += `📰 <b>${titleRu || ""}</b>\n`;
-  if (descRuShort) {
-    message += `${descRuShort}\n`;
-  }
-  message += `\n`;
-
-  // English tilida ma'lumotlar (har doim ko'rsatish - majburiy)
-  const titleEn = blog.titleEn || "";
-  const descEn = blog.descriptionEn?.text || "";
-  const descEnShort =
-    descEn.length > 200 ? descEn.substring(0, 200) + "..." : descEn;
-
-  message += `🇬🇧 <b>EN:</b>\n`;
-  message += `📰 <b>${titleEn || ""}</b>\n`;
-  if (descEnShort) {
-    message += `${descEnShort}\n`;
-  }
-  message += `\n`;
-
-  // Muallif va sana (har doim rus tilida)
-  message += `👤 Автор: ${author}\n`;
-  message += `📅 Дата: ${blogDate}\n\n`;
-  message += `🔗 <a href="${blogUrl}">Подробнее</a>`;
-
-  // Barcha rasmlarni to'plash
-  const allImages = [];
-
-  // Agar images array bo'lsa va bo'sh bo'lmasa
-  if (blog.images && Array.isArray(blog.images) && blog.images.length > 0) {
-    blog.images.forEach((img) => {
-      if (img?.url) {
-        allImages.push(img.url);
-      }
-    });
+  let result;
+  try {
+    result = await response.json();
+  } catch {
+    throw new Error("Server javobi JSON emas");
   }
 
-  // Agar image (bitta rasm) bo'lsa va images array'da yo'q bo'lsa
-  if (blog.image?.url && !allImages.includes(blog.image.url)) {
-    allImages.unshift(blog.image.url); // Birinchi o'ringa qo'shish
+  if (!response.ok || !result.success) {
+    console.error("❌ Server xatolik:", result);
+    throw new Error(result.error || "Server xatolik");
   }
 
-  // Agar rasm(lar) bo'lsa
-  if (allImages.length > 0) {
-    // Birinchi rasm bilan caption bilan yuborish
-    const firstImage = allImages[0];
-    const photoUrl = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendPhoto`;
-    const text = `chat_id=${TELEGRAM_CHAT_ID}&photo=${encodeURIComponent(
-      firstImage
-    )}&caption=${encodeURIComponent(message)}&parse_mode=HTML`;
-
-    try {
-      const response = await fetch(`${photoUrl}?${text}`);
-      const result = await response.json();
-
-      if (result.ok) {
-        console.log(`✅ Telegram'ga yuborildi (rasm bilan): ${blogIdentifier}`);
-        // markBlogAsSent allaqachon yuborishdan oldin chaqirilgan
-
-        // Qolgan rasmlarni alohida yuborish (caption'siz)
-        if (allImages.length > 1) {
-          for (let i = 1; i < allImages.length; i++) {
-            const photoUrl2 = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendPhoto`;
-            const text2 = `chat_id=${TELEGRAM_CHAT_ID}&photo=${encodeURIComponent(
-              allImages[i]
-            )}`;
-
-            await fetch(`${photoUrl2}?${text2}`);
-            console.log(
-              `✅ Qo'shimcha rasm ${i + 1}/${allImages.length} yuborildi`
-            );
-
-            await new Promise((resolve) => setTimeout(resolve, 500));
-          }
-        }
-      } else {
-        console.error("❌ Telegram API xatolik:", result);
-        throw new Error(result.description || "Telegram API xatolik");
-      }
-    } catch (error) {
-      console.error("❌ Telegram'ga yuborishda xatolik:", error);
-      throw error; // Xatolikni yuqoriga chiqarish
-    }
-  } else {
-    // Faqat matn yuborish
-    const messageUrl = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
-    const text = `chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(
-      message
-    )}&parse_mode=HTML`;
-
-    try {
-      const response = await fetch(`${messageUrl}?${text}`);
-      const result = await response.json();
-
-      if (result.ok) {
-        console.log(`✅ Telegram'ga yuborildi (matn): ${blogIdentifier}`);
-        // markBlogAsSent allaqachon yuborishdan oldin chaqirilgan
-      } else {
-        console.error("❌ Telegram API xatolik:", result);
-        throw new Error(result.description || "Telegram API xatolik");
-      }
-    } catch (error) {
-      console.error("❌ Telegram'ga yuborishda xatolik:", error);
-      throw error; // Xatolikni yuqoriga chiqarish
-    }
-  }
+  console.log(`✅ Server orqali Telegram'ga yuborildi: ${blogIdentifier}`);
 }
 
 // Blog'ni yuborilgan deb belgilash (unique key va hash bilan - ID'siz)

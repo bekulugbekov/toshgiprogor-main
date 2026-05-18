@@ -1,7 +1,16 @@
 // Vercel Serverless Function
 export default async function handler(req, res) {
-  // CORS headers
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  // CORS: faqat o'z domeniga
+  const allowedOrigins = ["https://tashgiprogor.uz", "https://www.tashgiprogor.uz"];
+  const origin = req.headers.origin || "";
+  if (origin) {
+    if (allowedOrigins.includes(origin)) {
+      res.setHeader("Access-Control-Allow-Origin", origin);
+      res.setHeader("Vary", "Origin");
+    } else {
+      return res.status(403).json({ error: "CORS: ruxsat yo'q" });
+    }
+  }
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
@@ -15,10 +24,14 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  // Telegram Bot konfiguratsiyasi
-  const TOKEN = "8314016456:AAFx4hDqN3WtZKK_4qGT3VoKk90RBEX4CN4";
-  const CHAT_ID = "-1002696318657";
+  // Telegram Bot konfiguratsiyasi — faqat server muhitida (.env / Vercel env vars)
+  const TOKEN = process.env.TELEGRAM_BOT_TOKEN || "";
+  const CHAT_ID = process.env.TELEGRAM_CHAT_ID || "";
   const SITE_URL = "https://tashgiprogor.uz";
+
+  if (!TOKEN || !CHAT_ID) {
+    return res.status(500).json({ error: "Server konfiguratsiya xatolik: TELEGRAM_BOT_TOKEN va TELEGRAM_CHAT_ID kerak" });
+  }
 
   try {
     let payload = null;
