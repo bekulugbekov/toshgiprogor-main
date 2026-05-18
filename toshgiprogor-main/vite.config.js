@@ -20,6 +20,8 @@ export default defineConfig({
         'blog-details':       resolve(root, 'blog-details.html'),
         contact:              resolve(root, 'contact.html'),
         'corporate-management': resolve(root, 'corporate-management.html'),
+        cooperation:            resolve(root, 'cooperation.html'),
+        privacy:                resolve(root, 'privacy.html'),
       },
     },
   },

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+
+    <title data-translate="coopPageTitle">Международное сотрудничество — ТАШГИПРОГОР</title>
+
+    <!--Favicon-->
+    <link rel="icon" href="assets/img/favicon.png" type="image/png" />
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Line Awesome CSS -->
+    <link href="assets/css/line-awesome.min.css" rel="stylesheet" />
+    <!-- Font Awesome CSS -->
+    <link href="assets/css/fontAwesomePro.css" rel="stylesheet" />
+    <!-- Animate CSS-->
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <!-- Bar Filler CSS -->
+    <link href="assets/css/barfiller.css" rel="stylesheet" />
+    <!-- Magnific Popup Video -->
+    <link href="assets/css/magnific-popup.css" rel="stylesheet" />
+    <!-- Flaticon CSS -->
+    <link href="assets/css/flaticon.css" rel="stylesheet" />
+    <!-- Owl Carousel CSS -->
+    <link href="assets/css/owl.carousel.css" rel="stylesheet" />
+    <!-- Slick Slider CSS -->
+    <link href="assets/css/slick.css" rel="stylesheet" />
+    <!-- Nice Select  -->
+    <link href="assets/css/nice-select.css" rel="stylesheet" />
+    <!-- Back to Top -->
+    <link href="assets/css/backToTop.css" rel="stylesheet" />
+    <!-- Metis Menu -->
+    <link href="assets/css/metismenu.css" rel="stylesheet" />
+    <!-- Odometer CSS -->
+    <link href="assets/css/odometer.min.css" rel="stylesheet" />
+    <!-- Style CSS -->
+    <link href="assets/scss/style.scss" rel="stylesheet" />
+    <!-- Accessibility Menu CSS -->
+    <link href="assets/css/a11y-menu.css" rel="stylesheet" />
+    <!-- Snow Animation CSS -->
+    <link href="assets/css/snow-animation.css" rel="stylesheet" />
+
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- FOUC fix + lang init -->
+    <script>(function(){var l=localStorage.getItem('selectedLanguage');if(!l){var bl=(navigator.language||'').toLowerCase();l=bl.startsWith('zh')?'zh':bl.startsWith('uz')?'uz':bl.startsWith('en')?'en':'ru';}var m={zh:'zh-Hans',uz:'uz',en:'en',ru:'ru'};document.documentElement.lang=m[l]||'ru';document.documentElement.dataset.pending='';}());</script>
+    <style>[data-pending] [data-translate]{visibility:hidden}</style>
+  </head>
+
+  <body>
+    <!-- Pre-Loader -->
+    <div id="loader"></div>
+
+    <!-- Mouse Cursor  -->
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner"><span>Drag</span></div>
+
+    <!-- Message Modal -->
+    <div id="messageContainer" class="message-container"></div>
+
+    <div id="smooth-wrapper">
+      <!-- Header Area  -->
+      <div class="header-area">
+        <div id="header-sticky">
+          <div class="navigation">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-xl-3 col-lg-3 col-6">
+                  <div class="logo">
+                    <a href="index.html" class="logo">TASHGIPROGOR</a>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-7 d-none d-lg-block text-lg-end">
+                  <div class="main-menu">
+                    <ul>
+                      <li>
+                        <a data-translate="aboutus" class="navlink" href="about.html">О нас</a>
+                      </li>
+                      <li>
+                        <a data-translate="services" class="navlink" href="services.html">Услуги</a>
+                      </li>
+                      <li>
+                        <a data-translate="projects" class="navlink" href="projects.html">Проекты</a>
+                      </li>
+                      <li>
+                        <a data-translate="management" class="navlink" href="corporate-management.html">Корпоративное управление</a>
+                      </li>
+                      <li>
+                        <a data-translate="blogS" class="navlink" href="blog.html">Новости</a>
+                      </li>
+                      <li>
+                        <a data-translate="cooperation" class="navlink active" href="cooperation.html">Сотрудничество</a>
+                      </li>
+                      <li>
+                        <a data-translate="contact" class="navlink" href="contact.html">Контакт</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1 d-none d-lg-block text-lg-end">
+                  <select id="languageSelector">
+                    <option data-translate="option_ru" value="ru">Русский</option>
+                    <option data-translate="option_en" value="en">English</option>
+                    <option data-translate="option_uz" value="uz">O'zbekcha</option>
+                    <option data-translate="option_zh" value="zh">中文</option>
+                  </select>
+                </div>
+                <!-- Mobile Menu -->
+                <div class="mobile-nav-bar col-6 d-block d-lg-none">
+                  <div class="mobile-nav-wrap">
+                    <div id="hamburger">
+                      <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" style="fill: currentColor">
+                        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+                      </svg>
+                    </div>
+                    <div class="mobile-nav">
+                      <button type="button" class="close-nav">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255)">
+                          <path d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"></path>
+                          <path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"></path>
+                        </svg>
+                      </button>
+                      <nav class="sidebar-nav">
+                        <ul class="metismenu" id="mobile-menu">
+                          <li><a data-translate="aboutus" class="has-arrow" href="about.html">О нас</a></li>
+                          <li><a data-translate="services" class="has-arrow" href="services.html">Услуги</a></li>
+                          <li><a data-translate="projects" class="has-arrow" href="projects.html">Проекты</a></li>
+                          <li><a data-translate="management" class="has-arrow" href="corporate-management.html">Корпоративное управление</a></li>
+                          <li><a data-translate="blogS" class="has-arrow" href="blog.html">Новости</a></li>
+                          <li><a data-translate="cooperation" class="has-arrow" href="cooperation.html">Сотрудничество</a></li>
+                          <li><a data-translate="contact" class="has-arrow" href="contact.html">Контакт</a></li>
+                        </ul>
+                        <select id="languageSelector" class="languageSelector">
+                          <option class="bg-black" value="uz">O'zbekcha</option>
+                          <option class="bg-black" value="ru">Русский</option>
+                          <option class="bg-black" value="en">English</option>
+                          <option class="bg-black" value="zh">中文</option>
+                        </select>
+                      </nav>
+                      <div class="action-bar">
+                        <a href="mailto:info@tashgiprogor.uz">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255); margin-right: 5px">
+                            <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.7-8 5.334L4 8.7V6.297l8 5.333 8-5.333V8.7z"></path>
+                          </svg>info@tashgiprogor.uz
+                        </a>
+                        <a href="tel:+998712440495">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255); margin-right: 5px">
+                            <path d="M20 10.999h2C22 5.869 18.127 2 12.99 2v2C17.052 4 20 6.943 20 10.999z"></path>
+                            <path d="M13 8c2.103 0 3 .897 3 3h2c0-3.225-1.775-5-5-5v2zm3.422 5.443a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a1 1 0 0 0-.086-1.391l-4.064-3.696z"></path>
+                          </svg>+998 (71) 244-04-95
+                        </a>
+                        <a href="cooperation.html" data-translate="cooperation" class="theme-btn">Сотрудничество</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="offcanvas-overlay"></div>
+
+      <div id="smooth-content">
+        <!-- Hero -->
+        <div id="cooperation_page" class="all-hero-area" data-page="cooperation">
+          <div class="container">
+            <div class="row align-items-center mb-50">
+              <div class="section-title text-up section-hero-title">
+                <h1 data-translate="coopHeroTitle">中外合作</h1>
+              </div>
+              <div class="breadcrumb-area">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="index.html" data-translate="home">Главная</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page" data-translate="cooperation">
+                      Сотрудничество
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intro -->
+        <section class="section-padding pt-0">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8 text-center">
+                <p class="lead" data-translate="coopHeroDesc">
+                  АО «Ташгипрогор» (основано в 1937 г.) оказывает китайским компаниям полный комплекс услуг: локализация проектной документации, приведение в соответствие с узбекскими нормами (ШНК) и сопровождение государственной экспертизы.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Services -->
+        <section class="section-padding pt-0">
+          <div class="container">
+            <div class="section-title text-center mb-50">
+              <h2 data-translate="coopWhyTitle">Услуги для китайских партнёров</h2>
+            </div>
+            <div class="row gy-4">
+              <div class="col-lg-4 col-md-6">
+                <div class="single-service-card h-100">
+                  <div class="service-icon">
+                    <i class="las la-file-alt"></i>
+                  </div>
+                  <h4 data-translate="coopService1Title">Адаптация к местным нормам (ШНК)</h4>
+                  <p data-translate="coopService1Desc">Приведение китайской проектной документации в соответствие с национальными строительными нормами Узбекистана (ШНК) для прохождения государственной экспертизы.</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="single-service-card h-100">
+                  <div class="service-icon">
+                    <i class="las la-stamp"></i>
+                  </div>
+                  <h4 data-translate="coopService2Title">Экспертиза и согласование документации</h4>
+                  <p data-translate="coopService2Desc">Сопровождение процедур государственной экспертизы и согласования в уполномоченных органах Узбекистана.</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="single-service-card h-100">
+                  <div class="service-icon">
+                    <i class="las la-hard-hat"></i>
+                  </div>
+                  <h4 data-translate="coopService3Title">Авторский надзор</h4>
+                  <p data-translate="coopService3Desc">Профессиональный контроль за ходом строительства в соответствии с утверждённым проектом.</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="single-service-card h-100">
+                  <div class="service-icon">
+                    <i class="las la-map-marked-alt"></i>
+                  </div>
+                  <h4 data-translate="coopService4Title">Локализация проекта</h4>
+                  <p data-translate="coopService4Desc">Адаптация иностранной документации с учётом сейсмики, климата, грунтовых условий и местных строительных материалов.</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="single-service-card h-100">
+                  <div class="service-icon">
+                    <i class="las la-landmark"></i>
+                  </div>
+                  <h4 data-translate="coopService5Title">Взаимодействие с госорганами</h4>
+                  <p data-translate="coopService5Desc">Представление интересов проекта в строительных органах, муниципалитете и земельных службах.</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="single-service-card h-100">
+                  <div class="service-icon">
+                    <i class="las la-calculator"></i>
+                  </div>
+                  <h4 data-translate="coopService6Title">Сметная документация</h4>
+                  <p data-translate="coopService6Desc">Составление полной проектно-сметной документации по государственным нормативам Узбекистана.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Trust Signals -->
+        <!-- ⚠️ BUYURTMACHIDAN TASDIQ KERAK: portfolio raqamlari va litsenziya ma'lumotlari -->
+        <section class="section-padding bg-light">
+          <div class="container">
+            <div class="section-title text-center mb-50">
+              <h2 data-translate="coopTrustTitle">Наши преимущества</h2>
+            </div>
+            <div class="row gy-4 justify-content-center">
+              <div class="col-lg-3 col-md-6 text-center">
+                <div class="trust-card p-4">
+                  <div class="trust-icon mb-3">
+                    <i class="las la-history fa-2x"></i>
+                  </div>
+                  <div class="trust-label" data-translate="coopTrustYearLabel">Год основания</div>
+                  <div class="trust-value h3 mt-1" data-translate="coopTrustYearValue">1937</div>
+                  <p class="trust-note small" data-translate="coopTrustYearNote">Один из старейших проектных институтов Узбекистана</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 text-center">
+                <div class="trust-card p-4">
+                  <div class="trust-icon mb-3">
+                    <i class="las la-building fa-2x"></i>
+                  </div>
+                  <div class="trust-label" data-translate="coopTrustPortfolioLabel">Выполненные проекты</div>
+                  <!-- ⚠️ BUYURTMACHIDAN TASDIQ KERAK: aniq raqam -->
+                  <div class="trust-value h3 mt-1" data-translate="coopTrustPortfolioValue">Более 400 объектов</div>
+                  <p class="trust-note small" data-translate="coopTrustPortfolioNote">Административные, жилые, культурные, спортивные и коммерческие объекты</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 text-center">
+                <div class="trust-card p-4">
+                  <div class="trust-icon mb-3">
+                    <i class="las la-certificate fa-2x"></i>
+                  </div>
+                  <div class="trust-label" data-translate="coopTrustLicenseLabel">Нормативное соответствие</div>
+                  <!-- ⚠️ BUYURTMACHIDAN TASDIQ KERAK: litsenziya rekvizitlari -->
+                  <p class="trust-note small mt-2" data-translate="coopTrustLicenseNote">Строгое соблюдение ШНК и технических регламентов Узбекистана</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 text-center">
+                <div class="trust-card p-4">
+                  <div class="trust-icon mb-3">
+                    <i class="las la-star fa-2x"></i>
+                  </div>
+                  <div class="trust-label" data-translate="coopTrustGovLabel">Государственные объекты</div>
+                  <!-- ⚠️ BUYURTMACHIDAN TASDIQ KERAK: davlat ob'ektlari ro'yxati -->
+                  <p class="trust-note small mt-2" data-translate="coopTrustGovNote">Ряд знаковых государственных объектов Узбекистана</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Channels -->
+        <section class="contact-section section-padding">
+          <div class="container">
+            <div class="section-title text-center mb-50">
+              <h2 data-translate="coopContactTitle">Связаться с нами</h2>
+              <p data-translate="coopContactDesc">Свяжитесь с нами удобным способом. Часы работы: Пн–Пт, 09:00–18:00 (UTC+5).</p>
+            </div>
+            <div class="row gy-4">
+
+              <!-- WeChat -->
+              <!-- ⚠️ BUYURTMACHIDAN TASDIQ KERAK: WeChat QR kod rasm va WeChat ID -->
+              <div class="col-lg-4 col-md-6">
+                <div class="single-contact-channel text-center p-4">
+                  <div class="channel-icon mb-3">
+                    <!-- WeChat SVG icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.295.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.601-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.062-6.122zm-3.912 3.Individual c.535 0 .969.44.969.983a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.543.434-.983.969-.983zm3.937 0c.535 0 .969.44.969.983a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.543.434-.983.969-.983z"/>
+                    </svg>
+                  </div>
+                  <h5 data-translate="coopWechatLabel">WeChat</h5>
+                  <!-- ⚠️ BUYURTMACHIDAN TASDIQ KERAK: haqiqiy WeChat QR kod rasmi -->
+                  <div class="wechat-qr-placeholder" style="width:140px;height:140px;border:2px dashed #ccc;margin:12px auto;display:flex;align-items:center;justify-content:center;border-radius:4px;background:#f8f8f8;">
+                    <span style="font-size:12px;color:#999;text-align:center;padding:8px;">⚠️ WeChat QR<br>kod — buyurtmachidan</span>
+                  </div>
+                  <p class="small" data-translate="coopWechatNote">Отсканируйте QR-код для добавления в WeChat</p>
+                  <!-- ⚠️ BUYURTMACHIDAN TASDIQ KERAK: WeChat ID -->
+                  <p class="small text-muted">WeChat ID: [buyurtmachidan tasdiq kerak]</p>
+                </div>
+              </div>
+
+              <!-- WhatsApp -->
+              <!-- ⚠️ BUYURTMACHIDAN TASDIQ KERAK: WhatsApp raqami -->
+              <div class="col-lg-4 col-md-6">
+                <div class="single-contact-channel text-center p-4">
+                  <div class="channel-icon mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                    </svg>
+                  </div>
+                  <h5 data-translate="coopWhatsappLabel">WhatsApp</h5>
+                  <!-- ⚠️ BUYURTMACHIDAN TASDIQ KERAK: WhatsApp raqami -->
+                  <a href="https://wa.me/[WHATSAPP_NUMBER]" class="theme-btn mt-2" target="_blank" rel="noopener noreferrer">
+                    WhatsApp [buyurtmachidan tasdiq kerak]
+                  </a>
+                  <p class="small mt-2" data-translate="coopTimezoneNote">Ташкент UTC+5 (разница с Пекином: −3 часа)</p>
+                </div>
+              </div>
+
+              <!-- Email & Phone -->
+              <div class="col-lg-4 col-md-6">
+                <div class="single-contact-channel p-4">
+                  <div class="single-contact-info mb-3">
+                    <p data-translate="email">Электронная почта</p>
+                    <h4><a href="mailto:info@tashgiprogor.uz">info@tashgiprogor.uz</a></h4>
+                  </div>
+                  <div class="single-contact-info mb-3">
+                    <p data-translate="phone">Телефон</p>
+                    <h4><a href="tel:+998712440495">+998 (71) 244-04-95</a></h4>
+                  </div>
+                  <div class="single-contact-info mb-3">
+                    <p data-translate="address">Адрес</p>
+                    <h5 data-translate="coopAddressZh">Узбекистан, 100021, Ташкент, Шайхантахурский р-н, просп. Навои, 40</h5>
+                  </div>
+                  <div class="single-contact-info">
+                    <p data-translate="coopTimezoneNote">Ташкент UTC+5 (разница с Пекином: −3 часа)</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Inquiry Form -->
+        <section class="section-padding bg-light">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="section-title text-center mb-40">
+                  <h2 data-translate="coopInquiryTitle">Запрос на сотрудничество</h2>
+                </div>
+                <div class="subimit-form-wrap">
+                  <form id="cooperationForm" action="#" novalidate>
+                    <!-- honeypot anti-spam -->
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <input
+                          type="text"
+                          id="coop-company"
+                          name="company"
+                          required
+                          data-translate="coopInquiryName"
+                          placeholder="Название компании"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <input
+                          type="text"
+                          id="coop-contact"
+                          name="contact"
+                          required
+                          data-translate="coopInquiryContact"
+                          placeholder="Контактное лицо"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <input
+                          type="text"
+                          id="coop-type"
+                          name="projectType"
+                          data-translate="coopInquiryType"
+                          placeholder="Тип проекта"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <input
+                          type="tel"
+                          id="coop-phone"
+                          name="phone"
+                          required
+                          data-translate="coopInquiryPhone"
+                          placeholder="Телефон (с кодом страны)"
+                        />
+                      </div>
+                    </div>
+                    <input
+                      type="email"
+                      id="coop-email"
+                      name="email"
+                      required
+                      data-translate="coopInquiryEmail"
+                      placeholder="Электронная почта"
+                    />
+                    <textarea
+                      id="coop-message"
+                      name="message"
+                      rows="5"
+                      data-translate="coopInquiryMessage"
+                      placeholder="Краткое описание проекта / запроса"
+                    ></textarea>
+
+                    <div class="form-check mb-3">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="coop-privacy"
+                        name="privacy"
+                        required
+                      />
+                      <label class="form-check-label small" for="coop-privacy">
+                        <span data-translate="coopInquiryPrivacy">Я ознакомлен(-а) с политикой конфиденциальности и даю согласие на обработку персональных данных.</span>
+                        &nbsp;<a href="privacy.html" data-translate="privacyPolicyLink" target="_blank">Политика конфиденциальности</a>
+                      </label>
+                    </div>
+
+                    <div id="coopMessageBox" class="message-box mb-30" style="display:none;"></div>
+
+                    <div class="text-center">
+                      <input
+                        type="submit"
+                        id="coopSubmitBtn"
+                        data-translate="coopInquirySubmit"
+                        value="Отправить запрос"
+                        class="theme-btn"
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer Area -->
+        <footer class="footer-area">
+          <div class="container">
+            <div class="footer-up">
+              <div class="row gy-5">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <a href="index.html" class="logo">
+                    <img src="assets/img/logo.png" alt="TOSHGIPROGOR" />
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <h5 data-translate="office">Офис</h5>
+                  <p data-translate="addressInfo">
+                    Узбекистан, 100021, Ташкент, <br />
+                    ШАЙХАНТАХУРСКИЙ РАЙОН, просп. НАВОИ, 40
+                  </p>
+                  <div class="company-email">
+                    <p data-translate="haveProject">Сотрудничество</p>
+                    <a href="mailto:info@tashgiprogor.uz">info@tashgiprogor.uz</a>
+                  </div>
+                  <div class="phone-number">
+                    <p data-translate="workOrder">Пн–Пт, 09:00–18:00</p>
+                    <a href="tel:+998712440495">+998 (71) 244-04-95</a>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                  <h5 data-translate="followUs">Подпишитесь на нас</h5>
+                  <ul>
+                    <li>
+                      <div class="social-area">
+                        <a href="https://t.me/tg_tashgiprogor_uz" aria-label="Telegram">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255)">
+                            <path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"></path>
+                          </svg>
+                        </a>
+                        <a href="http://www.youtube.com/@tashgiprogor" aria-label="YouTube">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255)">
+                            <path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"></path>
+                          </svg>
+                        </a>
+                        <a href="https://www.instagram.com/tashgiprogor/" aria-label="Instagram">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255)">
+                            <path d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"></path>
+                            <circle cx="11.994" cy="11.979" r="3.003"></circle>
+                          </svg>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <p data-translate="allRights" class="copyright-line">
+                  © 2025 TOSHGIPROGOR. Все права защищены
+                </p>
+              </div>
+              <div class="col-lg-6 col-md-6 col-xs-12 text-md-end">
+                <a href="privacy.html" data-translate="privacyPolicyLink" class="privacy">
+                  Политика конфиденциальности
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- back to top start -->
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+    <!-- back to top end -->
+
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Popper js -->
+    <script src="assets/js/popper.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <!-- Jquery appear -->
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <!-- WOW js -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- Nice Select  -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- Metis Menu JS -->
+    <script src="assets/js/metismenu.js"></script>
+    <!-- Back to Top JS -->
+    <script src="assets/js/backToTop.js"></script>
+    <!-- Translate JS -->
+    <script src="assets/js/translate.js"></script>
+    <!-- A11y Menu -->
+    <script src="assets/js/a11y-menu.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      // Cooperation form submit handler
+      (function () {
+        var form = document.getElementById('cooperationForm');
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var honey = form.querySelector('[name="_honey"]');
+          if (honey && honey.value) return;
+
+          var privacyCb = document.getElementById('coop-privacy');
+          if (!privacyCb || !privacyCb.checked) {
+            var msgBox = document.getElementById('coopMessageBox');
+            if (msgBox) { msgBox.style.display = 'block'; msgBox.className = 'message-box mb-30 error'; msgBox.textContent = 'Пожалуйста, примите политику конфиденциальности.'; }
+            return;
+          }
+
+          var btn = document.getElementById('coopSubmitBtn');
+          if (btn) btn.disabled = true;
+
+          var data = new FormData(form);
+          data.append('source', 'cooperation');
+
+          fetch('api/telegram.php', { method: 'POST', body: data })
+            .then(function (r) { return r.json(); })
+            .then(function (res) {
+              var msgBox = document.getElementById('coopMessageBox');
+              if (msgBox) {
+                msgBox.style.display = 'block';
+                var lang = localStorage.getItem('selectedLanguage') || 'ru';
+                var successMsgs = {
+                  zh: '您的咨询已成功提交！我们将在1–2个工作日内回复。',
+                  en: 'Your enquiry has been submitted! We will reply within 1–2 business days.',
+                  uz: "So'rovingiz yuborildi! Biz 1–2 ish kuni ichida javob beramiz.",
+                  ru: 'Ваш запрос успешно отправлен! Мы ответим в течение 1–2 рабочих дней.'
+                };
+                if (res && res.ok) {
+                  msgBox.className = 'message-box mb-30 success';
+                  msgBox.textContent = successMsgs[lang] || successMsgs.ru;
+                  form.reset();
+                } else {
+                  var errorMsgs = {
+                    zh: '提交失败，请稍后再试或直接发送电子邮件。',
+                    en: 'Submission failed. Please try again later or email us directly.',
+                    uz: "Yuborishda xato. Keyinroq urinib ko'ring yoki to'g'ridan-to'g'ri elektron pochta orqali yozing.",
+                    ru: 'Ошибка отправки. Попробуйте позже или напишите нам напрямую.'
+                  };
+                  msgBox.className = 'message-box mb-30 error';
+                  msgBox.textContent = errorMsgs[lang] || errorMsgs.ru;
+                  if (btn) btn.disabled = false;
+                }
+              }
+            })
+            .catch(function () {
+              var msgBox = document.getElementById('coopMessageBox');
+              if (msgBox) { msgBox.style.display = 'block'; msgBox.className = 'message-box mb-30 error'; }
+              if (btn) btn.disabled = false;
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>
