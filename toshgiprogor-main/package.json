@@ -6,9 +6,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/pre-render.js",
     "preview": "vite preview",
     "images": "node scripts/optimize-images.js",
+    "seo": "node scripts/pre-render.js",
     "lint": "eslint assets/js",
     "format": "prettier --write \"**/*.{js,scss,html}\" --ignore-path .prettierignore"
   },

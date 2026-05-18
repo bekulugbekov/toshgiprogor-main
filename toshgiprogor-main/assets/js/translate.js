@@ -53,7 +53,7 @@ async function changeLanguage(language) {
   }
 
   try {
-    var response = await fetch("assets/lang/" + language + ".json");
+    var response = await fetch("/assets/lang/" + language + ".json");
     if (!response.ok) throw new Error("HTTP error: " + response.status);
     var data = await response.json();
     translationCache[language] = data;
