@@ -7,11 +7,9 @@
 // =============================================================================
 @charset "UTF-8";
 
-/*-- Google Font Import
+/*-- Self-hosted fonts (Google Fonts o'rniga, Xitoyda ishlaydi)
 -----------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("../css/self-hosted-fonts.css");
 /*------------Typography----------------- */
 
 * {
@@ -7136,3 +7134,81 @@ a.reply-btn i {
 
  */
 
+
+/* =============================================
+   Static Location Card (E5: xarita iframe oʻrniga)
+   ============================================= */
+.static-location-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,.12);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.slc-map-visual {
+  position: relative;
+  background: #e8e0d0;
+  flex: 1;
+  min-height: 280px;
+}
+.slc-map-bg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.slc-coords {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  background: rgba(255,255,255,.85);
+  font-size: 11px;
+  color: #555;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+.slc-info {
+  background: #1a1a2e;
+  color: #eee;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.slc-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.slc-icon {
+  font-size: 18px;
+  color: #e74c3c;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.slc-actions {
+  margin-top: 4px;
+}
+.slc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e74c3c;
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .2s;
+}
+.slc-btn:hover {
+  background: #c0392b;
+  color: #fff;
+}
+@media (max-width: 575px) {
+  .slc-map-visual { min-height: 180px; }
+}

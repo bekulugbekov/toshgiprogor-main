@@ -311,16 +311,38 @@
             <div class="contact-info-wrap">
               <div class="row mt-60">
                 <div class="col-xl-6">
-                  <div class="google-map">
-                    <iframe
-                      src="https://yandex.uz/map-widget/v1/?display-text=Tashgiprogor%22%20%D0%90%D0%9E&ll=69.213584%2C41.321583&mode=search&oid=110804645211&ol=biz&sctx=ZAAAAAgBEAAaKAoSCcueBDbnUVFAERGPxMvTp0RAEhIJ%2BWcG8YEd1z8RJ%2FkRv2INwz8iBgABAgMEBSgKOABAop8GSAFqAnV6nQHNzMw9oAEAqAEAvQFqSpQmwgEG2%2Bri45wDggISVGFzaGdpcHJvZ29yIiDQkNCeigIAkgIAmgIMZGVza3RvcC1tYXBz&sll=69.213584%2C41.321583&sspn=0.151856%2C0.062572&text=Tashgiprogor%22%20%D0%90%D0%9E&z=13.25"
-                      width="600"
-                      height="600"
-                      frameborder="1"
-                      allowfullscreen=""
-                      loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade"
-                    ></iframe>
+                  <div class="static-location-card">
+                    <div class="slc-map-visual" aria-hidden="true">
+                      <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" class="slc-map-bg">
+                        <rect width="600" height="400" fill="#e8e0d0"/>
+                        <rect x="0" y="170" width="600" height="14" fill="#d4c9b0" opacity=".7"/>
+                        <rect x="0" y="220" width="600" height="10" fill="#d4c9b0" opacity=".5"/>
+                        <rect x="140" y="0" width="12" height="400" fill="#d4c9b0" opacity=".7"/>
+                        <rect x="300" y="0" width="10" height="400" fill="#d4c9b0" opacity=".5"/>
+                        <rect x="450" y="0" width="8" height="400" fill="#d4c9b0" opacity=".4"/>
+                        <circle cx="300" cy="190" r="22" fill="#c0392b"/>
+                        <circle cx="300" cy="190" r="14" fill="#e74c3c"/>
+                        <circle cx="300" cy="190" r="6" fill="#fff"/>
+                        <polygon points="300,215 290,195 310,195" fill="#c0392b"/>
+                      </svg>
+                      <div class="slc-coords">41.3216° N, 69.2136° E</div>
+                    </div>
+                    <div class="slc-info">
+                      <div class="slc-row">
+                        <i class="las la-map-marker-alt slc-icon"></i>
+                        <span data-translate="address">Toshkent sh., Shayxontohur tumani,<br>Navoiy ko'chasi, 28</span>
+                      </div>
+                      <div class="slc-row">
+                        <i class="las la-clock slc-icon"></i>
+                        <span data-translate="workHours">Du–Ju: 09:00–18:00 (UTC+5)</span>
+                      </div>
+                      <div class="slc-actions">
+                        <a href="https://yandex.uz/maps/?ll=69.213584,41.321583&z=16&text=Tashgiprogor" target="_blank" rel="noopener noreferrer" class="slc-btn">
+                          <i class="las la-external-link-alt"></i>
+                          <span data-translate="openMap">Xaritada ochish</span>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="col-xl-6">
