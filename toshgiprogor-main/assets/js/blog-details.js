@@ -12,6 +12,7 @@ async function fetchLastBlogs() {
         titleEn
         titleRu
         titleUz
+        titleZh
         descriptionEn {
           text
         }
@@ -19,6 +20,9 @@ async function fetchLastBlogs() {
           text
         }
         descriptionUz {
+          text
+        }
+        descriptionZh {
           text
         }
         image {
@@ -65,6 +69,8 @@ function renderLastBlogs(lastBlogs) {
         ? blog.titleEn
         : language === "ru"
         ? blog.titleRu
+        : language === "zh"
+        ? (blog.titleZh || blog.titleEn)
         : blog.titleUz;
 
     const description =
@@ -72,6 +78,8 @@ function renderLastBlogs(lastBlogs) {
         ? blog.descriptionEn.text
         : language === "ru"
         ? blog.descriptionRu.text
+        : language === "zh"
+        ? ((blog.descriptionZh && blog.descriptionZh.text) || blog.descriptionEn.text)
         : blog.descriptionUz.text;
 
     const blogHTML = `
@@ -112,6 +120,7 @@ async function fetchBlogDetails(slug) {
         titleEn
         titleRu
         titleUz
+        titleZh
         descriptionEn {
           text
         }
@@ -119,6 +128,9 @@ async function fetchBlogDetails(slug) {
           text
         }
         descriptionUz {
+          text
+        }
+        descriptionZh {
           text
         }
         image {
@@ -168,14 +180,18 @@ async function renderBlogDetails() {
       ? blog.titleEn
       : language === "ru"
         ? blog.titleRu
-        : blog.titleUz;
+        : language === "zh"
+          ? (blog.titleZh || blog.titleEn)
+          : blog.titleUz;
 
   const description =
     language === "en"
       ? blog.descriptionEn.text
       : language === "ru"
         ? blog.descriptionRu.text
-        : blog.descriptionUz.text;
+        : language === "zh"
+          ? ((blog.descriptionZh && blog.descriptionZh.text) || blog.descriptionEn.text)
+          : blog.descriptionUz.text;
 
   document.querySelector(".blog-details").innerHTML = `
       <div class="section-title">

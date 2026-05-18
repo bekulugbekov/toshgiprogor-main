@@ -11,6 +11,7 @@ const query = `
           titleEn
           titleRu
           titleUz
+          titleZh
           descriptionEn {
             text
           }
@@ -18,6 +19,9 @@ const query = `
             text
           }
           descriptionUz {
+            text
+          }
+          descriptionZh {
             text
           }
           image {
@@ -72,6 +76,8 @@ function renderBlogs(blogs, currentPage) {
         ? node.titleEn
         : language === "ru"
         ? node.titleRu
+        : language === "zh"
+        ? (node.titleZh || node.titleEn)
         : node.titleUz;
 
     const description =
@@ -79,6 +85,8 @@ function renderBlogs(blogs, currentPage) {
         ? node.descriptionEn.text
         : language === "ru"
         ? node.descriptionRu.text
+        : language === "zh"
+        ? ((node.descriptionZh && node.descriptionZh.text) || node.descriptionEn.text)
         : node.descriptionUz.text;
 
     if (currentPage === "home") {
@@ -126,6 +134,8 @@ function renderBlogs(blogs, currentPage) {
           ? "Read More"
           : language === "ru"
           ? "Читать больше"
+          : language === "zh"
+          ? "阅读更多"
           : "Batafsil";
 
       blogWrapperItem.innerHTML = `
