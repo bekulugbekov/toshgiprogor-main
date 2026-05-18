@@ -1,0 +1,156 @@
+// ============================================================
+// E7 — CJK tipografika va dizayn  (:lang(zh) qoidalari)
+// ============================================================
+//
+// Maqsad:
+//   - Xitoycha matn (zh-Hans) professional va o'qilishi qulay ko'rinishi
+//   - :lang(zh) uchun alohida font-stack, line-height, letter-spacing
+//   - Tugma/menyu/sarlavhalarda layout buzilmasligi
+//   - Dark/light tema zh da ham to'g'ri ishlashi
+//
+// Eslatma: Noto Sans SC self-hosted subset — E5 da qo'shiladi.
+// Hozir tizim shriftlari (PingFang SC, Microsoft YaHei) fallback sifatida yetarli.
+// ============================================================
+
+// ─── CJK font stack ─────────────────────────────────────────
+// PingFang SC    — macOS 10.11+, iOS 9+
+// Microsoft YaHei (微软雅黑) — Windows Vista+
+// Hiragino Sans GB — macOS (eski versiyalar)
+// Noto Sans SC   — E5 da self-hosted subset qo'shiladi; hozir system fallback
+// WenQuanYi Micro Hei — Linux
+$cjk-stack: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans SC",
+  "WenQuanYi Micro Hei", sans-serif;
+
+// ─── Asosiy tipografika ──────────────────────────────────────
+// :lang(zh) "zh-Hans" ga ham mos keladi (CSS prefix match)
+:lang(zh) {
+  font-family: $cjk-stack !important;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  word-break: break-word;
+  font-style: normal !important;
+  // Lokal OpenType shakl tanlash (PingFang SC uchun muhim)
+  font-feature-settings: "locl" 1;
+}
+
+// ─── Sarlavhalar ────────────────────────────────────────────
+// Hanzi uchun: italic yo'q; tight Latin letter-spacing (-1px) emas; weight 500
+:lang(zh) h1,
+:lang(zh) h2,
+:lang(zh) h3,
+:lang(zh) h4,
+:lang(zh) h5,
+:lang(zh) h6 {
+  font-family: $cjk-stack !important;
+  font-style: normal !important;
+  letter-spacing: 0 !important; // style.scss dagi -1px Latin spacing o'chiriladi
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+// ─── Paragraflar ────────────────────────────────────────────
+:lang(zh) p {
+  font-family: $cjk-stack !important;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  font-style: normal !important;
+}
+
+// ─── Section sarlavhalar ────────────────────────────────────
+// .section-title h1: -2px letter-spacing → CJK uchun -0.02em (muloyimroq)
+:lang(zh) .section-title h1 {
+  letter-spacing: -0.02em !important;
+}
+
+// .section-title h2: -1px letter-spacing → 0
+:lang(zh) .section-title h2 {
+  letter-spacing: 0 !important;
+}
+
+// text-up: uppercase + katta letter-spacing — Hanzi uchun bekor
+:lang(zh) .section-title.text-up h2 {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+// ─── Tugmalar ───────────────────────────────────────────────
+// Xitoycha matn bilan overflow va wrapping oldini olish:
+// - text-transform: uppercase → Hanzi o'zgarmaydi lekin letter-spacing buziladi
+// - letter-spacing: 1px → Hanzi uchun shart emas
+// - white-space: nowrap → tugma ichidagi matn bir qatorda qoladi
+:lang(zh) .theme-btn,
+:lang(zh) .primary-btn,
+:lang(zh) .white-btn {
+  font-family: $cjk-stack !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  white-space: nowrap;
+}
+
+// ─── Navigatsiya menyusi ────────────────────────────────────
+// Desktop menyu
+:lang(zh) .main-menu ul > li > a {
+  font-family: $cjk-stack !important;
+  letter-spacing: 0;
+}
+
+// Mobil/offcanvas menyu
+:lang(zh) .mobile-nav .sidebar-nav .metismenu a,
+:lang(zh) .mobile-nav .sidebar-nav .metismenu ul a {
+  font-family: $cjk-stack !important;
+  letter-spacing: 0;
+}
+
+// Off-canvas menyu havolalari
+:lang(zh) .off-canvas-menu a,
+:lang(zh) .off-canvas-menu p {
+  font-family: $cjk-stack !important;
+  letter-spacing: 0;
+}
+
+// ─── Form elementlari ────────────────────────────────────────
+:lang(zh) input,
+:lang(zh) input::placeholder,
+:lang(zh) textarea,
+:lang(zh) textarea::placeholder,
+:lang(zh) select {
+  font-family: $cjk-stack !important;
+  letter-spacing: 0;
+}
+
+// ─── Raqam/sana/valyuta formatlash ──────────────────────────
+// Asosiy formatlash translate.js da amalga oshiriladi.
+// CSS: tnum (tabular figures) ni o'chirish — Hanzi bilan yonma-yon chiroyliroq
+:lang(zh) .date-display,
+:lang(zh) time,
+:lang(zh) [data-date] {
+  font-variant-numeric: normal;
+  font-feature-settings: "locl" 1, "tnum" 0;
+}
+
+// ─── Dark tema mosligi ───────────────────────────────────────
+// body.a11y-theme-dark klassi a11y-menu.js tomonidan o'rnatiladi.
+// Fon/rang a11y-menu.css da; bu yerda faqat font uyg'unligi ta'minlanadi.
+body.a11y-theme-dark :lang(zh) {
+  font-family: $cjk-stack !important;
+}
+
+// ─── Light tema mosligi ──────────────────────────────────────
+body.a11y-theme-light :lang(zh) {
+  font-family: $cjk-stack !important;
+}
+
+// ─── read_more havolasi ──────────────────────────────────────
+// .link_text da white-space: nowrap mavjud — zh da ham to'g'ri
+:lang(zh) .read_more_link .link_text {
+  font-family: $cjk-stack !important;
+  letter-spacing: 0;
+}
+
+// ─── Section h6 teglari ──────────────────────────────────────
+// text-transform: uppercase + letter-spacing: 2px → Hanzi uchun bekor
+:lang(zh) .section-title h6 {
+  font-family: $cjk-stack !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
