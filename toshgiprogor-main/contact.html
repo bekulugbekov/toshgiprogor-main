@@ -369,7 +369,16 @@
                         <span><i class="las la-arrow-right"></i></span>
                       </h2>
                       <div class="subimit-form-wrap">
-                        <form id="contactForm" action="#">
+                        <form id="contactForm" action="api/contact.php" novalidate>
+                          <!-- Honeypot: spam-botlar uchun ko'rinmas maydon -->
+                          <input
+                            type="text"
+                            name="website"
+                            style="display:none !important; visibility:hidden; position:absolute; left:-9999px;"
+                            tabindex="-1"
+                            autocomplete="off"
+                            aria-hidden="true"
+                          />
                           <input
                             type="text"
                             id="name"
@@ -379,6 +388,13 @@
                             data-translate="yourFullName"
                           />
                           <input
+                            type="text"
+                            id="company"
+                            name="company"
+                            placeholder="Название компании"
+                            data-translate="yourCompany"
+                          />
+                          <input
                             type="tel"
                             id="phone"
                             name="phone"
@@ -386,13 +402,41 @@
                             placeholder="Номер телефона"
                             data-translate="yourPhone"
                           />
-                          <div
-                            id="messageBox"
-                            data-translate="succesMessage"
-                            class="message-box mb-30"
-                          >
-                            Ваше сообщение отправлено!
+                          <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Ваш адрес электронной почты"
+                            data-translate="yourEmail"
+                          />
+                          <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            placeholder="Ваше сообщение"
+                            data-translate="yourMessage"
+                          ></textarea>
+                          <!-- Rozilik belgisi -->
+                          <div class="consent-wrap mb-20">
+                            <label class="consent-label">
+                              <input
+                                type="checkbox"
+                                name="consent"
+                                id="consentCheck"
+                                value="1"
+                                required
+                              />
+                              <span data-translate="consentAgree">Я согласен(на) с</span>
+                              <a
+                                href="privacy.html"
+                                data-translate="privacyPolicyLink"
+                                class="consent-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >политикой конфиденциальности</a>
+                            </label>
                           </div>
+                          <div id="messageBox" class="message-box mb-30" style="display:none;"></div>
                           <input
                             type="submit"
                             data-translate="submit"

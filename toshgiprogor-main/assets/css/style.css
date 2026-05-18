@@ -246,6 +246,43 @@ p {
   border-radius: 5px;
   text-align: center;
 }
+.message-box.msg-success {
+  background-color: #4caf50;
+}
+.message-box.msg-error {
+  background-color: #e53935;
+}
+
+/* Rozilik belgisi */
+.consent-wrap {
+  margin-bottom: 20px;
+}
+.consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.consent-label input[type="checkbox"],
+.contact-section .subimit-form-wrap .consent-label input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  border: 1px solid #aaa !important;
+  border-bottom: 1px solid #aaa !important;
+  margin-bottom: 0 !important;
+}
+.consent-link {
+  text-decoration: underline;
+  color: inherit;
+}
+.consent-link:hover {
+  opacity: 0.75;
+}
 
 /* Modal oynaning asosiy stili */
 .modal {

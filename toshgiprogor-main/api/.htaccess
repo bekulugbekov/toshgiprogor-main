@@ -1,20 +1,19 @@
-# Apache server uchun .htaccess
-# PHP fayllarni to'g'ri ishlatish uchun
-
-# PHP fayllarni ishlatish
+# Apache: PHP fayl handleri
 <Files "telegram.php">
     SetHandler application/x-httpd-php
 </Files>
+<Files "contact.php">
+    SetHandler application/x-httpd-php
+</Files>
 
-# CORS headers
-<IfModule mod_headers.c>
-    Header set Access-Control-Allow-Origin "*"
-    Header set Access-Control-Allow-Methods "POST, OPTIONS"
-    Header set Access-Control-Allow-Headers "Content-Type"
+# Logs katalogiga to'g'ridan-to'g'ri kirish taqiqlanadi
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^logs/ - [F,L]
 </IfModule>
 
-# OPTIONS request'ni qaytarish
-RewriteEngine On
-RewriteCond %{REQUEST_METHOD} OPTIONS
-RewriteRule ^(.*)$ $1 [R=200,L]
-
+# OPTIONS preflightni tezkor qaytarish
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^(.*)$ $1 [R=200,L]
+</IfModule>

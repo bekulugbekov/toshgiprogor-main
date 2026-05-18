@@ -11,6 +11,10 @@ processed-blogs.json
 # Environment variables
 .env
 
+# Server logs (rate-limit va contact yozuvlari)
+api/logs/*.log
+api/logs/rate_limit.json
+
 # Logs
 *.log
 npm-debug.log*

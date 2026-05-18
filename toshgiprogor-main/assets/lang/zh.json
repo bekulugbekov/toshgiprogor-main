@@ -214,7 +214,7 @@
   "privacyPageTitle": "隐私政策 — 塔什甘吉普罗格尔股份公司",
   "privacyHeroTitle": "隐私政策",
   "privacyUpdated": "最后更新：2025年",
-  "privacyIntro": "塔什甘吉普罗格尔股份公司（以下简称"本公司"）重视您的隐私权，并致力于保护您通过本网站提交的个人信息。",
+  "privacyIntro": "塔什甘吉普罗格尔股份公司（以下简称「本公司」）重视您的隐私权，并致力于保护您通过本网站提交的个人信息。",
   "privacyCollectedTitle": "一、收集的信息",
   "privacyCollectedText": "当您通过本网站的联系表单或合作咨询表单提交信息时，我们会收集以下数据：姓名/公司名称、联系电话、电子邮箱地址、项目相关信息。",
   "privacyUseTitle": "二、信息使用目的",
@@ -225,5 +225,8 @@
   "privacyRightsText": "您有权随时要求查阅、更正或删除本公司所持有的您的个人信息。如需行使上述权利，请通过以下方式与我们联系。",
   "privacyContactTitle": "五、联系方式",
   "privacyContactText": "如对本隐私政策有任何疑问，请发送电子邮件至：info@tashgiprogor.uz",
-  "privacyGoverningLaw": "本隐私政策依据乌兹别克斯坦共和国相关法律制定。"
+  "privacyGoverningLaw": "本隐私政策依据乌兹别克斯坦共和国相关法律制定。",
+
+  "yourCompany": "公司名称",
+  "consentAgree": "我同意"
 }

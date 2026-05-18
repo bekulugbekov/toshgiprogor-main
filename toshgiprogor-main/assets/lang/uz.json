@@ -227,5 +227,8 @@
   "privacyRightsText": "Istalgan vaqtda shaxsiy ma'lumotlaringizga kirish, ularni to'g'irlash yoki o'chirish talabini qo'yishingiz mumkin. Buning uchun quyidagi aloqa ma'lumotlari orqali murojaat qiling.",
   "privacyContactTitle": "5. Aloqa",
   "privacyContactText": "Maxfiylik siyosatiga oid savollar uchun elektron pochta orqali murojaat qiling: info@tashgiprogor.uz",
-  "privacyGoverningLaw": "Ushbu siyosat O'zbekiston Respublikasi qonunchiligiga muvofiq tartibga solinadi."
+  "privacyGoverningLaw": "Ushbu siyosat O'zbekiston Respublikasi qonunchiligiga muvofiq tartibga solinadi.",
+
+  "yourCompany": "Kompaniya nomi",
+  "consentAgree": "Roziman:"
 }
