@@ -1,0 +1,109 @@
+.contact-section {
+
+    .section-title h1 {
+        font-size: 90px;
+        font-weight: 500;
+        line-height: 100px;
+    }
+
+    .section-title i {
+        transform: rotate(-45deg);
+        position: relative;
+        top: 10px;
+    }
+
+    .contact-text {
+        text-align: justify;
+    }
+
+    .subimit-form-wrap form {
+        margin-top: 50px;
+    }
+
+    .subimit-form-wrap input,
+    .subimit-form-wrap textarea {
+        border: none;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 30px;
+    }
+
+    .subimit-form-wrap textarea {
+        height: 60px;
+    }
+
+    input[type="submit"] {
+        border: 1px solid #ddd;        
+        width: 160px;
+    }
+
+    iframe {
+        max-width: calc(100% - 40px);
+        height: 600px;
+        filter: grayscale(1);
+        position: relative;
+        z-index: -1;
+
+        @media #{$xs} {
+            max-width: calc(100% - 0px);
+        }
+    }
+
+    .single-contact-info {
+        border-bottom: 1px solid #ddd;
+
+        p {
+            margin: 0;
+        }
+
+        h4 {
+            margin: 0 0 15px;
+
+            @media #{$xs} {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .social-area {
+        margin-top: 30px;
+
+        a {
+            background: #9F9F9D;
+            color: #fff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+
+            i {
+                font-size: 14px;
+                margin-right: 0;                
+            }
+        }
+
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        @media #{$xs} {
+            margin-top: 30px;
+        }
+    }
+
+}
+
+.contact-section img {
+    @media #{$xs} {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+}
+

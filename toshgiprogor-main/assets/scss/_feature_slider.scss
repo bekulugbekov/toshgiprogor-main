@@ -1,0 +1,122 @@
+/* Feature Slider # 01  */
+
+  .feature_item {
+      display: flex;
+      align-items: center;
+      height: 100px;
+      gap: 80px;
+
+      @media #{$xs}{
+          height: 60px;     
+      }
+
+      h2 {
+        font-size: 60px;
+        font-weight: 500;
+        margin-right: 30px;
+        @media #{$xs}{
+          font-size: 30px;
+      }
+
+        &.stroke {
+          -webkit-text-stroke: 0.8px #666;
+          -webkit-text-fill-color: #fff;
+      }
+    }
+
+    img {
+      width: 50px;
+      display: inline-block;    
+      margin-right: 20px;
+  }
+      
+  }
+  
+
+ // Animation 
+   
+  .feature_item{
+      animation: architon-scroller 20s linear infinite;
+      will-change: transform;
+      white-space: nowrap;
+  }
+
+
+  @keyframes architon-scroller {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    100% {
+      transform: translate(-100%, 0);
+    }
+  }
+  
+  @keyframes architon-scroller-reverse {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    100% {
+      transform: translate(100%, 0);
+    }
+  }
+
+
+  // Feature Slider # 02
+
+.feature_wrap{
+  position: relative;
+  z-index: 1;
+
+  &:after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #171717;
+      opacity: .2;
+  }
+  
+}
+
+.feature_item_two {
+  display: flex;
+  align-items: center;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media #{$md} {
+      height: 300px;
+  }
+  @media #{$xs} {
+      height: 200px;
+  }
+  h5 {
+      color: #fff;
+      font-size: 90px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-right: 60px;
+      color: transparent;
+      -webkit-text-stroke: 0.8px #FFFBFB;
+      -webkit-text-stroke-width: 1px;
+      letter-spacing: -2px;
+      @media #{$md} {
+          font-size: 80px;
+      }    
+      @media #{$xs} {
+          font-size: 60px;
+      }
+  }
+}
+
+.slick-list {
+  z-index: 1;
+}
+
+
+

@@ -1,0 +1,127 @@
+
+.single-price-item {
+	margin-top: 50px;
+	transition: .3s;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    padding: 30px 10px;
+	min-height: 600px;
+	margin-bottom: 30px;
+	h5 {
+		font-size: 24px;
+		font-weight: 400;
+		position: relative;
+		margin: 20px 0 0;		
+	}
+	p {
+		margin: 40px 0px;
+	}
+
+
+	.bordered-btn {
+		color: #333;
+		border-color: #333;
+	  }
+	
+}
+
+.price-box {
+    margin-top: 10px;
+    border-bottom: 1px solid #ddd;
+    h3{
+        font-size: 40px;
+        margin-bottom: 20px;
+		@media #{$xs}{
+			font-size: 35px;
+		}
+    }
+	h3 span {
+		font-size: 16px;
+	}
+}
+
+
+.price-list {
+    margin-top: 40px;
+}
+
+.price-list ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li {
+		display: block;
+		margin: 20px 0;
+		color: #878787;
+		font-size: 16px;
+		position: relative;
+		transition: .3s;
+		padding-left: 30px;
+        i{
+            margin-right: 15px;
+			position: absolute;
+			top: 4px;
+			left: 0;
+        }
+	}
+}
+
+
+// Price Page 
+
+#price_page .section-title h1 {
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 90px;
+
+	@media #{$lg}{
+        font-size: 70px;
+        line-height: 80px;
+    }
+    @media #{$md}{
+        font-size: 60px;
+        line-height: 70px;
+    }
+    @media #{$xs}{
+        font-size: 35px;
+        line-height: 45px;
+    }
+    @media #{$sm}{
+        font-size: 50px;
+        line-height: 60px;
+    }
+}
+
+#price_page .hero-area-inner {
+    padding: 80px 0 40px;
+}
+
+#price_page .hero-area-content p {
+    padding-left: 400px;
+    text-align: justify;
+    margin-top: -25px;
+	@media #{$md} {
+		padding-left: 0;
+		margin-top: 50px;
+	}
+
+	@media #{$xs} {
+		padding-left: 0;
+		margin-top: 50px;
+		text-align: left;
+	}
+}
+
+#price_page .section-title h1 br {
+	@media #{$xs} {
+		display: none;
+	}
+	
+  }
+  
+.pricing-section.pb-90 {
+    @media #{$xs} {
+		padding-bottom: 0;
+	}
+}
+

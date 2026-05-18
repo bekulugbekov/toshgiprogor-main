@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+
+    <title>TOSHGIPROGOR</title>
+
+    <!--Favicon-->
+    <link rel="icon" href="assets/img/favicon.png" type="image/png" />
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Line Awesome CSS -->
+    <link href="assets/css/line-awesome.min.css" rel="stylesheet" />
+    <!-- Font Awesome CSS -->
+    <link href="assets/css/fontAwesomePro.css" rel="stylesheet" />
+    <!-- Animate CSS-->
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <!-- Bar Filler CSS -->
+    <link href="assets/css/barfiller.css" rel="stylesheet" />
+    <!-- Magnific Popup Video -->
+    <link href="assets/css/magnific-popup.css" rel="stylesheet" />
+    <!-- Flaticon CSS -->
+    <link href="assets/css/flaticon.css" rel="stylesheet" />
+    <!-- Owl Carousel CSS -->
+    <link href="assets/css/owl.carousel.css" rel="stylesheet" />
+    <!-- Slick Slider CSS -->
+    <link href="assets/css/slick.css" rel="stylesheet" />
+    <!-- Nice Select  -->
+    <link href="assets/css/nice-select.css" rel="stylesheet" />
+    <!-- Back to Top -->
+    <link href="assets/css/backToTop.css" rel="stylesheet" />
+    <!-- Metis Menu -->
+    <link href="assets/css/metismenu.css" rel="stylesheet" />
+    <!-- Odometer CSS -->
+    <link href="assets/css/odometer.min.css" rel="stylesheet" />
+    <!-- Style CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <!-- Accessibility Menu CSS -->
+    <link href="assets/css/a11y-menu.css" rel="stylesheet" />
+    <!-- Snow Animation CSS -->
+    <link href="assets/css/snow-animation.css" rel="stylesheet" />
+
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <body data-page="home">
+    <!-- Pre-Loader -->
+    <div id="loader"></div>
+
+    <!-- Mouse Cursor  -->
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner"><span>Drag</span></div>
+
+    <!-- Message Modal -->
+    <div id="messageContainer" class="message-container"></div>
+
+    <!-- Accessibility Tools Menu -->
+    <div
+      id="a11y-menu"
+      class="a11y-menu"
+      role="complementary"
+      aria-label="Accessibility Tools"
+    >
+      <!-- Toggle Button -->
+      <button
+        id="a11y-toggle"
+        class="a11y-toggle"
+        aria-label="Ochish"
+        title="Moslashuvchanlik"
+        aria-expanded="false"
+        aria-controls="a11y-panel"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+
+      <!-- Menu Panel -->
+      <div
+        id="a11y-panel"
+        class="a11y-panel"
+        role="region"
+        aria-labelledby="a11y-menu-title"
+      >
+        <div class="a11y-panel-header">
+          <h2 id="a11y-menu-title" class="a11y-menu-title">
+            <span data-lang="uz">Moslashuvchanlik</span>
+            <span data-lang="ru" style="display: none">Доступность</span>
+            <span data-lang="en" style="display: none">Accessibility</span>
+          </h2>
+          <button id="a11y-close" class="a11y-close" aria-label="Yopish">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="a11y-panel-content">
+          <!-- 1. Mavzuni tanlash -->
+          <div class="a11y-control-group">
+            <label class="a11y-label">
+              <span data-lang="uz">Mavzuni tanlash</span>
+              <span data-lang="ru" style="display: none">Выберите тему</span>
+              <span data-lang="en" style="display: none">Choose theme</span>
+            </label>
+            <div class="a11y-theme-buttons">
+              <button
+                id="a11y-theme-adaptive"
+                class="a11y-theme-btn"
+                data-theme="adaptive"
+                aria-label="Moslashuvchan mavzu"
+              >
+                <div class="a11y-theme-preview">
+                  <div class="a11y-theme-preview-top"></div>
+                  <div class="a11y-theme-preview-bottom"></div>
+                  <div class="a11y-theme-preview-circle"></div>
+                </div>
+                <span data-lang="uz">Moslashuvchan</span>
+                <span data-lang="ru" style="display: none">Адаптивный</span>
+                <span data-lang="en" style="display: none">Adaptive</span>
+              </button>
+              <button
+                id="a11y-theme-light"
+                class="a11y-theme-btn active"
+                data-theme="light"
+                aria-label="Oddiy mavzu"
+              >
+                <div class="a11y-theme-preview">
+                  <div class="a11y-theme-preview-top"></div>
+                  <div class="a11y-theme-preview-bottom"></div>
+                  <div class="a11y-theme-preview-circle"></div>
+                </div>
+                <span data-lang="uz">Kunduzgi</span>
+                <span data-lang="ru" style="display: none">Дневной</span>
+                <span data-lang="en" style="display: none">Day</span>
+              </button>
+              <button
+                id="a11y-theme-dark"
+                class="a11y-theme-btn"
+                data-theme="dark"
+                aria-label="Tungi mavzu"
+              >
+                <div class="a11y-theme-preview">
+                  <div class="a11y-theme-preview-top"></div>
+                  <div class="a11y-theme-preview-bottom"></div>
+                  <div class="a11y-theme-preview-circle"></div>
+                </div>
+                <span data-lang="uz">Tungi</span>
+                <span data-lang="ru" style="display: none">Ночной</span>
+                <span data-lang="en" style="display: none">Night</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. Matn hajmi slayder (0% dan 100% gacha) -->
+          <div class="a11y-control-group">
+            <!-- Font size slider (ko'chirilgan) -->
+            <label
+              class="a11y-label"
+              for="a11y-font-scale"
+              style="margin-top: 16px"
+            >
+              <span class="a11y-icon-text">Aa</span>
+              <span data-lang="uz">Matn hajmi</span>
+              <span data-lang="ru" style="display: none">Размер текста</span>
+              <span data-lang="en" style="display: none">Font size</span>
+              <span id="a11y-font-scale-value" class="a11y-value">0%</span>
+            </label>
+            <p class="a11y-description">
+              <span data-lang="uz">Matn hajmini oshiring va kamaytiring</span>
+              <span data-lang="ru" style="display: none"
+                >Увеличьте или уменьшите размер текста</span
+              >
+              <span data-lang="en" style="display: none"
+                >Increase or decrease text size</span
+              >
+            </p>
+            <div class="a11y-slider-wrapper">
+              <button
+                class="a11y-slider-btn"
+                id="a11y-font-scale-decrease"
+                aria-label="Kamaytirish"
+              >
+                <span>A-</span>
+              </button>
+              <input
+                type="range"
+                id="a11y-font-scale"
+                class="a11y-slider"
+                min="0"
+                max="100"
+                value="0"
+                step="10"
+                aria-label="Shrift o'lchami"
+              />
+              <button
+                class="a11y-slider-btn"
+                id="a11y-font-scale-increase"
+                aria-label="Oshirish"
+              >
+                <span>A+</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. Shrift o'lchami (So'z uzunligi / So'z oralig'i) -->
+          <div class="a11y-control-group">
+            <label class="a11y-label">
+              <span class="a11y-icon-text">Aa</span>
+              <span data-lang="uz">Shrift o'lchami</span>
+              <span data-lang="ru" style="display: none">Размер шрифта</span>
+              <span data-lang="en" style="display: none">Font size</span>
+            </label>
+            <p class="a11y-description">
+              <span data-lang="uz">Shrift hajmini oshiring va kamaytiring</span>
+              <span data-lang="ru" style="display: none"
+                >Увеличьте или уменьшите размер шрифта</span
+              >
+              <span data-lang="en" style="display: none"
+                >Increase or decrease font size</span
+              >
+            </p>
+            <div class="a11y-word-controls">
+              <button
+                id="a11y-word-length-btn"
+                class="a11y-word-btn"
+                aria-label="So'z uzunligi"
+              >
+                <span data-lang="uz">So'z uzunligi</span>
+                <span data-lang="ru" style="display: none">Длина слова</span>
+                <span data-lang="en" style="display: none">Word length</span>
+              </button>
+              <button
+                id="a11y-word-spacing-btn"
+                class="a11y-word-btn active"
+                aria-label="So'z oralig'i"
+              >
+                <span data-lang="uz">So'z oralig'i</span>
+                <span data-lang="ru" style="display: none">Интервал слов</span>
+                <span data-lang="en" style="display: none">Word spacing</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 6. Ekran suhandoni (Voice Assistant) -->
+          <div class="a11y-control-group">
+            <div class="a11y-voice-header">
+              <div class="a11y-voice-header-left">
+                <svg
+                  class="a11y-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"
+                  ></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <line x1="12" y1="19" x2="12" y2="23"></line>
+                  <line x1="8" y1="23" x2="16" y2="23"></line>
+                </svg>
+                <div class="a11y-voice-header-text">
+                  <label class="a11y-label" style="margin-bottom: 4px">
+                    <span data-lang="uz">Ekran suhandoni</span>
+                    <span data-lang="ru" style="display: none"
+                      >Голосовой помощник</span
+                    >
+                    <span data-lang="en" style="display: none"
+                      >Voice assistant</span
+                    >
+                  </label>
+                  <p class="a11y-description" style="margin: 0">
+                    <span data-lang="uz">Zaif ko'ruvchilar uchun vosita</span>
+                    <span data-lang="ru" style="display: none"
+                      >Инструмент для слабовидящих</span
+                    >
+                    <span data-lang="en" style="display: none"
+                      >Tool for visually impaired</span
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="a11y-toggle-wrapper">
+                <input
+                  type="checkbox"
+                  id="a11y-voice-assistant"
+                  class="a11y-toggle-switch"
+                  aria-describedby="a11y-voice-desc"
+                />
+                <label
+                  for="a11y-voice-assistant"
+                  class="a11y-toggle-label"
+                ></label>
+              </div>
+            </div>
+
+            <!-- Voice Assistant Controls (hidden by default) -->
+            <div
+              id="a11y-voice-controls"
+              class="a11y-voice-controls"
+              style="display: none"
+            >
+              <!-- O'qish tezligi -->
+              <div class="a11y-voice-option">
+                <label class="a11y-voice-label">
+                  <span data-lang="uz">O'qish tezligi</span>
+                  <span data-lang="ru" style="display: none"
+                    >Скорость чтения</span
+                  >
+                  <span data-lang="en" style="display: none"
+                    >Reading speed</span
+                  >
+                </label>
+                <div class="a11y-speed-slider-container">
+                  <div class="a11y-speed-slider-wrapper">
+                    <button
+                      class="a11y-slider-btn"
+                      id="a11y-speed-decrease"
+                      aria-label="Kamaytirish"
+                    >
+                      <span>-</span>
+                    </button>
+                    <input
+                      type="range"
+                      id="a11y-speed-slider"
+                      class="a11y-speed-slider"
+                      min="0.5"
+                      max="2.0"
+                      value="1.0"
+                      step="0.25"
+                      aria-label="O'qish tezligi"
+                    />
+                    <button
+                      class="a11y-slider-btn"
+                      id="a11y-speed-increase"
+                      aria-label="Oshirish"
+                    >
+                      <span>+</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ovoz ohangi -->
+              <div class="a11y-voice-option">
+                <label class="a11y-voice-label">
+                  <span data-lang="uz">Ovoz ohangi</span>
+                  <span data-lang="ru" style="display: none">Тон голоса</span>
+                  <span data-lang="en" style="display: none">Voice tone</span>
+                </label>
+                <div class="a11y-tone-buttons">
+                  <button
+                    id="a11y-tone-neutral"
+                    class="a11y-tone-btn"
+                    data-tone="neutral"
+                    aria-label="Betaraf"
+                  >
+                    <span data-lang="uz">Betaraf</span>
+                    <span data-lang="ru" style="display: none"
+                      >Нейтральный</span
+                    >
+                    <span data-lang="en" style="display: none">Neutral</span>
+                  </button>
+                  <button
+                    id="a11y-tone-friendly"
+                    class="a11y-tone-btn active"
+                    data-tone="friendly"
+                    aria-label="Samimiy"
+                  >
+                    <span data-lang="uz">Samimiy</span>
+                    <span data-lang="ru" style="display: none"
+                      >Дружелюбный</span
+                    >
+                    <span data-lang="en" style="display: none">Friendly</span>
+                  </button>
+                  <button
+                    id="a11y-tone-formal"
+                    class="a11y-tone-btn"
+                    data-tone="formal"
+                    aria-label="Rasmiy"
+                  >
+                    <span data-lang="uz">Rasmiy</span>
+                    <span data-lang="ru" style="display: none">Формальный</span>
+                    <span data-lang="en" style="display: none">Formal</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Ko'rsatkich (Cursor) -->
+          <div class="a11y-control-group">
+            <label class="a11y-label">
+              <svg
+                class="a11y-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"></path>
+              </svg>
+              <span data-lang="uz">Ko'rsatkich</span>
+              <span data-lang="ru" style="display: none">Курсор</span>
+              <span data-lang="en" style="display: none">Cursor</span>
+            </label>
+            <p class="a11y-description">
+              <span data-lang="uz"
+                >Ko'rsatkichni kattalashtiring va rangini o'zgartiring</span
+              >
+              <span data-lang="ru" style="display: none"
+                >Увеличьте курсор и измените его цвет</span
+              >
+              <span data-lang="en" style="display: none"
+                >Magnify cursor and change its color</span
+              >
+            </p>
+            <div class="a11y-cursor-color-btns">
+              <button
+                id="a11y-cursor-black"
+                class="a11y-cursor-color-btn"
+                data-color="black"
+                aria-label="Qora"
+              >
+                <span data-lang="uz">Qora</span>
+                <span data-lang="ru" style="display: none">Черный</span>
+                <span data-lang="en" style="display: none">Black</span>
+              </button>
+              <button
+                id="a11y-cursor-white"
+                class="a11y-cursor-color-btn"
+                data-color="white"
+                aria-label="Oq"
+              >
+                <span data-lang="uz">Oq</span>
+                <span data-lang="ru" style="display: none">Белый</span>
+                <span data-lang="en" style="display: none">White</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 8. Maxsus rang rejimlari -->
+          <div class="a11y-control-group">
+            <label class="a11y-label">
+              <svg
+                class="a11y-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+                <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                <circle cx="11.5" cy="11.5" r=".5" fill="currentColor"></circle>
+                <path
+                  d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"
+                ></path>
+              </svg>
+              <span data-lang="uz">Maxsus rang</span>
+              <span data-lang="ru" style="display: none">Специальный цвет</span>
+              <span data-lang="en" style="display: none">Special color</span>
+            </label>
+            <p class="a11y-description">
+              <span data-lang="uz">Sayt ranglarini o'zgartiring</span>
+              <span data-lang="ru" style="display: none"
+                >Измените цвета сайта</span
+              >
+              <span data-lang="en" style="display: none"
+                >Change site colors</span
+              >
+            </p>
+            <div class="a11y-color-mode-buttons">
+              <button
+                id="a11y-color-none"
+                class="a11y-color-mode-btn"
+                data-mode="none"
+                aria-label="Rangsiz ko'rinish"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 20h9"></path>
+                  <path
+                    d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                  ></path>
+                  <line x1="15" y1="5" x2="19" y2="9"></line>
+                </svg>
+                <span data-lang="uz">Rangsiz ko'rinish</span>
+                <span data-lang="ru" style="display: none">Бесцветный вид</span>
+                <span data-lang="en" style="display: none">Colorless view</span>
+              </button>
+            </div>
+            <!-- Yorug'lik slideri -->
+            <div class="a11y-control-group" style="margin-top: 16px">
+              <label class="a11y-label" for="a11y-brightness-scale">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <span data-lang="uz">Yorug'lik</span>
+                <span data-lang="ru" style="display: none">Яркость</span>
+                <span data-lang="en" style="display: none">Brightness</span>
+                <span id="a11y-brightness-scale-value" class="a11y-value"
+                  >100%</span
+                >
+              </label>
+              <p class="a11y-description">
+                <span data-lang="uz"
+                  >Sayt yorug'ligini oshiring va kamaytiring</span
+                >
+                <span data-lang="ru" style="display: none"
+                  >Увеличьте или уменьшите яркость сайта</span
+                >
+                <span data-lang="en" style="display: none"
+                  >Increase or decrease site brightness</span
+                >
+              </p>
+              <div class="a11y-slider-wrapper">
+                <button
+                  class="a11y-slider-btn"
+                  id="a11y-brightness-scale-decrease"
+                  aria-label="Kamaytirish"
+                >
+                  <span>-</span>
+                </button>
+                <input
+                  type="range"
+                  id="a11y-brightness-scale"
+                  class="a11y-slider"
+                  min="0"
+                  max="100"
+                  value="100"
+                  step="10"
+                  aria-label="Yorug'lik"
+                />
+                <button
+                  class="a11y-slider-btn"
+                  id="a11y-brightness-scale-increase"
+                  aria-label="Oshirish"
+                >
+                  <span>+</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reset Button -->
+          <div class="a11y-control-group">
+            <button
+              id="a11y-reset"
+              class="a11y-btn-reset"
+              aria-label="Barcha sozlamalarni tiklash"
+            >
+              <span data-lang="uz">Barcha sozlamalarni tiklash</span>
+              <span data-lang="ru" style="display: none"
+                >Сбросить все настройки</span
+              >
+              <span data-lang="en" style="display: none"
+                >Reset all settings</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Focus Mode Overlay -->
+    <div
+      id="a11y-focus-overlay"
+      class="a11y-focus-overlay"
+      aria-hidden="true"
+      role="presentation"
+    ></div>
+
+    <!-- Focus Mode Spotlight -->
+    <div
+      id="a11y-focus-spotlight"
+      class="a11y-focus-spotlight"
+      aria-hidden="true"
+      role="presentation"
+    ></div>
+
+    <!-- Focus Mode Banner -->
+    <div
+      id="a11y-focus-banner"
+      class="a11y-focus-banner"
+      aria-hidden="true"
+      role="region"
+      aria-label="Diqqatni jamlash rejimi"
+    >
+      <div class="a11y-focus-banner-content">
+        <span class="a11y-focus-banner-text">
+          <span data-lang="uz">Diqqatni jamlash rejimini o'chirish</span>
+          <span data-lang="ru" style="display: none"
+            >Отключить режим фокусировки</span
+          >
+          <span data-lang="en" style="display: none">Disable focus mode</span>
+        </span>
+        <button
+          id="a11y-focus-banner-close"
+          class="a11y-focus-banner-close"
+          aria-label="Rejimni o'chirish"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="smooth-wrapper">
+      <!-- Header Area  -->
+      <div class="header-area">
+        <div id="header-sticky">
+          <div class="navigation">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-xl-3 col-lg-3 col-6">
+                  <div class="logo">
+                    <a href="index.html" class="logo">TASHGIPROGOR</a>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-7 d-none d-lg-block text-lg-end">
+                  <div class="main-menu">
+                    <ul>
+                      <li>
+                        <a
+                          data-translate="aboutus"
+                          class="navlink"
+                          href="about.html"
+                          >О нас</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          data-translate="services"
+                          class="navlink"
+                          href="services.html"
+                          >Услуги</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          data-translate="projects"
+                          class="navlink"
+                          href="projects.html"
+                          >Проекты</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          data-translate="management"
+                          class="navlink"
+                          href="corporate-management.html"
+                          >Корпоративное управление</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          data-translate="blogS"
+                          class="navlink"
+                          href="blog.html"
+                          >Новости</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          data-translate="contact"
+                          class="navlink"
+                          href="contact.html"
+                          >Контакт</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1 d-none d-lg-block text-lg-end">
+                  <select
+                    onchange="changeLanguage(this.value); window.location.reload()"
+                    id="languageSelector"
+                  >
+                    <option value="uz">O'zbekcha</option>
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                  </select>
+                </div>
+                <!-- <div class="col-xl-1 col-lg-1 d-none d-lg-inline-block">
+                <div class="header-right">
+                  <div class="header-btn">
+                    <div class="menu-trigger">
+                      <span class="lines"></span>
+                      <span class="lines"></span>
+                      <span class="lines"></span>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+                <!-- Mobile Menu -->
+                <div class="mobile-nav-bar col-6 d-block d-lg-none">
+                  <div class="mobile-nav-wrap">
+                    <div id="hamburger">
+                      <svg
+                        class="menu-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="35"
+                        height="35"
+                        viewBox="0 0 24 24"
+                        style="fill: currentColor"
+                      >
+                        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+                      </svg>
+                    </div>
+                    <!-- mobile menu - responsive menu  -->
+                    <div class="mobile-nav">
+                      <button type="button" class="close-nav">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="30"
+                          height="30"
+                          viewBox="0 0 24 24"
+                          style="fill: rgb(255, 255, 255)"
+                        >
+                          <path
+                            d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"
+                          ></path>
+                          <path
+                            d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"
+                          ></path>
+                        </svg>
+                      </button>
+                      <nav class="sidebar-nav">
+                        <ul class="metismenu" id="mobile-menu">
+                          <li>
+                            <a
+                              data-translate="aboutus"
+                              class="has-arrow"
+                              href="about.html"
+                              >О нас</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              data-translate="services"
+                              class="has-arrow"
+                              href="services.html"
+                              >Услуги</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              data-translate="projects"
+                              class="has-arrow"
+                              href="projects.html"
+                              >Проекты</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              data-translate="management"
+                              class="has-arrow"
+                              href="corporate-management.html"
+                              >Корпоративное управление</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              data-translate="blogS"
+                              class="has-arrow"
+                              href="blog.html"
+                              >Новости</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              data-translate="contact"
+                              class="has-arrow"
+                              href="contact.html"
+                              >Контакт</a
+                            >
+                          </li>
+                        </ul>
+                        <select
+                          onchange="changeLanguage(this.value); window.location.reload()"
+                          id="languageSelector"
+                          class="languageSelector"
+                        >
+                          <option class="bg-black" value="uz">O'zbekcha</option>
+                          <option class="bg-black" value="ru">Русский</option>
+                          <option class="bg-black" value="en">English</option>
+                        </select>
+                      </nav>
+                      <div class="action-bar">
+                        <a href="mailto:itashgiprogor@yahoo.com">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            style="fill: rgb(255, 255, 255); margin-right: 5px"
+                          >
+                            <path
+                              d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.7-8 5.334L4 8.7V6.297l8 5.333 8-5.333V8.7z"
+                            ></path></svg
+                          >itashgiprogor@yahoo.com</a
+                        >
+                        <a href="tel:+998712440495"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            style="fill: rgb(255, 255, 255); margin-right: 5px"
+                          >
+                            <path
+                              d="M20 10.999h2C22 5.869 18.127 2 12.99 2v2C17.052 4 20 6.943 20 10.999z"
+                            ></path>
+                            <path
+                              d="M13 8c2.103 0 3 .897 3 3h2c0-3.225-1.775-5-5-5v2zm3.422 5.443a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a1 1 0 0 0-.086-1.391l-4.064-3.696z"
+                            ></path></svg
+                          >+998 (71) 244-04-95</a
+                        >
+                        <a
+                          href="contact.html"
+                          data-translate="contactUs"
+                          class="theme-btn"
+                          >Свяжитесь с нами</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Off-canvas Area-->
+      <!-- <div class="extra-info">
+      <div class="close-icon menu-close">
+        <button>
+          <i class="las la-times"></i>
+        </button>
+      </div>
+      <div class="logo-side">
+        <div class="logo">
+          <a href="index.html" class="logo">TOSHGIPROGOR</a>
+        </div>
+      </div>
+      <div class="side-info">
+        <div class="contact-list mb-40">
+          <p>
+            Добро пожаловать в TOSHGIPROGOR, фирму, предоставляющую полный
+            спектр услуг по архитектуре и дизайну интерьеров. Мы
+            специализируемся на создании пространств.
+          </p>
+          <img src="assets/img/offcanvas-img.jpg" alt="" />
+
+          <div class="mt-30 mb-30">
+            <a href="contact.html" class="white-btn">Связаться с нами</a>
+          </div>
+        </div>
+        <div class="social-area-wrap">
+          <a href="#"><i class="lab la-facebook-f"></i></a>
+          <a href="#"><i class="lab la-instagram"></i></a>
+          <a href="#"><i class="lab la-linkedin-in"></i></a>
+          <a href="#"><i class="lab la-skype"></i></a>
+        </div>
+      </div>
+    </div> -->
+      <div class="offcanvas-overlay"></div>
+
+      <div id="smooth-content">
+        <!-- Hero Area  -->
+        <div class="hero-area">
+          <div class="video-background">
+            <div class="video-overlay"></div>
+            <video id="bg-video" autoplay loop muted playsinline>
+              <source
+                id="video-source"
+                src="./assets/video/tashkent.mp4"
+                type="video/mp4"
+              />
+              Sizning brauzeringiz video tegini qo'llab-quvvatlamaydi.
+            </video>
+          </div>
+          <div class="hero-content">
+            <div class="container">
+              <div class="row align-items-start mt-120 mediaCenter">
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12">
+                  <div>
+                    <div class="heading-animation mediaFlex">
+                      <img
+                        width="200px"
+                        height="200px"
+                        src="/assets/img/building-logo.png"
+                        alt="logo"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12">
+                  <div class="section-title">
+                    <div class="heading-animation flexEnd">
+                      <h2 data-translate="homeMainTitle">
+                        Архитектура провеоенная временем
+                      </h2>
+                      <a
+                        data-translate="contactUs"
+                        href="contact.html"
+                        class="theme-btn mt-30 mb-30"
+                        ><span>Свяжитесь с нами</span></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Section -->
+        <div class="feature-section section-padding pt-0 pb-0">
+          <div class="container">
+            <div class="row gx-5">
+              <div class="col-xl-5 col-lg-4">
+                <div class="section-title text-low">
+                  <div>
+                    <h2 data-translate="featureSectionTitle">
+                      АО «Ташгипрогор»: <br />Архитектура, проверенная временем
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-7 col-lg-8">
+                <div class="row gy-5 feature-wrap">
+                  <div
+                    class="col-xl-6 col-lg-6 col-md-6 col-sm-6 wow fadeInUp animated"
+                    data-wow-delay=".2s"
+                  >
+                    <div class="single-feature-item">
+                      <div class="single-feat-inner">
+                        <div class="icon-wrap">
+                          <img src="assets/img/icon/1.png" alt="" />
+                        </div>
+                        <div class="service-title">
+                          <h4 data-translate="featureSectionTextTitleOne">
+                            Многолетний опыт и престиж
+                          </h4>
+                        </div>
+                      </div>
+                      <p data-translate="featureSectionTextOne">
+                        Работаем с 1937 года, формируя архитектурное наследие и
+                        современный облик Узбекистана.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="col-xl-6 col-lg-6 col-md-6 col-sm-6 wow fadeInUp animated"
+                    data-wow-delay=".4s"
+                  >
+                    <div class="single-feature-item">
+                      <div class="single-feat-inner">
+                        <div class="icon-wrap">
+                          <img src="assets/img/icon/2.png" alt="" />
+                        </div>
+                        <div class="service-title">
+                          <h4 data-translate="featureSectionTextTitleTwo">
+                            Широкий спектр услуг
+                          </h4>
+                        </div>
+                      </div>
+                      <p data-translate="featureSectionTextTwo">
+                        От проектирования зданий до разработки инженерных
+                        решений и благоустройства.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="col-xl-6 col-lg-6 col-md-6 col-sm-6 wow fadeInUp animated"
+                    data-wow-delay=".6s"
+                  >
+                    <div class="single-feature-item">
+                      <div class="single-feat-inner">
+                        <div class="icon-wrap">
+                          <img src="assets/img/icon/3.png" alt="" />
+                        </div>
+                        <div class="service-title">
+                          <h4 data-translate="featureSectionTextTitleThree">
+                            Индивидуальный подход
+                          </h4>
+                        </div>
+                      </div>
+                      <p data-translate="featureSectionTextThree">
+                        Каждый проект учитывает архитектурные особенности,
+                        запросы заказчика и современные тенденции.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="col-xl-6 col-lg-6 col-md-6 col-sm-6 wow fadeInUp animated"
+                    data-wow-delay=".8s"
+                  >
+                    <div class="single-feature-item">
+                      <div class="single-feat-inner">
+                        <div class="icon-wrap">
+                          <img src="assets/img/icon/4.png" alt="" />
+                        </div>
+                        <div class="service-title">
+                          <h4 data-translate="featureSectionTextTitleFour">
+                            Высокая надёжность и качество
+                          </h4>
+                        </div>
+                      </div>
+                      <p data-translate="featureSectionTextFour">
+                        Гарантируем профессионализм на каждом этапе — от
+                        планирования до завершения строительства.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Counter Section -->
+        <div class="counter-section pt-60 pb-60">
+          <div class="container">
+            <div class="row gx-5">
+              <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="single-counter-box">
+                  <p class="counter-number">
+                    <span
+                      class="purecounter"
+                      data-purecounter-duration="1"
+                      data-purecounter-end="100"
+                      >100</span
+                    >+
+                  </p>
+                  <h6 data-translate="counter100">Административных зданий</h6>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="single-counter-box">
+                  <p class="counter-number">
+                    <span
+                      class="purecounter"
+                      data-purecounter-duration="1"
+                      data-purecounter-end="70"
+                      >70</span
+                    >+
+                  </p>
+                  <h6 data-translate="counter70">
+                    Социально значимых объектов
+                  </h6>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="single-counter-box">
+                  <p class="counter-number">
+                    <span
+                      class="purecounter"
+                      data-purecounter-duration="1"
+                      data-purecounter-end="20"
+                      >20</span
+                    >+
+                  </p>
+                  <h6 data-translate="counter20">Спортивных объектов</h6>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="single-counter-box">
+                  <p class="counter-number">
+                    <span
+                      class="purecounter"
+                      data-purecounter-duration="1"
+                      data-purecounter-end="200"
+                      >200</span
+                    >+
+                  </p>
+                  <h6 data-translate="counter200">Многоэтажных жилых домов</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Section  -->
+        <div class="about-section section-padding">
+          <div class="container">
+            <div class="row align-items-center">
+              <div
+                class="col-xl-6 col-lg-6 wow fadeInUp animated"
+                data-wow-delay="200ms"
+              >
+                <div class="about-img-wrapper">
+                  <img src="assets/img/about/1-1.png" alt="" />
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-10">
+                <div class="about-content-wrapper">
+                  <div class="section-title text-low">
+                    <div>
+                      <h2 data-translate="aboutSectionTitle">
+                        Архитектурное <br />
+                        наследие, создающее будущее
+                      </h2>
+                    </div>
+                  </div>
+                  <div class="p-animation">
+                    <p data-translate="aboutMainDescLong">
+                      Ташкентский Государственный Институт Проектирования Города
+                      Ташгипрогор, основанный в 1937 году, является ключевым
+                      звеном в архитектурном развитии Ташкента и Узбекистана.
+                      Основная миссия института — разработка градостроительной и
+                      проектно-сметной документации для административных, жилых,
+                      культурных, социальных и спортивных объектов, которые
+                      формируют исторический и современный облик столицы.
+                    </p>
+                  </div>
+
+                  <div class="progress-bar-area">
+                    <div class="single-bar-item">
+                      <h5 data-translate="aboutSectionPercentageOne">
+                        Успешных завершённых проектов
+                      </h5>
+                      <div class="bar-parcentage">95%</div>
+                    </div>
+                    <div id="bar1" class="barfiller">
+                      <span class="fill" data-percentage="95"></span>
+                    </div>
+
+                    <div class="single-bar-item">
+                      <h5 data-translate="aboutSectionPercentageTwo">
+                        Постоянных клиентов
+                      </h5>
+                      <div class="bar-parcentage">80%</div>
+                    </div>
+                    <div id="bar2" class="barfiller">
+                      <span class="fill" data-percentage="80"></span>
+                    </div>
+
+                    <div class="single-bar-item">
+                      <h5 data-translate="aboutSectionPercentageThree">
+                        Cоответствие стандартам
+                      </h5>
+                      <div class="bar-parcentage">100%</div>
+                    </div>
+                    <div id="bar3" class="barfiller">
+                      <span class="fill" data-percentage="100"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Section -->
+        <div class="service-section section-padding pt-0">
+          <div class="container">
+            <div class="row border-bottom">
+              <div class="col-xl-6 col-lg-6">
+                <div class="section-title text-up">
+                  <div>
+                    <h2 data-translate="serviceTitle">Наши услуги</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xl-6 col-lg-6">
+                <div class="service-wrap">
+                  <div
+                    class="service-title wow fadeInUp animated"
+                    data-wow-delay=".2s"
+                  >
+                    <span>1</span>
+                    <h5 data-translate="serviceOne">Архитектура и дизайн</h5>
+                  </div>
+                  <div
+                    class="service-title wow fadeInUp animated"
+                    data-wow-delay=".4s"
+                  >
+                    <span>2</span>
+                    <h5 data-translate="serviceTwo">Конструктивные решения</h5>
+                  </div>
+                  <div
+                    class="service-title wow fadeInUp animated"
+                    data-wow-delay=".6s"
+                  >
+                    <span>3</span>
+                    <h5 data-translate="serviceThree">
+                      Инженерное оборудование и инженерные сети
+                    </h5>
+                  </div>
+                  <div class="service-title">
+                    <span>4</span>
+                    <h5 data-translate="serviceFour">Сметная документация</h5>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xl-6 col-lg-6 wow fadeInUp animated"
+                data-wow-delay=".2s"
+              >
+                <div class="service-wrap">
+                  <div
+                    class="service-title wow fadeInUp animated"
+                    data-wow-delay=".4s"
+                  >
+                    <span>5</span>
+                    <h5 data-translate="serviceFive">
+                      Проект организации строительства (ПОС)
+                    </h5>
+                  </div>
+                  <div
+                    class="service-title wow fadeInUp animated"
+                    data-wow-delay=".6s"
+                  >
+                    <span>6</span>
+                    <h5 data-translate="serviceSix">
+                      Содействие подрядным организациям
+                    </h5>
+                  </div>
+                  <div
+                    class="service-title wow fadeInUp animated"
+                    data-wow-delay=".6s"
+                  >
+                    <span>7</span>
+                    <h5 data-translate="serviceSeven">
+                      Технико-инструментальное и визуальное обследование
+                    </h5>
+                  </div>
+                  <div
+                    class="service-title wow fadeInUp animated"
+                    data-wow-delay=".6s"
+                  >
+                    <span>8</span>
+                    <h5 data-translate="serviceEight">
+                      Разработка Специальных Технических Условий для уникальных
+                      зданий и сооружений
+                    </h5>
+                  </div>
+                  <div
+                    class="service-title wow fadeInUp animated"
+                    data-wow-delay=".8s"
+                  >
+                    <span>9</span>
+                    <h5 data-translate="serviceNine">
+                      Авторский надзор по ШНК
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scrolling text area  -->
+        <div>
+          <div class="container">
+            <div class="section-title text-up">
+              <h2 data-translate="partners">Партнёры</h2>
+            </div>
+          </div>
+          <div class="feature_slider_wrap border-top border-bottom">
+            <div class="slider">
+              <div class="slide-track">
+                <div class="slide">
+                  <img src="assets/img/trastbank.png" alt="Logo 1" />
+                </div>
+                <div class="slide">
+                  <img src="assets/img/o'zgashkliti.png" alt="Logo 2" />
+                </div>
+                <div class="slide">
+                  <img src="assets/img/o'zshaharsozlik.png" alt="Logo 3" />
+                </div>
+                <div class="slide">
+                  <img src="assets/img/planliti.png" alt="Logo 4" />
+                </div>
+                <div class="slide">
+                  <img src="assets/img/taqu.png" alt="Logo 5" />
+                </div>
+                <div class="slide">
+                  <img src="assets/img/toshuyjoy.png" alt="Logo 6" />
+                </div>
+                <div class="slide">
+                  <img src="assets/img/tower.png" alt="Logo 7" />
+                </div>
+                <div class="slide">
+                  <img src="assets/img/samalyot.png" alt="Logo 8" />
+                </div>
+                <div class="slide">
+                  <img src="assets/img/bird.png" alt="Logo 9" />
+                </div>
+                <div class="slide">
+                  <img src="assets/img/knauf.png" alt="Logo 10" />
+                </div>
+                <div class="slide">
+                  <img src="assets/img/osten.png" alt="Logo 11" />
+                </div>
+                <div class="slide">
+                  <img src="assets/img/wilo.png" alt="Logo 12" />
+                </div>
+                <div class="slide">
+                  <img src="assets/img/grundfos.png" alt="Logo 13" />
+                </div>
+                <div class="slide">
+                  <img src="assets/img/enter-enginering.png" alt="Logo 14" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project - Standard -->
+        <div
+          id="project-standard"
+          class="project-section section-padding pb-0"
+          data-page="home"
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-8 col-lg-8 col-md-7">
+                <div class="section-title text-up">
+                  <div>
+                    <h2 data-translate="projectSectionTitle">Наши проекты</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-5 text-start">
+                <div class="p-animation">
+                  <p data-translate="projectSectionDesc">
+                    Качество, проверенное временем: архитектурные шедевры,
+                    изменяющие облик города
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div id="projects-wrapper" class="row"></div>
+            <div class="moreBtn">
+              <a
+                data-translate="moreBtn"
+                href="projects.html"
+                class="theme-btn mt-30 mb-30"
+                ><span>Показать все</span></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Section -->
+        <div class="blog-section section-padding pt-60 pb-70">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-12 col-lg-12">
+                <div class="section-title text-up">
+                  <h2 data-translate="blogS">Новости</h2>
+                </div>
+              </div>
+            </div>
+            <div id="blogs-container" class="row mt-40"></div>
+          </div>
+        </div>
+
+        <div class="contact-section pb-70">
+          <div class="container">
+            <div class="contact-info-wrap">
+              <div class="row mt-60">
+                <div class="col-xl-6">
+                  <div class="google-map">
+                    <iframe
+                      src="https://yandex.uz/map-widget/v1/?display-text=Tashgiprogor%22%20%D0%90%D0%9E&ll=69.213584%2C41.321583&mode=search&oid=110804645211&ol=biz&sctx=ZAAAAAgBEAAaKAoSCcueBDbnUVFAERGPxMvTp0RAEhIJ%2BWcG8YEd1z8RJ%2FkRv2INwz8iBgABAgMEBSgKOABAop8GSAFqAnV6nQHNzMw9oAEAqAEAvQFqSpQmwgEG2%2Bri45wDggISVGFzaGdpcHJvZ29yIiDQkNCeigIAkgIAmgIMZGVza3RvcC1tYXBz&sll=69.213584%2C41.321583&sspn=0.151856%2C0.062572&text=Tashgiprogor%22%20%D0%90%D0%9E&z=13.25"
+                      width="600"
+                      height="600"
+                      frameborder="1"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-xl-6">
+                  <div class="contact-info">
+                    <div class="section-title">
+                      <h2 data-translate="contactInfo">
+                        Oбратная связь
+                        <span><i class="las la-arrow-right"></i></span>
+                      </h2>
+                      <div class="subimit-form-wrap">
+                        <form id="contactForm" action="#">
+                          <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            placeholder="Ваше полное имя"
+                            data-translate="yourFullName"
+                          />
+                          <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            required
+                            placeholder="Номер телефона"
+                            data-translate="yourPhone"
+                          />
+                          <div
+                            id="messageBox"
+                            data-translate="succesMessage"
+                            class="message-box mb-30"
+                          >
+                            Ваше сообщение отправлено!
+                          </div>
+                          <input
+                            type="submit"
+                            data-translate="submit"
+                            value="Отправить"
+                          />
+                        </form>
+                      </div>
+                    </div>
+                    <div class="contact-info-inner">
+                      <div class="single-contact-info">
+                        <p data-translate="email">Электронная почта</p>
+                        <h4>info@tashgiprogor.uz</h4>
+                      </div>
+                      <div class="single-contact-info">
+                        <p data-translate="phone">Телефон</p>
+                        <h4>+998 (71) 244-04-95</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer-area">
+          <div class="container">
+            <div class="footer-up">
+              <div class="row gy-5">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <a href="index.html" class="logo">
+                    <img src="assets/img/logo.png" alt="" />
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <h5 data-translate="office">Офис</h5>
+                  <p data-translate="addressInfo">
+                    Узбекистан, 100021, Ташкент, <br />
+                    ШАЙХАНТАХУРСКИЙ РАЙОН, просп. НАВОИ, 40
+                  </p>
+                  <div class="company-email">
+                    <p data-translate="haveProject">Cотрудничество</p>
+                    <a href="mailTo:info@tashgiprogor.uz"
+                      >info@tashgiprogor.uz</a
+                    >
+                  </div>
+                  <div class="phone-number">
+                    <p data-translate="workOrder">8.00-17.00;</p>
+                    <a href="tel:+998712440495">+998 (71) 244-04-95</a>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                  <h5 data-translate="followUs">Подпишитесь на нас</h5>
+                  <ul>
+                    <li>
+                      <div class="social-area">
+                        <a href="https://t.me/tg_tashgiprogor_uz">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            style="fill: rgb(255, 255, 255)"
+                          >
+                            <path
+                              d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"
+                            ></path></svg
+                        ></a>
+                        <a href="http://www.youtube.com/@tashgiprogor"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            style="fill: rgb(255, 255, 255)"
+                          >
+                            <path
+                              d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"
+                            ></path></svg
+                        ></a>
+                        <a href="https://www.instagram.com/tashgiprogor/"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            style="fill: rgba(255, 255, 255)"
+                          >
+                            <path
+                              d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"
+                            ></path>
+                            <circle
+                              cx="11.994"
+                              cy="11.979"
+                              r="3.003"
+                            ></circle></svg
+                        ></a>
+
+                        <a
+                          href="https://www.facebook.com/share/19yTgR3crW/?mibextid=wwXIfr"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            style="fill: rgba(255, 255, 255)"
+                          >
+                            <path
+                              d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"
+                            ></path>
+                          </svg>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <!-- Footer Bottom Area -->
+
+        <div class="footer-bottom">
+          <div class="container">
+            <div
+              class="row justify-content-center align-items-center justify-content-center"
+            >
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <p data-translate="allRights" class="copyright-line">
+                  © 2024 TOSHGIPROGOR. Все права защищены
+                </p>
+              </div>
+              <div class="col-lg-6 col-md-6 col-xs-12 text-md-end">
+                <p data-translate="privacyPolicy" class="privacy">
+                  Политика конфиденциальности | Условия и положения
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- back to top start -->
+    <div class="progress-wrap">
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
+    <!-- Popper JS -->
+    <script src="assets/js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Wow JS -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- Pure Counter JS -->
+    <script src="assets/js/pure-counter.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- Magnific Popup JS -->
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <!-- Isotope JS -->
+    <script src="assets/js/isotope-3.0.6-min.js"></script>
+    <!-- Nice Select JS -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- Back To Top JS -->
+    <script src="assets/js/backToTop.js"></script>
+    <!-- Metis Menu JS -->
+    <script src="assets/js/metismenu.js"></script>
+    <!-- Progress Bar JS -->
+    <script src="assets/js/jquery.barfiller.js"></script>
+    <!-- Appear JS -->
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <!-- Odometer JS -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- GSAP Animation JS -->
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/gsap-scroll-to-plugin.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/smoother-script.js"></script>
+    <script src="assets/js/heading-animation.js"></script>
+    <script src="assets/js/paragraph-animation.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/translate.js"></script>
+    <script src="assets/js/blogs.js"></script>
+    <script src="assets/js/contactForm.js"></script>
+    <script src="assets/js/slider.js"></script>
+    <script src="assets/js/video-kesh.js"></script>
+    <script src="assets/js/projects.js"></script>
+    <!-- Accessibility Menu JavaScript -->
+    <script src="assets/js/a11y-menu.js"></script>
+    <!-- Snow Animation JavaScript -->
+    <script src="assets/js/snow-animation.js"></script>
+  </body>
+</html>

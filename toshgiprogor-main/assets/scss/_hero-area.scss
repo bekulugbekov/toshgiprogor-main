@@ -1,0 +1,170 @@
+/* Hero Area # 02 */
+
+#home-2 {
+    .single-slide-item {
+        background-image: url(../img/slider/slide-1.jpg);
+        background-size: cover;
+        background-position: center;
+        background-color: #ddd;
+        color: #fff;
+        width: 100%;
+        height: 800px;
+        position: relative;
+        z-index: 1;   
+        @media #{$xs} {
+            height: 700px;
+        }
+        h1{
+            font-size: 80px;
+            font-weight: 500;
+            line-height: 85px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            @media #{$md}{
+                font-size: 70px;
+                line-height: 80px;
+            }
+            @media #{$xs}{
+                font-size: 30px;
+                line-height: 40px;
+            }
+            @media #{$sm}{
+                font-size: 40px;
+                line-height: 50px;
+            }
+        }   
+    }
+
+    .hero-area-content {
+        padding-top: 120px;
+        padding-left: 80px;
+        @media #{$md}{
+            padding-left: 20px;
+        }
+        @media #{$xs}{
+            padding-left: 0;
+            padding-top: 0;
+        }
+    }
+  
+}
+
+// Slider Nav Style 
+
+.homepage-slides .owl-nav button.owl-prev,
+.homepage-slides .owl-nav button.owl-next {
+	width: 50px;
+	height: 50px;
+	border: 2px solid;
+	font-size: 20px;
+	font-weight: 100;
+	line-height: 16px;
+	position: absolute;
+	left: 15px;
+	top: 50%;
+	margin-top: -25px;
+	color: $theme_color;
+	border-radius: 50%;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: all .3s ease-out 0s;
+	transition: all .3s ease-out 0s;
+}
+
+.homepage-slides .owl-nav button.owl-next {
+	left: auto;
+	right: 15px;
+}
+
+.homepage-slides:hover .owl-nav button.owl-prev,
+.homepage-slides:hover .owl-nav button.owl-next {
+	visibility: visible;
+	opacity: .3;
+}
+
+.homepage-slides .owl-nav button.owl-prev:hover,
+.homepage-slides .owl-nav button.owl-next:hover {
+	background: $theme_color;
+	color: #fff;
+	border-color: $theme_color;
+	opacity: 1;
+}
+
+
+// Hero Area # 03
+
+#home-3{
+
+    &.hero-area {
+        position: relative;
+        z-index: 1;
+    }
+
+    &.hero-area:before{
+        background-image: url(../img/hero-img.jpg);
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        @media #{$md}{
+            display: none;
+        }
+        @media #{$xs}{
+            display: none;
+        }
+    }
+
+    .hero-content-wrap {
+        padding-right: 50px;
+    }
+
+    .section-title h1{
+        font-size: 70px;
+        font-weight: 500;
+        line-height: 80px;
+        @media #{$xs}{
+            font-size: 35px;
+            line-height: 45px;
+            margin-bottom: 20px;
+        }
+        @media #{$sm}{
+            font-size: 50px;
+            line-height: 60px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .video-wrap {
+        display: inline-flex;
+        align-items: center;
+        gap: 20px;
+        @media #{$xs}{
+            margin-top: 30px;
+        }
+    }
+    
+    .video-play-btn {
+        width: 60px;
+        height: 60px;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+        position: relative;
+        z-index: 999;
+        font-size: 20px;
+        line-height: 1;
+        color: $primary_color;
+        &:hover{
+            background: $primary_color;
+            color: #fff;
+        }
+      }
+}
+

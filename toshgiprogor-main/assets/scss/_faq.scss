@@ -1,0 +1,128 @@
+
+// CP Custom Accordion 
+
+.cp-custom-accordion .accordion-items {
+    margin-bottom: 20px;
+    @media #{$xs} {        
+      margin-top: 30px;
+  } 
+  }
+  .cp-custom-accordion .accordion-buttons {    
+    position: relative;
+    width: 100%;
+    padding: 20px 0px 30px 20px;
+    background-color: #fff;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #171717;
+    border: none;
+    border-bottom: 1px solid #eee;    
+
+  }
+
+  .cp-custom-accordion .accordion-buttons span {
+    font-size: 15px;
+    margin-right: 15px;
+}
+  
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .cp-custom-accordion .accordion-buttons {
+      padding: 20px 28px;
+      padding-left: 60px;
+    }
+  }
+  @media (max-width: 767px) {
+    .cp-custom-accordion .accordion-buttons {
+      padding-right: 50px;
+      line-height: 25px;
+      font-size: 16px;
+    }
+  }
+
+  .cp-custom-accordion .accordion-buttons::after {
+    position: absolute;
+    content: "\f068";
+    font-family: "Line Awesome Free";
+    top: 25%;
+    right: 30px;
+    font-size: 24px;
+    font-weight: 500;
+    opacity: 1;
+    color: #333;
+  }
+  @media (max-width: 767px) {
+    .cp-custom-accordion .accordion-buttons::after {
+      top: 35px;
+      right: 25px;
+      font-size: 16px;
+    }
+  }
+  .cp-custom-accordion .accordion-buttons.collapsed::after {
+    content: "\f067";
+  }
+  .cp-custom-accordion .collapsed {
+    position: relative;
+    z-index: 9;
+  }
+  .cp-custom-accordion .accordion-body {
+    background-color: #fff;
+    color: #878787;
+    padding: 20px 0;    
+    padding-left: 30px;
+    position: relative;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    z-index: 1;
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .cp-custom-accordion .accordion-body {
+      padding-right: 25px;
+      padding-bottom: 0;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .cp-custom-accordion .accordion-body {
+      padding-right: 30px;
+      padding-bottom: 0;
+    }
+  }
+  @media (max-width: 767px) {
+    .cp-custom-accordion .accordion-body {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+  }
+  
+  .faq-section-bg {
+    max-width: calc(100% - 10px);
+}
+
+.faq-section p{
+  @media #{$xs} {        
+		br{
+      display: none;
+    }
+	}
+}
+
+.cp-custom-accordion {
+  padding-left: 60px;
+  @media #{$md} {        
+		margin-top: 30px;
+    padding-left: 0;
+	}
+  @media #{$xs} {        
+		margin-top: 30px;
+    padding-left: 0;
+	}
+}
+
+.faq-section .mt-100 {
+  @media #{$xs}{
+    margin-top: 50px;
+  }
+}

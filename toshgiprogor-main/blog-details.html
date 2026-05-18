@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+
+    <title>Blog Details</title>
+
+    <!--Favicon-->
+    <link rel="icon" href="assets/img/favicon.png" type="image/png" />
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Line Awesome CSS -->
+    <link href="assets/css/line-awesome.min.css" rel="stylesheet" />
+    <!-- Font Awesome CSS -->
+    <link href="assets/css/fontAwesomePro.css" rel="stylesheet" />
+    <!-- Animate CSS-->
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <!-- Bar Filler CSS -->
+    <link href="assets/css/barfiller.css" rel="stylesheet" />
+    <!-- Magnific Popup Video -->
+    <link href="assets/css/magnific-popup.css" rel="stylesheet" />
+    <!-- Flaticon CSS -->
+    <link href="assets/css/flaticon.css" rel="stylesheet" />
+    <!-- Owl Carousel CSS -->
+    <link href="assets/css/owl.carousel.css" rel="stylesheet" />
+    <!-- Slick Slider CSS -->
+    <link href="assets/css/slick.css" rel="stylesheet" />
+    <!-- Nice Select  -->
+    <link href="assets/css/nice-select.css" rel="stylesheet" />
+    <!-- Back to Top -->
+    <link href="assets/css/backToTop.css" rel="stylesheet" />
+    <!-- Metis Menu -->
+    <link href="assets/css/metismenu.css" rel="stylesheet" />
+    <!-- Odometer CSS -->
+    <link href="assets/css/odometer.min.css" rel="stylesheet" />
+    <!-- Style CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <!-- Accessibility Menu CSS -->
+    <link href="assets/css/a11y-menu.css" rel="stylesheet" />
+    <!-- Snow Animation CSS -->
+    <link href="assets/css/snow-animation.css" rel="stylesheet" />
+
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Pre-Loader -->
+    <div id="loader"></div>
+
+    <!-- Mouse Cursor  -->
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner"><span>Drag</span></div>
+
+    <!-- Message Modal -->
+    <div id="messageContainer" class="message-container"></div>
+
+    <div id="smooth-wrapper">
+      <!-- Header Area  -->
+      <div class="header-area details-header">
+        <div id="header-sticky">
+          <div class="navigation">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-xl-3 col-lg-3 col-6">
+                  <div class="logo">
+                    <a href="index.html" class="logo">TASHGIPROGOR</a>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-7 d-none d-lg-block text-lg-end">
+                  <div class="main-menu">
+                    <ul>
+                      <li>
+                        <a
+                          data-translate="aboutus"
+                          class="navlink"
+                          href="about.html"
+                          >О нас</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          data-translate="services"
+                          class="navlink"
+                          href="services.html"
+                          >Услуги</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          data-translate="projects"
+                          class="navlink"
+                          href="projects.html"
+                          >Проекты</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          data-translate="management"
+                          class="navlink"
+                          href="corporate-management.html"
+                          >Корпоративное управление</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          data-translate="blogS"
+                          class="navlink"
+                          href="blog.html"
+                          >Новости</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          data-translate="contact"
+                          class="navlink"
+                          href="contact.html"
+                          >Контакт</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1 d-none d-lg-block text-lg-end">
+                  <select
+                    default="ru"
+                    onchange="changeLanguage(this.value); window.location.reload()"
+                    id="languageSelector"
+                  >
+                    <option data-translate="option_ru" value="ru">
+                      Русский
+                    </option>
+                    <option data-translate="option_en" value="en">
+                      English
+                    </option>
+                    <option data-translate="option_uz" value="uz">
+                      O'zbekcha
+                    </option>
+                  </select>
+                </div>
+                <!-- Mobile Menu -->
+                <div class="mobile-nav-bar col-6 d-block d-lg-none">
+                  <div class="mobile-nav-wrap">
+                    <div id="hamburger">
+                      <svg
+                        class="menu-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="35"
+                        height="35"
+                        viewBox="0 0 24 24"
+                        style="fill: currentColor"
+                      >
+                        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+                      </svg>
+                    </div>
+                    <!-- mobile menu - responsive menu  -->
+                    <div class="mobile-nav">
+                      <button type="button" class="close-nav">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="30"
+                          height="30"
+                          viewBox="0 0 24 24"
+                          style="fill: rgb(255, 255, 255)"
+                        >
+                          <path
+                            d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"
+                          ></path>
+                          <path
+                            d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"
+                          ></path>
+                        </svg>
+                      </button>
+                      <nav class="sidebar-nav">
+                        <ul class="metismenu" id="mobile-menu">
+                          <li>
+                            <a
+                              data-translate="aboutus"
+                              class="has-arrow"
+                              href="about.html"
+                              >О нас</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              data-translate="services"
+                              class="has-arrow"
+                              href="services.html"
+                              >Услуги</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              data-translate="projects"
+                              class="has-arrow"
+                              href="projects.html"
+                              >Проекты</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              data-translate="management"
+                              class="has-arrow"
+                              href="corporate-management.html"
+                              >Корпоративное управление</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              data-translate="blogS"
+                              class="has-arrow"
+                              href="blog.html"
+                              >Новости</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              data-translate="contact"
+                              class="has-arrow"
+                              href="contact.html"
+                              >Контакт</a
+                            >
+                          </li>
+                        </ul>
+                        <select
+                          onchange="changeLanguage(this.value); window.location.reload()"
+                          id="languageSelector"
+                          class="languageSelector"
+                        >
+                          <option class="bg-black" value="uz">O'zbekcha</option>
+                          <option class="bg-black" value="ru">Русский</option>
+                          <option class="bg-black" value="en">English</option>
+                        </select>
+                      </nav>
+                      <div class="action-bar">
+                        <a href="mailto:itashgiprogor@yahoo.com">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            style="fill: rgb(255, 255, 255); margin-right: 5px"
+                          >
+                            <path
+                              d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.7-8 5.334L4 8.7V6.297l8 5.333 8-5.333V8.7z"
+                            ></path></svg
+                          >itashgiprogor@yahoo.com</a
+                        >
+                        <a href="tel:+998712440495"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            style="fill: rgb(255, 255, 255); margin-right: 5px"
+                          >
+                            <path
+                              d="M20 10.999h2C22 5.869 18.127 2 12.99 2v2C17.052 4 20 6.943 20 10.999z"
+                            ></path>
+                            <path
+                              d="M13 8c2.103 0 3 .897 3 3h2c0-3.225-1.775-5-5-5v2zm3.422 5.443a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a1 1 0 0 0-.086-1.391l-4.064-3.696z"
+                            ></path></svg
+                          >+998 (71) 244-04-95</a
+                        >
+                        <a
+                          href="contact.html"
+                          data-translate="contactUs"
+                          class="theme-btn"
+                          >Свяжитесь с нами</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="offcanvas-overlay"></div>
+
+      <div id="smooth-content">
+        <!-- Blog Details Page  -->
+        <div class="blog-details-page">
+          <div class="container">
+            <div class="row gx-5 justify-content-around">
+              <div class="col-xl-4 col-lg-4 order-2 order-lg-1">
+                <div class="blog-sidebar">
+                  <h5 data-translate="latestPost">Latest Post</h5>
+                  <div class="latest-post-wrap"></div>
+                </div>
+              </div>
+              <div
+                class="col-xl-8 col-lg-8 order-1 order-lg-2 blog-details"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Area -->
+        <footer class="footer-area">
+          <div class="container">
+            <div class="footer-up">
+              <div class="row gy-5">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <a href="index.html" class="logo">
+                    <img src="assets/img/logo.png" alt="" />
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <h5 data-translate="office">Офис</h5>
+                  <p data-translate="addressInfo">
+                    Узбекистан, 100021, Ташкент, <br />
+                    ШАЙХАНТАХУРСКИЙ РАЙОН, просп. НАВОИ, 40
+                  </p>
+                  <div class="company-email">
+                    <p data-translate="haveProject">Cотрудничество</p>
+                    <a href="mailTo:info@tashgiprogor.uz"
+                      >info@tashgiprogor.uz</a
+                    >
+                  </div>
+                  <div class="phone-number">
+                    <p data-translate="workOrder">8.00-17.00;</p>
+                    <a href="tel:+998712440495">+998 (71) 244-04-95</a>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                  <h5 data-translate="followUs">Подпишитесь на нас</h5>
+                  <ul>
+                    <li>
+                      <div class="social-area">
+                        <a href="https://t.me/tg_tashgiprogor_uz">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            style="fill: rgb(255, 255, 255)"
+                          >
+                            <path
+                              d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"
+                            ></path></svg
+                        ></a>
+                        <a href="http://www.youtube.com/@tashgiprogor"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            style="fill: rgb(255, 255, 255)"
+                          >
+                            <path
+                              d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"
+                            ></path></svg
+                        ></a>
+                        <a href="https://www.instagram.com/tashgiprogor/"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            style="fill: rgba(255, 255, 255)"
+                          >
+                            <path
+                              d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"
+                            ></path>
+                            <circle
+                              cx="11.994"
+                              cy="11.979"
+                              r="3.003"
+                            ></circle></svg
+                        ></a>
+
+                        <a
+                          href="https://www.facebook.com/share/19yTgR3crW/?mibextid=wwXIfr"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            style="fill: rgba(255, 255, 255)"
+                          >
+                            <path
+                              d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"
+                            ></path>
+                          </svg>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <!-- Footer Bottom Area -->
+
+        <div class="footer-bottom">
+          <div class="container">
+            <div
+              class="row justify-content-center align-items-center justify-content-center"
+            >
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <p data-translate="allRights" class="copyright-line">
+                  © 2024 TOSHGIPROGOR. Все права защищены
+                </p>
+              </div>
+              <div class="col-lg-6 col-md-6 col-xs-12 text-md-end">
+                <p data-translate="privacyPolicy" class="privacy">
+                  Политика конфиденциальности | Условия и положения
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- back to top start -->
+    <div class="progress-wrap">
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
+    <!-- Popper JS -->
+    <script src="assets/js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Wow JS -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- Pure Counter JS -->
+    <script src="assets/js/pure-counter.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- Magnific Popup JS -->
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <!-- Isotope JS -->
+    <script src="assets/js/isotope-3.0.6-min.js"></script>
+    <!-- Nice Select JS -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- Back To Top JS -->
+    <script src="assets/js/backToTop.js"></script>
+    <!-- Metis Menu JS -->
+    <script src="assets/js/metismenu.js"></script>
+    <!-- Progress Bar JS -->
+    <script src="assets/js/jquery.barfiller.js"></script>
+    <!-- Appear JS -->
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <!-- Odometer JS -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- GSAP Animation JS -->
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/gsap-scroll-to-plugin.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/smoother-script.js"></script>
+    <script src="assets/js/heading-animation.js"></script>
+    <script src="assets/js/paragraph-animation.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/blog-details.js"></script>
+    <script src="assets/js/translate.js"></script>
+
+    <!-- Accessibility Menu JavaScript -->
+    <script src="assets/js/a11y-menu.js"></script>
+    <!-- Snow Animation JavaScript -->
+    <script src="assets/js/snow-animation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,3041 @@
+/* ============================================
+   ACCESSIBILITY TOOLS MENU - CSS
+   ============================================
+   Rasmga mos dizayn bilan to'liq CSS styling
+   Modern, soft shadow, minimal dizayn
+*/
+
+/* ============================================
+   1. ACCESSIBILITY MENU CONTAINER
+   ============================================ */
+.a11y-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  z-index: 100000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  pointer-events: none;
+}
+
+.a11y-menu.active {
+  pointer-events: auto;
+}
+
+/* Toggle Button - Left bottom circle */
+.a11y-toggle {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  min-width: 56px !important;
+  min-height: 56px !important;
+  max-width: 56px !important;
+  max-height: 56px !important;
+  background: #fff;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  border-radius: 50% !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 100001;
+  pointer-events: auto !important; /* Toggle button har doim clickable bo'lishi kerak */
+}
+
+.a11y-toggle:hover {
+  background: #f5f5f5;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.a11y-toggle:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.a11y-toggle svg {
+  width: 24px;
+  height: 24px;
+  color: #333;
+  fill: currentColor;
+}
+
+.a11y-toggle i {
+  font-size: 24px;
+  color: #333;
+  line-height: 1;
+  display: inline-block;
+  font-style: normal;
+  font-weight: 900;
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free", "FontAwesome";
+}
+
+/* Menu Panel - Ochiladigan yon panel */
+.a11y-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 500px;
+  max-height: 100vh;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
+  border-left: 1px solid #e8e8e8;
+  overflow: hidden;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dark theme da panel background */
+body.a11y-theme-dark .a11y-panel {
+  background: #1a1a1a !important;
+  border-left-color: #444 !important;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.a11y-menu.active .a11y-panel {
+  transform: translateX(0);
+}
+
+/* Panel Header */
+.a11y-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  flex-shrink: 0;
+}
+
+/* Dark theme da panel header */
+body.a11y-theme-dark .a11y-panel-header {
+  background: #1a1a1a !important;
+  border-bottom-color: #444 !important;
+}
+
+.a11y-menu-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.3px;
+}
+
+/* Dark theme da menu title */
+body.a11y-theme-dark .a11y-menu-title {
+  color: #fff !important;
+}
+
+.a11y-close {
+  background: transparent;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  width: 32px;
+  height: 32px;
+}
+
+.a11y-close:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.a11y-close:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.a11y-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Panel Content */
+.a11y-panel-content {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+  height: calc(100vh - 81px);
+  background: #fff;
+}
+
+/* Dark theme da panel content */
+body.a11y-theme-dark .a11y-panel-content {
+  background: #1a1a1a !important;
+}
+
+/* Scrollbar styling */
+.a11y-panel-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.a11y-panel-content::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+.a11y-panel-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.a11y-panel-content::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* Control Group */
+.a11y-control-group {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Dark theme da control group */
+body.a11y-theme-dark .a11y-control-group {
+  border-bottom-color: #444 !important;
+}
+
+.a11y-control-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Label */
+.a11y-label {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  cursor: pointer;
+  gap: 8px;
+}
+
+.a11y-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #333;
+}
+
+.a11y-icon-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-right: 4px;
+}
+
+.a11y-sub-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Value Display */
+.a11y-value {
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0066cc;
+}
+
+/* Description */
+.a11y-description {
+  font-size: 16px;
+  color: #666;
+  margin: 8px 0 16px 0;
+  line-height: 1.5;
+}
+
+/* Dark theme da description */
+body.a11y-theme-dark .a11y-description {
+  color: #ccc !important;
+}
+
+/* ============================================
+   2. THEME BUTTONS (Mavzuni tanlash)
+   ============================================ */
+.a11y-theme-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.a11y-theme-btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.a11y-theme-btn > span {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.a11y-theme-btn:hover .a11y-theme-preview {
+  border-color: #ccc;
+  border-width: 1px;
+}
+
+.a11y-theme-btn.active .a11y-theme-preview {
+  border-color: #0066cc;
+  border-width: 3px;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+}
+
+/* Adaptive theme button - yengil kulrang fon */
+.a11y-theme-btn[data-theme="adaptive"] .a11y-theme-preview {
+  background: #e8e8e8;
+}
+
+.a11y-theme-btn[data-theme="adaptive"]:hover .a11y-theme-preview {
+  background: #e0e0e0;
+}
+
+/* Light theme button - oq fon */
+.a11y-theme-btn[data-theme="light"] .a11y-theme-preview {
+  background: #f5f5f5;
+}
+
+.a11y-theme-btn[data-theme="light"]:hover .a11y-theme-preview {
+  background: #eeeeee;
+}
+
+/* Dark theme button - qora/kulrang fon */
+.a11y-theme-btn[data-theme="dark"] .a11y-theme-preview {
+  background: #424242;
+}
+
+.a11y-theme-btn[data-theme="dark"]:hover .a11y-theme-preview {
+  background: #525252;
+}
+
+.a11y-theme-btn[data-theme="dark"] > span {
+  color: #333;
+}
+
+.a11y-theme-btn:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Theme Preview - Vertikal server rack dizayn (rasmga mos) */
+.a11y-theme-preview {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  transition: all 0.2s ease;
+  align-items: stretch;
+}
+
+/* Adaptive Theme - Diagonal split effekt (rasmga mos) */
+.a11y-theme-btn[data-theme="adaptive"] .a11y-theme-preview {
+  background: linear-gradient(
+    135deg,
+    #f5f5f5 0%,
+    #f5f5f5 50%,
+    #e0e0e0 50%,
+    #e0e0e0 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.a11y-theme-btn[data-theme="adaptive"] .a11y-theme-preview::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.3) 30%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+.a11y-theme-btn[data-theme="adaptive"] .a11y-theme-preview-top {
+  width: 100%;
+  height: 36px;
+  background: #1976d2; /* To'q ko'k */
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.a11y-theme-btn[data-theme="adaptive"] .a11y-theme-preview-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 50%
+  );
+  border-radius: 2px;
+}
+
+.a11y-theme-btn[data-theme="adaptive"] .a11y-theme-preview-bottom {
+  width: 100%;
+  height: 32px;
+  background: #64b5f6; /* Ochiq ko'k */
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.a11y-theme-btn[data-theme="adaptive"] .a11y-theme-preview-bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 50%
+  );
+  border-radius: 2px;
+}
+
+.a11y-theme-btn[data-theme="adaptive"] .a11y-theme-preview-circle {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #bdbdbd;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Adaptive Theme active holatida - circle ko'k rangga o'zgaradi va pulse animation */
+.a11y-theme-btn[data-theme="adaptive"].active .a11y-theme-preview-circle {
+  border: 2px solid #0066cc; /* Ko'k border */
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2); /* Ko'k glow */
+  background: #0066cc; /* Ko'k background */
+  transform: translateX(-50%);
+  animation: circlePulseBlue 1.5s ease-in-out infinite; /* Pulse animation */
+}
+
+/* Light Theme (Oddiy) - Oq fon, ko'k border, bullseye circle */
+.a11y-theme-btn[data-theme="light"] .a11y-theme-preview {
+  background: #fff;
+}
+
+.a11y-theme-btn[data-theme="light"] .a11y-theme-preview-top {
+  width: 100%;
+  height: 36px;
+  background: #1976d2; /* To'q ko'k */
+  border-radius: 2px;
+}
+
+.a11y-theme-btn[data-theme="light"] .a11y-theme-preview-bottom {
+  width: 100%;
+  height: 32px;
+  background: #64b5f6; /* Ochiq ko'k */
+  border-radius: 2px;
+}
+
+.a11y-theme-btn[data-theme="light"] .a11y-theme-preview-circle {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+/* Light Theme active holatida - circle ko'k rangga o'zgaradi va pulse animation */
+.a11y-theme-btn[data-theme="light"].active .a11y-theme-preview-circle {
+  border: 2px solid #0066cc; /* Ko'k border */
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2); /* Ko'k glow */
+  background: #0066cc; /* Ko'k background */
+  transform: translateX(-50%);
+  animation: circlePulseBlue 1.5s ease-in-out infinite; /* Pulse animation */
+}
+
+/* Dark Theme (Tungi) - Kulrang fon */
+.a11y-theme-btn[data-theme="dark"] .a11y-theme-preview {
+  background: #757575;
+}
+
+.a11y-theme-btn[data-theme="dark"] .a11y-theme-preview-top {
+  width: 100%;
+  height: 36px;
+  background: #1976d2; /* To'q ko'k */
+  border-radius: 2px;
+}
+
+.a11y-theme-btn[data-theme="dark"] .a11y-theme-preview-bottom {
+  width: 100%;
+  height: 32px;
+  background: #64b5f6; /* Ochiq ko'k */
+  border-radius: 2px;
+}
+
+.a11y-theme-btn[data-theme="dark"] .a11y-theme-preview-circle {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #9e9e9e;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Theme active holatida - circle ko'k rangga o'zgaradi va pulse animation */
+.a11y-theme-btn[data-theme="dark"].active .a11y-theme-preview-circle {
+  border: 2px solid #0066cc; /* Ko'k border */
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2); /* Ko'k glow */
+  background: #0066cc; /* Ko'k background */
+  transform: translateX(-50%);
+  animation: circlePulseBlue 1.5s ease-in-out infinite; /* Pulse animation */
+}
+
+/* Circle pulse animation - ko'k rangda lip-lip qilib turishi */
+@keyframes circlePulseBlue {
+  0%,
+  100% {
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(0, 102, 204, 0.4);
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+/* ============================================
+   3. SLIDER (Matn hajmi 0% dan 200% gacha)
+   ============================================ */
+.a11y-slider-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.a11y-slider-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: #0066cc;
+  font-size: 16px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.a11y-slider-btn:hover {
+  background: #f0f0f0;
+  border-color: #ccc;
+}
+
+.a11y-slider-btn:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.a11y-slider {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: #e0e0e0;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.a11y-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0066cc;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.a11y-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.a11y-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0066cc;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Speed Slider Container */
+.a11y-speed-slider-container {
+  margin-top: 12px;
+  width: 100%;
+}
+
+/* Speed Slider */
+.a11y-speed-slider {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: #e0e0e0;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+}
+
+.a11y-speed-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0066cc;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.a11y-speed-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.a11y-speed-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0066cc;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.a11y-speed-slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.a11y-speed-slider::-moz-range-track {
+  height: 6px;
+  border-radius: 3px;
+  background: #e0e0e0;
+}
+
+/* Speed Markers */
+.a11y-speed-markers {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.a11y-speed-marker {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-50%);
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 3;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.a11y-speed-marker[data-value="0.5"] {
+  left: 0%;
+}
+
+.a11y-speed-marker[data-value="0.75"] {
+  left: 16.67%;
+}
+
+.a11y-speed-marker[data-value="1.0"] {
+  left: 33.33%;
+}
+
+.a11y-speed-marker[data-value="1.5"] {
+  left: 66.67%;
+}
+
+.a11y-speed-marker[data-value="2.0"] {
+  left: 100%;
+}
+
+.a11y-speed-marker-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2.5px solid #0066cc;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 102, 204, 0.2);
+}
+
+.a11y-speed-marker:hover .a11y-speed-marker-dot {
+  transform: scale(1.2);
+  box-shadow: 0 2px 6px rgba(0, 102, 204, 0.3);
+}
+
+.a11y-speed-marker-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #555;
+  white-space: nowrap;
+  margin-top: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.1px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.a11y-speed-marker:hover .a11y-speed-marker-label {
+  color: #0066cc;
+  font-weight: 600;
+}
+
+.a11y-speed-marker:focus {
+  outline: none;
+}
+
+.a11y-speed-marker:focus .a11y-speed-marker-dot {
+  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.2), 0 2px 6px rgba(0, 102, 204, 0.3);
+}
+
+.a11y-speed-marker:focus .a11y-speed-marker-label {
+  color: #0066cc;
+  font-weight: 600;
+}
+
+/* Active marker dot */
+.a11y-speed-marker.active .a11y-speed-marker-dot {
+  width: 14px;
+  height: 14px;
+  background: #0066cc;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.15),
+    0 2px 8px rgba(0, 102, 204, 0.3);
+  transform: scale(1.1);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.15),
+      0 2px 8px rgba(0, 102, 204, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(0, 102, 204, 0.1),
+      0 2px 8px rgba(0, 102, 204, 0.3);
+  }
+}
+
+.a11y-speed-marker.active .a11y-speed-marker-label {
+  color: #0066cc;
+  font-weight: 600;
+  font-size: 14px;
+  transform: translateY(-2px);
+  text-shadow: 0 1px 2px rgba(0, 102, 204, 0.1);
+}
+
+/* Dark theme for speed slider */
+body.a11y-theme-dark .a11y-speed-slider-wrapper::before {
+  background: #3a3a3a !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.a11y-theme-dark .a11y-speed-slider-wrapper::after {
+  background: linear-gradient(90deg, #64b5f6 0%, #90caf9 100%) !important;
+  box-shadow: 0 1px 3px rgba(100, 181, 246, 0.4) !important;
+}
+
+body.a11y-theme-dark .a11y-speed-slider {
+  background: transparent !important;
+}
+
+body.a11y-theme-dark .a11y-speed-slider::-webkit-slider-thumb {
+  background: #ffffff !important;
+  border-color: #64b5f6 !important;
+  box-shadow: 0 2px 8px rgba(100, 181, 246, 0.4),
+    0 0 0 4px rgba(100, 181, 246, 0.15) !important;
+}
+
+body.a11y-theme-dark .a11y-speed-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 4px 12px rgba(100, 181, 246, 0.5),
+    0 0 0 6px rgba(100, 181, 246, 0.2) !important;
+  border-color: #42a5f5 !important;
+}
+
+body.a11y-theme-dark .a11y-speed-slider::-moz-range-thumb {
+  background: #ffffff !important;
+  border-color: #64b5f6 !important;
+  box-shadow: 0 2px 8px rgba(100, 181, 246, 0.4),
+    0 0 0 4px rgba(100, 181, 246, 0.15) !important;
+}
+
+body.a11y-theme-dark .a11y-speed-slider::-moz-range-thumb:hover {
+  box-shadow: 0 4px 12px rgba(100, 181, 246, 0.5),
+    0 0 0 6px rgba(100, 181, 246, 0.2) !important;
+  border-color: #42a5f5 !important;
+}
+
+body.a11y-theme-dark .a11y-speed-slider::-moz-range-track {
+  background: transparent !important;
+}
+
+body.a11y-theme-dark .a11y-speed-marker-dot {
+  background: #2a2a2a !important;
+  border-color: #64b5f6 !important;
+  box-shadow: 0 1px 3px rgba(100, 181, 246, 0.3) !important;
+}
+
+body.a11y-theme-dark .a11y-speed-marker:hover .a11y-speed-marker-dot {
+  box-shadow: 0 2px 6px rgba(100, 181, 246, 0.4) !important;
+}
+
+body.a11y-theme-dark .a11y-speed-marker-label {
+  color: #bbb !important;
+}
+
+body.a11y-theme-dark .a11y-speed-marker:hover .a11y-speed-marker-label {
+  color: #64b5f6 !important;
+}
+
+body.a11y-theme-dark .a11y-speed-marker.active .a11y-speed-marker-dot {
+  background: #64b5f6 !important;
+  border-color: #64b5f6 !important;
+  box-shadow: 0 0 0 4px rgba(100, 181, 246, 0.2),
+    0 2px 8px rgba(100, 181, 246, 0.4) !important;
+}
+
+body.a11y-theme-dark .a11y-speed-marker.active .a11y-speed-marker-label {
+  color: #64b5f6 !important;
+}
+
+/* ============================================
+   4. WORD CONTROLS (So'z uzunligi / So'z oralig'i)
+   ============================================ */
+.a11y-word-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.a11y-word-btn {
+  flex: 1;
+  padding: 10px 16px;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.a11y-word-btn:hover {
+  background: #f0f0f0;
+  border-color: #ccc;
+}
+
+.a11y-word-btn.active {
+  background: #fff;
+  color: #333;
+  border-color: #0066cc;
+}
+
+.a11y-word-btn:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   5. TEXT ZOOM BUTTON
+   ============================================ */
+.a11y-text-zoom-btn {
+  width: 100%;
+  padding: 12px 16px;
+  background: #f8f8f8; /* Light gray background */
+  border: 1px solid #0066cc; /* Thin blue border */
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.a11y-text-zoom-btn:hover {
+  background: #f0f0f0;
+  border-color: #0052a3;
+}
+
+.a11y-text-zoom-btn.active {
+  background: #0066cc;
+  color: #fff;
+  border-color: #0066cc;
+}
+
+.a11y-text-zoom-btn:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   6. FOCUS MODE BUTTONS
+   ============================================ */
+.a11y-focus-mode-buttons {
+  display: flex;
+  flex-direction: row; /* Yonma-yon joylashish */
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.a11y-focus-mode-btn {
+  flex: 1; /* Teng kenglik */
+  padding: 14px 16px;
+  background: #f8f8f8; /* Light gray background */
+  border: 1px solid #0066cc; /* Thin blue border */
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.a11y-focus-mode-btn:hover {
+  background: #f0f0f0;
+  border-color: #0052a3;
+}
+
+.a11y-focus-mode-btn.active {
+  background: #fff;
+  color: #333;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+}
+
+.a11y-focus-mode-btn:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.a11y-focus-mode-btn svg {
+  width: 24px;
+  height: 24px;
+  color: #0066cc; /* Ko'k rang icon uchun */
+  margin-bottom: 4px;
+}
+
+/* ============================================
+   7. TOGGLE SWITCH (Ekran suhandoni)
+   ============================================ */
+.a11y-voice-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.a11y-voice-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+}
+
+.a11y-voice-header-text {
+  flex: 1;
+}
+
+.a11y-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.a11y-toggle-switch {
+  display: none;
+}
+
+.a11y-toggle-label {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+  background: #ccc;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.a11y-toggle-label::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.a11y-toggle-switch:checked + .a11y-toggle-label {
+  background: #0066cc;
+}
+
+.a11y-toggle-switch:checked + .a11y-toggle-label::after {
+  transform: translateX(24px);
+}
+
+.a11y-toggle-label:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   8. VOICE ASSISTANT CONTROLS
+   ============================================ */
+.a11y-voice-controls {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.a11y-voice-option {
+  margin-bottom: 20px;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+  display: flex !important;
+  flex-direction: column !important;
+  clear: both !important;
+  position: relative !important;
+  max-width: 100% !important;
+}
+
+.a11y-voice-option:last-child {
+  margin-bottom: 0;
+}
+
+.a11y-voice-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Speed Control Group - Label va buttons bir qatorda */
+/* Speed Slider Wrapper */
+.a11y-speed-slider-wrapper {
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* Speed Values - slider ostida yonma-yon */
+.a11y-speed-values {
+  display: flex;
+  width: 100%;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+  padding: 0 10px;
+  box-sizing: border-box;
+  position: relative;
+  height: 20px;
+}
+
+.a11y-speed-value {
+  cursor: pointer;
+  transition: color 0.2s ease;
+  user-select: none;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.a11y-speed-value[data-value="0.5"] {
+  left: 0%;
+}
+
+.a11y-speed-value[data-value="0.75"] {
+  left: 25%;
+}
+
+.a11y-speed-value[data-value="1.0"] {
+  left: 50%;
+}
+
+.a11y-speed-value[data-value="1.5"] {
+  left: 75%;
+}
+
+.a11y-speed-value[data-value="2.0"] {
+  left: 100%;
+}
+
+.a11y-speed-value:hover {
+  color: #0066cc;
+}
+
+.a11y-speed-value.active {
+  color: #0066cc;
+  font-weight: 600;
+}
+
+/* Dark theme for speed values */
+body.a11y-theme-dark .a11y-speed-value {
+  color: #bbb !important;
+}
+
+body.a11y-theme-dark .a11y-speed-value:hover {
+  color: #64b5f6 !important;
+}
+
+body.a11y-theme-dark .a11y-speed-value.active {
+  color: #64b5f6 !important;
+}
+
+.a11y-voice-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.a11y-voice-btn {
+  flex: 1 1 0;
+  padding: 10px 12px;
+  background: #f8f8f8; /* Light gray background */
+  border: 1px solid #333; /* Dark gray border */
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  min-width: 0;
+  white-space: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  height: auto;
+  word-break: break-word;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-shrink: 1;
+}
+
+.a11y-voice-btn:hover {
+  background: #f0f0f0;
+  border-color: #333;
+}
+
+.a11y-voice-btn.active {
+  background: #0066cc; /* Blue background */
+  color: #fff; /* White text */
+  border: 1px solid #0066cc; /* Blue border */
+}
+
+.a11y-voice-btn:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Speed Control Group - Label va buttons bir qatorda */
+.a11y-speed-control-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.a11y-speed-control-group .a11y-voice-label {
+  margin-bottom: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Speed Buttons */
+.a11y-speed-buttons {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 6px !important;
+  align-items: stretch !important;
+  flex: 1 !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+.a11y-speed-btn {
+  flex: 1 1 0% !important;
+  flex-basis: 0 !important;
+  flex-grow: 1 !important;
+  flex-shrink: 1 !important;
+  padding: 8px 6px !important;
+  background: #f8f8f8 !important; /* Light gray background */
+  border: 1px solid #333 !important; /* Dark gray border */
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-align: center !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 36px !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+.a11y-speed-btn span {
+  display: inline-block !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+.a11y-speed-btn:hover {
+  background: #f0f0f0;
+  border-color: #333;
+}
+
+.a11y-speed-btn.active {
+  background: #0066cc; /* Blue background */
+  color: #fff; /* White text */
+  border: 1px solid #0066cc; /* Blue border */
+}
+
+.a11y-speed-btn:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Tone Buttons */
+.a11y-tone-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.a11y-tone-btn {
+  flex: 1 1 0;
+  padding: 10px 12px;
+  background: #f8f8f8; /* Light gray background */
+  border: 1px solid #333; /* Dark gray border */
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  min-width: 0;
+  white-space: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  height: auto;
+  word-break: break-word;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-shrink: 1;
+}
+
+.a11y-tone-btn:hover {
+  background: #f0f0f0;
+  border-color: #333;
+}
+
+.a11y-tone-btn.active {
+  background: #0066cc; /* Blue background */
+  color: #fff; /* White text */
+  border: 1px solid #0066cc; /* Blue border */
+}
+
+.a11y-tone-btn:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Voice Play Button */
+.a11y-voice-play-btn {
+  width: 100%;
+  padding: 12px 16px;
+  background: #0066cc;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.a11y-voice-play-btn:hover {
+  background: #0052a3;
+}
+
+.a11y-voice-play-btn:focus {
+  outline: 2px solid #ffd700;
+  outline-offset: 2px;
+}
+
+.a11y-voice-play-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.a11y-voice-play-btn.playing {
+  background: #dc3545;
+}
+
+.a11y-voice-play-btn.playing:hover {
+  background: #c82333;
+}
+
+/* ============================================
+   9. CURSOR CONTROLS
+   ============================================ */
+.a11y-cursor-color-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.a11y-cursor-color-btn {
+  flex: 1;
+  padding: 10px 16px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.a11y-cursor-color-btn:hover {
+  background: #f8f8f8;
+  border-color: #ccc;
+}
+
+.a11y-cursor-color-btn.active {
+  background: #fff;
+  color: #333;
+  border-color: #0066cc;
+}
+
+.a11y-cursor-color-btn:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   10. COLOR MODE BUTTONS
+   ============================================ */
+.a11y-color-mode-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.a11y-color-mode-btn {
+  flex: 1;
+  padding: 16px 12px;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.a11y-color-mode-btn:hover {
+  background: #f0f0f0;
+  border-color: #ccc;
+}
+
+.a11y-color-mode-btn.active {
+  background: #fff;
+  color: #333;
+  border-color: #0066cc;
+  border-width: 2px;
+}
+
+.a11y-color-mode-btn:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.a11y-color-mode-btn svg {
+  width: 32px;
+  height: 32px;
+  color: #333;
+}
+
+/* ============================================
+   11. RESET BUTTON
+   ============================================ */
+.a11y-btn-reset {
+  width: 100%;
+  padding: 12px 20px;
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.a11y-btn-reset:hover {
+  background: #c82333;
+}
+
+.a11y-btn-reset:focus {
+  outline: 2px solid #ffd700;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   12. ACCESSIBILITY MODES CSS CLASSES
+   ============================================ */
+
+/* Theme Modes */
+body.a11y-theme-light {
+  background: #fff !important;
+  color: #1a1a1a !important;
+}
+
+body.a11y-theme-dark {
+  background: #1a1a1a !important;
+  color: #fff !important;
+}
+
+/* Dark theme da barcha elementlar uchun, lekin accessibility menu va header uchun maxsus */
+body.a11y-theme-dark
+  *:not(#a11y-menu):not(#a11y-menu *):not(.header-area):not(.header-area *):not(
+    .header-sticky
+  ):not(.header-sticky *) {
+  background-color: transparent !important;
+  color: #fff !important;
+  border-color: #444 !important;
+}
+
+/* Dark theme da accessibility menu elementlari uchun */
+body.a11y-theme-dark #a11y-menu,
+body.a11y-theme-dark #a11y-menu * {
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-toggle {
+  background: #1a1a1a !important;
+  border-color: #444 !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-close {
+  color: #ccc !important;
+}
+
+body.a11y-theme-dark .a11y-close:hover {
+  background: #333 !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-value {
+  color: #64b5f6 !important;
+}
+
+body.a11y-theme-dark .a11y-icon {
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-icon-text {
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-sub-label {
+  color: #ccc !important;
+}
+
+body.a11y-theme-dark .a11y-theme-btn > span {
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-word-btn {
+  background: #2a2a2a !important;
+  border-color: #444 !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-word-btn:hover {
+  background: #333 !important;
+  border-color: #555 !important;
+}
+
+body.a11y-theme-dark .a11y-word-btn.active {
+  background: #2a2a2a !important;
+  border-color: #0066cc !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-text-zoom-btn {
+  background: #2a2a2a !important;
+  border-color: #444 !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-text-zoom-btn:hover {
+  background: #333 !important;
+  border-color: #555 !important;
+}
+
+body.a11y-theme-dark .a11y-text-zoom-btn.active {
+  background: #0066cc !important;
+  border-color: #0066cc !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-focus-mode-btn {
+  background: #2a2a2a !important;
+  border-color: #444 !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-focus-mode-btn:hover {
+  background: #333 !important;
+  border-color: #555 !important;
+}
+
+body.a11y-theme-dark .a11y-focus-mode-btn.active {
+  background: #2a2a2a !important;
+  border-color: #0066cc !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-focus-mode-btn svg {
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-slider-btn {
+  background: #2a2a2a !important;
+  border-color: #444 !important;
+  color: #64b5f6 !important;
+}
+
+body.a11y-theme-dark .a11y-slider-btn:hover {
+  background: #333 !important;
+  border-color: #555 !important;
+}
+
+body.a11y-theme-dark .a11y-slider {
+  background: #444 !important;
+}
+
+body.a11y-theme-dark .a11y-slider::-webkit-slider-thumb {
+  background: #0066cc !important;
+}
+
+body.a11y-theme-dark .a11y-slider::-moz-range-thumb {
+  background: #0066cc !important;
+}
+
+body.a11y-theme-dark .a11y-voice-btn,
+body.a11y-theme-dark .a11y-speed-btn,
+body.a11y-theme-dark .a11y-tone-btn {
+  background: #2a2a2a !important;
+  border-color: #444 !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-voice-btn:hover,
+body.a11y-theme-dark .a11y-speed-btn:hover,
+body.a11y-theme-dark .a11y-tone-btn:hover {
+  background: #333 !important;
+  border-color: #555 !important;
+}
+
+body.a11y-theme-dark .a11y-voice-btn.active,
+body.a11y-theme-dark .a11y-speed-btn.active,
+body.a11y-theme-dark .a11y-tone-btn.active {
+  background: #1a5490 !important;
+  border-color: #2196f3 !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-cursor-color-btn {
+  background: #2a2a2a !important;
+  border-color: #444 !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-cursor-color-btn:hover {
+  background: #333 !important;
+  border-color: #555 !important;
+}
+
+body.a11y-theme-dark .a11y-cursor-color-btn.active {
+  background: #2a2a2a !important;
+  border-color: #0066cc !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-color-mode-btn {
+  background: #2a2a2a !important;
+  border-color: #444 !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-color-mode-btn:hover {
+  background: #333 !important;
+  border-color: #555 !important;
+}
+
+body.a11y-theme-dark .a11y-color-mode-btn.active {
+  background: #2a2a2a !important;
+  border-color: #0066cc !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-color-mode-btn svg {
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-select {
+  background: #2a2a2a !important;
+  border-color: #444 !important;
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-select:focus {
+  border-color: #0066cc !important;
+}
+
+body.a11y-theme-dark .a11y-voice-label {
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-panel-content::-webkit-scrollbar-track {
+  background: #2a2a2a !important;
+}
+
+body.a11y-theme-dark .a11y-panel-content::-webkit-scrollbar-thumb {
+  background: #555 !important;
+}
+
+body.a11y-theme-dark .a11y-panel-content::-webkit-scrollbar-thumb:hover {
+  background: #666 !important;
+}
+
+body.a11y-theme-dark .header-area,
+body.a11y-theme-dark .header-sticky {
+  background: #1a1a1a !important;
+  border-color: #444 !important;
+}
+
+/* Dark theme da header navigation va boshqa elementlar */
+body.a11y-theme-dark .header-area .navigation,
+body.a11y-theme-dark .header-sticky .navigation {
+  background: #1a1a1a !important;
+}
+
+body.a11y-theme-dark .header-area .container,
+body.a11y-theme-dark .header-sticky .container {
+  background: #1a1a1a !important;
+}
+
+body.a11y-theme-dark .header-area .logo,
+body.a11y-theme-dark .header-sticky .logo {
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .header-area .main-menu ul > li > a,
+body.a11y-theme-dark .header-sticky .main-menu ul > li > a {
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .header-area .header-right,
+body.a11y-theme-dark .header-sticky .header-right {
+  background: transparent !important;
+}
+
+body.a11y-theme-dark .header-area .search-trigger i,
+body.a11y-theme-dark .header-sticky .search-trigger i {
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .header-area .contact-number .title h4,
+body.a11y-theme-dark .header-sticky .contact-number .title h4 {
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .header-area .menu-trigger span,
+body.a11y-theme-dark .header-sticky .menu-trigger span {
+  background: #fff !important;
+}
+
+/* Text Scale */
+body.a11y-text-scale {
+  font-size: var(--a11y-text-scale, 100%) !important;
+}
+
+/* Text Scale - Header overflow fix */
+html.a11y-text-scale,
+body.a11y-text-scale html {
+  overflow-x: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.a11y-text-scale {
+  overflow-x: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.a11y-text-scale #smooth-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.a11y-text-scale #smooth-wrapper > *:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.a11y-text-scale .header-area {
+  overflow: visible !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  top: 0 !important;
+  position: relative !important;
+}
+
+body.a11y-text-scale .header-area.absolute-header {
+  top: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.a11y-text-scale #header-sticky,
+body.a11y-text-scale .header-sticky {
+  overflow: visible !important;
+  top: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.a11y-text-scale .header-area .navigation {
+  overflow: visible !important;
+  position: relative !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.a11y-text-scale .header-area .container {
+  overflow: visible !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Prevent white background from showing above header when text scale is active */
+body.a11y-text-scale > *:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Ensure html element also has no margin/padding when text scale is active */
+html.a11y-text-scale {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Font Size Scale - 100% da 1 marta katta (faqat kichik va o'rta shriftlar) */
+/* Body'ga font-size qo'ymaslik - faqat kerakli elementlarga ta'sir qilish */
+
+/* Header va Footer elementlariga ta'sir qilmaslik - aniq font-size qo'yish */
+body.a11y-font-scale .header-area,
+body.a11y-font-scale .header-area *,
+body.a11y-font-scale .header-sticky,
+body.a11y-font-scale .header-sticky *,
+body.a11y-font-scale #header-sticky,
+body.a11y-font-scale #header-sticky *,
+body.a11y-font-scale .navigation,
+body.a11y-font-scale .navigation *,
+body.a11y-font-scale .main-menu,
+body.a11y-font-scale .main-menu *,
+body.a11y-font-scale .main-menu ul,
+body.a11y-font-scale .main-menu ul *,
+body.a11y-font-scale .main-menu ul > li > a {
+  font-size: 15px !important;
+}
+
+body.a11y-font-scale .main-menu ul > li > ul li a {
+  font-size: 15px !important;
+}
+
+body.a11y-font-scale .logo,
+body.a11y-font-scale .logo * {
+  font-size: 26px !important;
+}
+
+body.a11y-font-scale footer,
+body.a11y-font-scale footer *,
+body.a11y-font-scale .footer-area,
+body.a11y-font-scale .footer-area *,
+body.a11y-font-scale .footer-area p {
+  font-size: inherit !important;
+}
+
+body.a11y-font-scale .footer-area h5 {
+  font-size: 20px !important;
+}
+
+body.a11y-font-scale .footer-area ul li a {
+  font-size: 15px !important;
+}
+
+body.a11y-font-scale .footer-bottom,
+body.a11y-font-scale .footer-bottom *,
+body.a11y-font-scale .footer-bottom p {
+  font-size: 14px !important;
+}
+
+body.a11y-font-scale .footer-up,
+body.a11y-font-scale .footer-up *,
+body.a11y-font-scale .company-email,
+body.a11y-font-scale .company-email *,
+body.a11y-font-scale .phone-number,
+body.a11y-font-scale .phone-number * {
+  font-size: inherit !important;
+}
+
+/* Barcha elementlarga ta'sir qilish, lekin h1, header, footer va ACCESSIBILITY menudan tashqari */
+/* ACCESSIBILITY menudagi elementlarga ta'sir qilmaslik - eng yuqorida */
+body.a11y-font-scale .a11y-menu,
+body.a11y-font-scale .a11y-menu *,
+body.a11y-font-scale .a11y-panel,
+body.a11y-font-scale .a11y-panel *,
+body.a11y-font-scale .a11y-menu-title,
+body.a11y-font-scale .a11y-menu-title *,
+body.a11y-font-scale .a11y-label,
+body.a11y-font-scale .a11y-label *,
+body.a11y-font-scale .a11y-description,
+body.a11y-font-scale .a11y-description *,
+body.a11y-font-scale .a11y-control-group,
+body.a11y-font-scale .a11y-control-group *,
+body.a11y-font-scale .a11y-slider-wrapper,
+body.a11y-font-scale .a11y-slider-wrapper *,
+body.a11y-font-scale .a11y-word-controls,
+body.a11y-font-scale .a11y-word-controls *,
+body.a11y-font-scale .a11y-word-btn,
+body.a11y-font-scale .a11y-text-zoom-btn,
+body.a11y-font-scale .a11y-focus-mode-btn,
+body.a11y-font-scale .a11y-focus-mode-btn *,
+body.a11y-font-scale .a11y-voice-btn,
+body.a11y-font-scale .a11y-speed-btn,
+body.a11y-font-scale .a11y-tone-btn,
+body.a11y-font-scale .a11y-cursor-btn,
+body.a11y-font-scale .a11y-reset-btn,
+body.a11y-font-scale .a11y-toggle,
+body.a11y-font-scale .a11y-close,
+body.a11y-font-scale .a11y-panel-header,
+body.a11y-font-scale .a11y-panel-header *,
+body.a11y-font-scale .a11y-panel-content,
+body.a11y-font-scale .a11y-panel-content * {
+  font-size: inherit !important;
+}
+
+/* Counter raqamlariga ta'sir qilmaslik - eng yuqorida va kuchliroq */
+body.a11y-font-scale .counter-section,
+body.a11y-font-scale .counter-section *,
+body.a11y-font-scale .counter-section *::before,
+body.a11y-font-scale .counter-section *::after,
+body.a11y-font-scale .single-counter-box,
+body.a11y-font-scale .single-counter-box *,
+body.a11y-font-scale .single-counter-box *::before,
+body.a11y-font-scale .single-counter-box *::after,
+body.a11y-font-scale .counter-number,
+body.a11y-font-scale .counter-number *,
+body.a11y-font-scale .counter-number *::before,
+body.a11y-font-scale .counter-number *::after,
+body.a11y-font-scale p.counter-number,
+body.a11y-font-scale p.counter-number *,
+body.a11y-font-scale p.counter-number *::before,
+body.a11y-font-scale p.counter-number *::after,
+body.a11y-font-scale .purecounter,
+body.a11y-font-scale .purecounter *,
+body.a11y-font-scale .purecounter *::before,
+body.a11y-font-scale .purecounter *::after,
+body.a11y-font-scale .counter-section p,
+body.a11y-font-scale .counter-section p *,
+body.a11y-font-scale .counter-section p *::before,
+body.a11y-font-scale .counter-section p *::after,
+body.a11y-font-scale .counter-section span,
+body.a11y-font-scale .counter-section span *,
+body.a11y-font-scale .counter-section span *::before,
+body.a11y-font-scale .counter-section span *::after,
+body.a11y-font-scale .counter-section h6,
+body.a11y-font-scale .counter-section h6 *,
+body.a11y-font-scale .counter-section h6 *::before,
+body.a11y-font-scale .counter-section h6 *::after,
+body.a11y-font-scale .single-counter-box p,
+body.a11y-font-scale .single-counter-box p *,
+body.a11y-font-scale .single-counter-box p *::before,
+body.a11y-font-scale .single-counter-box p *::after,
+body.a11y-font-scale .single-counter-box span,
+body.a11y-font-scale .single-counter-box span *,
+body.a11y-font-scale .single-counter-box span *::before,
+body.a11y-font-scale .single-counter-box span *::after,
+body.a11y-font-scale .single-counter-box h6,
+body.a11y-font-scale .single-counter-box h6 *,
+body.a11y-font-scale .single-counter-box h6 *::before,
+body.a11y-font-scale .single-counter-box h6 *::after {
+  font-size: unset !important;
+}
+
+/* Counter raqamlariga aniq font-size qo'llash - default qiymatlar */
+body.a11y-font-scale .single-counter-box p.counter-number {
+  font-size: 90px !important;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  body.a11y-font-scale .single-counter-box p.counter-number {
+    font-size: 80px !important;
+  }
+
+  /* Accessibility toggle button - har doim circle */
+  .a11y-toggle {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    min-height: 56px !important;
+    max-width: 56px !important;
+    max-height: 56px !important;
+    border-radius: 50% !important;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  body.a11y-font-scale .single-counter-box p.counter-number {
+    font-size: 70px !important;
+  }
+
+  /* Accessibility toggle button - har doim circle */
+  .a11y-toggle {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    min-height: 56px !important;
+    max-width: 56px !important;
+    max-height: 56px !important;
+    border-radius: 50% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body.a11y-font-scale .single-counter-box p.counter-number {
+    font-size: 60px !important;
+  }
+
+  /* Accessibility toggle button - har doim circle */
+  .a11y-toggle {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    min-height: 56px !important;
+    max-width: 56px !important;
+    max-height: 56px !important;
+    border-radius: 50% !important;
+  }
+
+  /* Mobile rejimda cursor qismini yashirish */
+  .a11y-control-group.a11y-cursor-group {
+    display: none !important;
+  }
+}
+
+body.a11y-font-scale .single-counter-box p.counter-number span {
+  font-size: 90px !important;
+}
+
+body.a11y-font-scale .single-counter-box h6 {
+  font-size: 18px !important;
+}
+
+@media (max-width: 767px) {
+  body.a11y-font-scale .single-counter-box h6 {
+    font-size: 17px !important;
+  }
+}
+
+/* Titlelar - 20, 22, 30, 33px (title qanday ekaniga qarab) */
+body.a11y-font-scale
+  h2:not(.header-area h2):not(.footer-area h2):not(.section-title h2):not(
+    .a11y-menu h2
+  ):not(.a11y-panel h2) {
+  font-size: calc(
+    30px * (1 + var(--a11y-font-scale-value, 0) / 100)
+  ) !important;
+}
+
+body.a11y-font-scale
+  h3:not(.header-area h3):not(.footer-area h3):not(.section-title h3):not(
+    .a11y-menu h3
+  ):not(.a11y-panel h3) {
+  font-size: calc(
+    22px * (1 + var(--a11y-font-scale-value, 0) / 100)
+  ) !important;
+}
+
+body.a11y-font-scale
+  h4:not(.header-area h4):not(.footer-area h4):not(.a11y-menu h4):not(
+    .a11y-panel h4
+  ) {
+  font-size: calc(
+    20px * (1 + var(--a11y-font-scale-value, 0) / 100)
+  ) !important;
+}
+
+body.a11y-font-scale
+  h5:not(.header-area h5):not(.footer-area h5):not(.a11y-menu h5):not(
+    .a11y-panel h5
+  ) {
+  font-size: calc(
+    20px * (1 + var(--a11y-font-scale-value, 0) / 100)
+  ) !important;
+}
+
+body.a11y-font-scale
+  h6:not(.header-area h6):not(.footer-area h6):not(.section-title h6):not(
+    .a11y-menu h6
+  ):not(.a11y-panel h6):not(.counter-section h6):not(.single-counter-box h6) {
+  font-size: calc(
+    20px * (1 + var(--a11y-font-scale-value, 0) / 100)
+  ) !important;
+}
+
+/* Textlar - 13, 16, 18, 19, 24px */
+body.a11y-font-scale
+  p:not(.header-area p):not(.footer-area p):not(.footer-bottom p):not(
+    .footer-up p
+  ):not(.a11y-menu p):not(.a11y-panel p):not(.counter-section p):not(
+    .single-counter-box p
+  ):not(.counter-number) {
+  font-size: calc(
+    16px * (1 + var(--a11y-font-scale-value, 0) / 100)
+  ) !important;
+}
+
+body.a11y-font-scale
+  span:not(.header-area span):not(.footer-area span):not(
+    .footer-bottom span
+  ):not(.footer-up span):not(h1 span):not(.section-title span):not(h2 span):not(
+    h3 span
+  ):not(h4 span):not(h5 span):not(h6 span):not(.a11y-menu span):not(
+    .a11y-panel span
+  ):not(.counter-section span):not(.single-counter-box span):not(
+    .counter-number span
+  ):not(.purecounter) {
+  font-size: calc(1em * (1 + var(--a11y-font-scale-value, 0) / 100)) !important;
+}
+
+body.a11y-font-scale
+  li:not(.header-area li):not(.main-menu li):not(.footer-area li):not(
+    .footer-bottom li
+  ):not(.footer-up li):not(.a11y-menu li):not(.a11y-panel li) {
+  font-size: calc(
+    16px * (1 + var(--a11y-font-scale-value, 0) / 100)
+  ) !important;
+}
+
+body.a11y-font-scale
+  td:not(.header-area td):not(.footer-area td):not(.a11y-menu td):not(
+    .a11y-panel td
+  ),
+body.a11y-font-scale
+  th:not(.header-area th):not(.footer-area th):not(.a11y-menu th):not(
+    .a11y-panel th
+  ) {
+  font-size: calc(
+    16px * (1 + var(--a11y-font-scale-value, 0) / 100)
+  ) !important;
+}
+
+body.a11y-font-scale
+  label:not(.header-area label):not(.footer-area label):not(
+    .a11y-menu label
+  ):not(.a11y-panel label) {
+  font-size: calc(
+    16px * (1 + var(--a11y-font-scale-value, 0) / 100)
+  ) !important;
+}
+
+body.a11y-font-scale
+  input:not(.header-area input):not(.footer-area input):not(
+    .a11y-menu input
+  ):not(.a11y-panel input),
+body.a11y-font-scale
+  textarea:not(.header-area textarea):not(.footer-area textarea):not(
+    .a11y-menu textarea
+  ):not(.a11y-panel textarea) {
+  font-size: calc(
+    16px * (1 + var(--a11y-font-scale-value, 0) / 100)
+  ) !important;
+}
+
+/* Buttonlar va linklar - 18, 22px */
+body.a11y-font-scale
+  a:not(.header-area a):not(.main-menu a):not(.navigation a):not(
+    .footer-area a
+  ):not(.footer-bottom a):not(.footer-up a):not(.theme-btn):not(
+    .primary-btn
+  ):not(.white-btn):not(.a11y-menu a):not(.a11y-panel a) {
+  font-size: calc(
+    18px * (1 + var(--a11y-font-scale-value, 0) / 100)
+  ) !important;
+}
+
+body.a11y-font-scale
+  button:not(.header-area button):not(.footer-area button):not(
+    .a11y-menu button
+  ):not(.a11y-panel button),
+body.a11y-font-scale
+  .theme-btn:not(.header-area .theme-btn):not(.footer-area .theme-btn),
+body.a11y-font-scale
+  .primary-btn:not(.header-area .primary-btn):not(.footer-area .primary-btn),
+body.a11y-font-scale
+  .white-btn:not(.header-area .white-btn):not(.footer-area .white-btn) {
+  font-size: calc(
+    22px * (1 + var(--a11y-font-scale-value, 0) / 100)
+  ) !important;
+}
+
+/* Font Size (Old - for backward compatibility) */
+body.a11y-font-small {
+  font-size: 14px !important;
+}
+
+body.a11y-font-medium {
+  font-size: 16px !important;
+}
+
+body.a11y-font-large {
+  font-size: 18px !important;
+}
+
+body.a11y-font-xlarge {
+  font-size: 20px !important;
+}
+
+body.a11y-font-xxlarge {
+  font-size: 24px !important;
+}
+
+/* Word Spacing va Letter Spacing */
+body.a11y-word-spacing-small
+  *:not(.header-area *):not(.header-sticky *):not(#header-sticky *):not(
+    .navigation *
+  ):not(.main-menu *):not(.logo *) {
+  word-spacing: 0.4em !important;
+  letter-spacing: 0.1em !important;
+}
+
+body.a11y-word-spacing-medium
+  *:not(.header-area *):not(.header-sticky *):not(#header-sticky *):not(
+    .navigation *
+  ):not(.main-menu *):not(.logo *) {
+  word-spacing: 0.6em !important;
+  letter-spacing: 0.15em !important;
+}
+
+body.a11y-word-spacing-large
+  *:not(.header-area *):not(.header-sticky *):not(#header-sticky *):not(
+    .navigation *
+  ):not(.main-menu *):not(.logo *) {
+  word-spacing: 0.8em !important;
+  letter-spacing: 0.2em !important;
+}
+
+/* Header elementlariga ta'sir qilmaslik */
+body.a11y-word-spacing-small .header-area,
+body.a11y-word-spacing-small .header-area *,
+body.a11y-word-spacing-small .header-sticky,
+body.a11y-word-spacing-small .header-sticky *,
+body.a11y-word-spacing-small #header-sticky,
+body.a11y-word-spacing-small #header-sticky *,
+body.a11y-word-spacing-small .navigation,
+body.a11y-word-spacing-small .navigation *,
+body.a11y-word-spacing-small .main-menu,
+body.a11y-word-spacing-small .main-menu *,
+body.a11y-word-spacing-small .logo,
+body.a11y-word-spacing-small .logo *,
+body.a11y-word-spacing-medium .header-area,
+body.a11y-word-spacing-medium .header-area *,
+body.a11y-word-spacing-medium .header-sticky,
+body.a11y-word-spacing-medium .header-sticky *,
+body.a11y-word-spacing-medium #header-sticky,
+body.a11y-word-spacing-medium #header-sticky *,
+body.a11y-word-spacing-medium .navigation,
+body.a11y-word-spacing-medium .navigation *,
+body.a11y-word-spacing-medium .main-menu,
+body.a11y-word-spacing-medium .main-menu *,
+body.a11y-word-spacing-medium .logo,
+body.a11y-word-spacing-medium .logo *,
+body.a11y-word-spacing-large .header-area,
+body.a11y-word-spacing-large .header-area *,
+body.a11y-word-spacing-large .header-sticky,
+body.a11y-word-spacing-large .header-sticky *,
+body.a11y-word-spacing-large #header-sticky,
+body.a11y-word-spacing-large #header-sticky *,
+body.a11y-word-spacing-large .navigation,
+body.a11y-word-spacing-large .navigation *,
+body.a11y-word-spacing-large .main-menu,
+body.a11y-word-spacing-large .main-menu *,
+body.a11y-word-spacing-large .logo,
+body.a11y-word-spacing-large .logo * {
+  word-spacing: normal !important;
+  letter-spacing: normal !important;
+}
+
+/* Word Length - Matnlar orasini ochish */
+body.a11y-word-length
+  *:not(.header-area *):not(.header-sticky *):not(#header-sticky *):not(
+    .navigation *
+  ):not(.main-menu *):not(.logo *) {
+  line-height: 2 !important;
+}
+
+body.a11y-word-length
+  p:not(.header-area p):not(.header-sticky p):not(#header-sticky p):not(
+    .navigation p
+  ):not(.main-menu p):not(.logo p) {
+  margin-bottom: 1.5em !important;
+}
+
+/* Header elementlariga ta'sir qilmaslik */
+body.a11y-word-length .header-area,
+body.a11y-word-length .header-area *,
+body.a11y-word-length .header-sticky,
+body.a11y-word-length .header-sticky *,
+body.a11y-word-length #header-sticky,
+body.a11y-word-length #header-sticky *,
+body.a11y-word-length .navigation,
+body.a11y-word-length .navigation *,
+body.a11y-word-length .main-menu,
+body.a11y-word-length .main-menu *,
+body.a11y-word-length .logo,
+body.a11y-word-length .logo * {
+  line-height: normal !important;
+  margin-bottom: normal !important;
+}
+
+/* Text Zoom (Shift + Hover) - Faqat hover qilingan textni kattalashtirish */
+body.a11y-text-zoom-active {
+  cursor: crosshair !important;
+}
+
+/* Text zoom popup */
+.a11y-text-zoom-popup {
+  position: fixed;
+  z-index: 999999;
+  display: none;
+  pointer-events: auto;
+}
+
+.a11y-text-zoom-popup-content {
+  background: #e8eef5; /* Light blue-gray background (rasmdagidek) */
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 0;
+  position: relative;
+  min-width: 300px;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.a11y-text-zoom-popup-text {
+  padding: 20px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.a11y-text-zoom-popup-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: #000;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.a11y-text-zoom-popup-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Zoomed text element */
+.a11y-text-zoomed {
+  transition: font-size 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Dark theme da popup */
+body.a11y-theme-dark .a11y-text-zoom-popup-content {
+  background: #1a1a1a !important;
+  border-color: #444 !important;
+}
+
+body.a11y-theme-dark .a11y-text-zoom-popup-content h3 {
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-text-zoom-popup-close {
+  color: #fff !important;
+}
+
+body.a11y-theme-dark .a11y-text-zoom-popup-close:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Focus Mode */
+body.a11y-focus-mode-active {
+  filter: brightness(0.7) !important;
+}
+
+body.a11y-focus-mode-active *:focus,
+body.a11y-focus-mode-active *:hover {
+  filter: brightness(1.2) !important;
+  outline: 3px solid #0066cc !important;
+  outline-offset: 2px !important;
+}
+
+/* Cursor Size - Qora rang (3 barobar kattalashgan) */
+body.a11y-cursor-small:not(.a11y-cursor-white) * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill="%23000" d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>'),
+    auto !important;
+}
+
+body.a11y-cursor-medium:not(.a11y-cursor-white) * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 24 24"><path fill="%23000" d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>'),
+    auto !important;
+}
+
+body.a11y-cursor-large:not(.a11y-cursor-white) * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24"><path fill="%23000" d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>'),
+    auto !important;
+}
+
+/* Cursor Size - Oq rang (3 barobar kattalashgan) */
+body.a11y-cursor-white.a11y-cursor-small * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill="%23fff" stroke="%23000" stroke-width="1" d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>'),
+    auto !important;
+}
+
+body.a11y-cursor-white.a11y-cursor-medium * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 24 24"><path fill="%23fff" stroke="%23000" stroke-width="1" d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>'),
+    auto !important;
+}
+
+body.a11y-cursor-white.a11y-cursor-large * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24"><path fill="%23fff" stroke="%23000" stroke-width="1" d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>'),
+    auto !important;
+}
+
+/* Cursor Color - Oq rang (default size - 3 barobar kattalashgan) */
+body.a11y-cursor-white:not(.a11y-cursor-small):not(.a11y-cursor-medium):not(
+    .a11y-cursor-large
+  )
+  * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 24 24"><path fill="%23fff" stroke="%23000" stroke-width="1" d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>'),
+    auto !important;
+}
+
+/* Color Modes */
+body.a11y-color-none * {
+  filter: grayscale(100%) !important;
+}
+
+/* Header va ACCESSIBILITY menu elementlariga ta'sir qilmaslik */
+body.a11y-color-none .header-area,
+body.a11y-color-none .header-area *,
+body.a11y-color-none .header-sticky,
+body.a11y-color-none .header-sticky *,
+body.a11y-color-none #header-sticky,
+body.a11y-color-none #header-sticky *,
+body.a11y-color-none .navigation,
+body.a11y-color-none .navigation *,
+body.a11y-color-none .main-menu,
+body.a11y-color-none .main-menu *,
+body.a11y-color-none .logo,
+body.a11y-color-none .logo *,
+body.a11y-color-none .a11y-menu,
+body.a11y-color-none .a11y-menu *,
+body.a11y-color-none .a11y-panel,
+body.a11y-color-none .a11y-panel *,
+body.a11y-color-none .a11y-toggle,
+body.a11y-color-none .a11y-toggle *,
+body.a11y-color-none .a11y-close,
+body.a11y-color-none .a11y-close *,
+body.a11y-color-none .a11y-control-group,
+body.a11y-color-none .a11y-control-group *,
+body.a11y-color-none .a11y-label,
+body.a11y-color-none .a11y-label *,
+body.a11y-color-none .a11y-description,
+body.a11y-color-none .a11y-description *,
+body.a11y-color-none .a11y-btn-reset,
+body.a11y-color-none .a11y-btn-reset *,
+body.a11y-color-none .a11y-color-mode-btn,
+body.a11y-color-none .a11y-color-mode-btn *,
+body.a11y-color-none .a11y-cursor-color-btn,
+body.a11y-color-none .a11y-cursor-color-btn *,
+body.a11y-color-none .a11y-word-btn,
+body.a11y-color-none .a11y-word-btn *,
+body.a11y-color-none .a11y-text-zoom-btn,
+body.a11y-color-none .a11y-text-zoom-btn *,
+body.a11y-color-none .a11y-focus-mode-btn,
+body.a11y-color-none .a11y-focus-mode-btn *,
+body.a11y-color-none .a11y-theme-btn,
+body.a11y-color-none .a11y-theme-btn *,
+body.a11y-color-none .a11y-slider-btn,
+body.a11y-color-none .a11y-slider-btn *,
+body.a11y-color-none .a11y-icon,
+body.a11y-color-none .a11y-icon *,
+body.a11y-color-none .a11y-icon-text,
+body.a11y-color-none .a11y-icon-text * {
+  filter: none !important;
+}
+
+/* Brightness filter - faqat smooth-content ga qo'llash, lekin header dan tashqari */
+body.a11y-color-low-light #smooth-content {
+  filter: brightness(0.7) !important;
+}
+
+body.a11y-color-high-light #smooth-content {
+  filter: brightness(1.3) !important;
+}
+
+/* Brightness scale slider orqali brightness qo'llash - faqat bir marta */
+body.a11y-brightness-scale #smooth-content {
+  filter: brightness(var(--a11y-brightness-value, 1)) !important;
+}
+
+/* Header elementlarini brightness filter'dan to'liq exclude qilish */
+body.a11y-color-low-light .header-area,
+body.a11y-color-low-light .header-area *,
+body.a11y-color-low-light #header-sticky,
+body.a11y-color-low-light #header-sticky *,
+body.a11y-color-low-light .header-sticky,
+body.a11y-color-low-light .header-sticky *,
+body.a11y-color-low-light .navigation,
+body.a11y-color-low-light .navigation *,
+body.a11y-color-low-light .main-menu,
+body.a11y-color-low-light .main-menu *,
+body.a11y-color-low-light .logo,
+body.a11y-color-low-light .logo *,
+body.a11y-color-low-light #smooth-wrapper .header-area,
+body.a11y-color-low-light #smooth-wrapper .header-area *,
+body.a11y-color-low-light #smooth-wrapper #header-sticky,
+body.a11y-color-low-light #smooth-wrapper #header-sticky *,
+body.a11y-color-high-light .header-area,
+body.a11y-color-high-light .header-area *,
+body.a11y-color-high-light #header-sticky,
+body.a11y-color-high-light #header-sticky *,
+body.a11y-color-high-light .header-sticky,
+body.a11y-color-high-light .header-sticky *,
+body.a11y-color-high-light .navigation,
+body.a11y-color-high-light .navigation *,
+body.a11y-color-high-light .main-menu,
+body.a11y-color-high-light .main-menu *,
+body.a11y-color-high-light .logo,
+body.a11y-color-high-light .logo *,
+body.a11y-color-high-light #smooth-wrapper .header-area,
+body.a11y-color-high-light #smooth-wrapper .header-area *,
+body.a11y-color-high-light #smooth-wrapper #header-sticky,
+body.a11y-color-high-light #smooth-wrapper #header-sticky * {
+  filter: none !important;
+}
+
+/* Footer, Header va ACCESSIBILITY menu elementlariga ta'sir qilmaslik */
+body.a11y-color-low-light .header-area,
+body.a11y-color-low-light .header-area *,
+body.a11y-color-low-light .header-sticky,
+body.a11y-color-low-light .header-sticky *,
+body.a11y-color-low-light #header-sticky,
+body.a11y-color-low-light #header-sticky *,
+body.a11y-color-low-light .navigation,
+body.a11y-color-low-light .navigation *,
+body.a11y-color-low-light .main-menu,
+body.a11y-color-low-light .main-menu *,
+body.a11y-color-low-light .logo,
+body.a11y-color-low-light .logo *,
+body.a11y-color-low-light .footer-area,
+body.a11y-color-low-light .footer-area *,
+body.a11y-color-low-light .footer-bottom,
+body.a11y-color-low-light .footer-bottom *,
+body.a11y-color-low-light .footer-up,
+body.a11y-color-low-light .footer-up *,
+body.a11y-color-low-light footer,
+body.a11y-color-low-light footer *,
+body.a11y-color-low-light .a11y-menu,
+body.a11y-color-low-light .a11y-menu *,
+body.a11y-color-low-light .a11y-panel,
+body.a11y-color-low-light .a11y-panel *,
+body.a11y-color-low-light .a11y-toggle,
+body.a11y-color-low-light .a11y-toggle *,
+body.a11y-color-low-light .a11y-close,
+body.a11y-color-low-light .a11y-close *,
+body.a11y-color-low-light #smooth-wrapper,
+body.a11y-color-high-light .header-area,
+body.a11y-color-high-light .header-area *,
+body.a11y-color-high-light .header-sticky,
+body.a11y-color-high-light .header-sticky *,
+body.a11y-color-high-light #header-sticky,
+body.a11y-color-high-light #header-sticky *,
+body.a11y-color-high-light .navigation,
+body.a11y-color-high-light .navigation *,
+body.a11y-color-high-light .main-menu,
+body.a11y-color-high-light .main-menu *,
+body.a11y-color-high-light .logo,
+body.a11y-color-high-light .logo *,
+body.a11y-color-high-light .footer-area,
+body.a11y-color-high-light .footer-area *,
+body.a11y-color-high-light .footer-bottom,
+body.a11y-color-high-light .footer-bottom *,
+body.a11y-color-high-light .footer-up,
+body.a11y-color-high-light .footer-up *,
+body.a11y-color-high-light footer,
+body.a11y-color-high-light footer *,
+body.a11y-color-high-light .a11y-menu,
+body.a11y-color-high-light .a11y-menu *,
+body.a11y-color-high-light .a11y-panel,
+body.a11y-color-high-light .a11y-panel *,
+body.a11y-color-high-light .a11y-toggle,
+body.a11y-color-high-light .a11y-toggle *,
+body.a11y-color-high-light .a11y-close,
+body.a11y-color-high-light .a11y-close *,
+body.a11y-color-high-light #smooth-wrapper {
+  filter: none !important;
+}
+
+/* Footer va body elementlarini to'g'ri ko'rsatish */
+body.a11y-color-low-light,
+body.a11y-color-low-light html,
+body.a11y-color-low-light body,
+body.a11y-color-high-light,
+body.a11y-color-high-light html,
+body.a11y-color-high-light body {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+  height: auto !important;
+  min-height: auto !important;
+}
+
+/* Scroll muammosini hal qilish */
+body.a11y-color-low-light #smooth-wrapper,
+body.a11y-color-low-light #smooth-content,
+body.a11y-color-high-light #smooth-wrapper,
+body.a11y-color-high-light #smooth-content {
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+  height: auto !important;
+  min-height: auto !important;
+}
+
+/* Header sticky funksiyasini tiklash */
+body.a11y-color-low-light .header-sticky,
+body.a11y-color-low-light #header-sticky.header-sticky,
+body.a11y-color-high-light .header-sticky,
+body.a11y-color-high-light #header-sticky.header-sticky,
+body.a11y-brightness-scale .header-sticky,
+body.a11y-brightness-scale #header-sticky.header-sticky {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 999 !important;
+  background-color: #fff !important;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+}
+
+/* Brightness scale uchun header elementlarini exclude qilish */
+body.a11y-brightness-scale .header-area,
+body.a11y-brightness-scale .header-area *,
+body.a11y-brightness-scale #header-sticky,
+body.a11y-brightness-scale #header-sticky *,
+body.a11y-brightness-scale .header-sticky,
+body.a11y-brightness-scale .header-sticky *,
+body.a11y-brightness-scale .navigation,
+body.a11y-brightness-scale .navigation *,
+body.a11y-brightness-scale .main-menu,
+body.a11y-brightness-scale .main-menu *,
+body.a11y-brightness-scale .logo,
+body.a11y-brightness-scale .logo *,
+body.a11y-brightness-scale #smooth-wrapper .header-area,
+body.a11y-brightness-scale #smooth-wrapper .header-area *,
+body.a11y-brightness-scale #smooth-wrapper #header-sticky,
+body.a11y-brightness-scale #smooth-wrapper #header-sticky * {
+  filter: none !important;
+}
+
+body.a11y-color-low-light footer,
+body.a11y-color-low-light .footer-area,
+body.a11y-color-low-light .footer-bottom,
+body.a11y-color-high-light footer,
+body.a11y-color-high-light .footer-area,
+body.a11y-color-high-light .footer-bottom {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  position: relative !important;
+}
+
+/* #smooth-content ichidagi header va footer elementlarini exclude qilish */
+body.a11y-color-low-light #smooth-content .header-area,
+body.a11y-color-low-light #smooth-content .header-area *,
+body.a11y-color-low-light #smooth-content .header-sticky,
+body.a11y-color-low-light #smooth-content .header-sticky *,
+body.a11y-color-low-light #smooth-content #header-sticky,
+body.a11y-color-low-light #smooth-content #header-sticky *,
+body.a11y-color-low-light #smooth-content .navigation,
+body.a11y-color-low-light #smooth-content .navigation *,
+body.a11y-color-low-light #smooth-content .main-menu,
+body.a11y-color-low-light #smooth-content .main-menu *,
+body.a11y-color-low-light #smooth-content .logo,
+body.a11y-color-low-light #smooth-content .logo *,
+body.a11y-color-low-light #smooth-content footer,
+body.a11y-color-low-light #smooth-content .footer-area,
+body.a11y-color-low-light #smooth-content .footer-bottom,
+body.a11y-color-low-light #smooth-content .footer-up,
+body.a11y-color-low-light #smooth-content footer *,
+body.a11y-color-low-light #smooth-content .footer-area *,
+body.a11y-color-low-light #smooth-content .footer-bottom *,
+body.a11y-color-low-light #smooth-content .footer-up *,
+body.a11y-color-high-light #smooth-content .header-area,
+body.a11y-color-high-light #smooth-content .header-area *,
+body.a11y-color-high-light #smooth-content .header-sticky,
+body.a11y-color-high-light #smooth-content .header-sticky *,
+body.a11y-color-high-light #smooth-content #header-sticky,
+body.a11y-color-high-light #smooth-content #header-sticky *,
+body.a11y-color-high-light #smooth-content .navigation,
+body.a11y-color-high-light #smooth-content .navigation *,
+body.a11y-color-high-light #smooth-content .main-menu,
+body.a11y-color-high-light #smooth-content .main-menu *,
+body.a11y-color-high-light #smooth-content .logo,
+body.a11y-color-high-light #smooth-content .logo *,
+body.a11y-color-high-light #smooth-content footer,
+body.a11y-color-high-light #smooth-content .footer-area,
+body.a11y-color-high-light #smooth-content .footer-bottom,
+body.a11y-color-high-light #smooth-content .footer-up,
+body.a11y-color-high-light #smooth-content footer *,
+body.a11y-color-high-light #smooth-content .footer-area *,
+body.a11y-color-high-light #smooth-content .footer-bottom *,
+body.a11y-color-high-light #smooth-content .footer-up * {
+  filter: none !important;
+}
+
+/* ============================================
+   13. FOCUS MODE - OVERLAY, SPOTLIGHT, BANNER
+   ============================================ */
+
+/* Focus Mode Overlay - Sahifaning qoraytirilgan qismi */
+.a11y-focus-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  max-height: 0;
+  background: rgba(0, 0, 0, 0.75); /* Qorayish (rasmdagidek) */
+  z-index: 99990; /* Accessibility menu (100000) dan past, lekin boshqa UI elementlardan yuqori */
+  pointer-events: none; /* Overlay orqali elementlarga bosish mumkin bo'lishi uchun */
+  opacity: 0;
+  transition: opacity 0.25s ease, width 0s 0.25s, height 0s 0.25s;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.a11y-focus-overlay.active {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s ease, width 0s, height 0s;
+}
+
+/* Focus Mode Spotlight - Yoritilgan hudud */
+.a11y-focus-spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  max-height: 0;
+  pointer-events: none; /* Spotlight orqali elementlarga bosish mumkin bo'lishi uchun */
+  z-index: 99991; /* Overlaydan yuqori */
+  opacity: 0;
+  transition: opacity 0.25s ease, clip-path 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0s 0.25s, height 0s 0.25s;
+  visibility: hidden;
+  overflow: hidden;
+  /* Spotlight effect - oq rangda yoritilgan hudud (rasmdagidek) */
+  background: rgba(255, 255, 255, 0.1);
+  clip-path: circle(0% at 50% 50%);
+  /* Mix-blend-mode orqali overlay bilan birga ishlaydi */
+  mix-blend-mode: screen;
+}
+
+.a11y-focus-spotlight.active {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s ease, clip-path 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0s, height 0s;
+}
+
+/* Page Focus Mode - Scroll-based dinamik yoritiladi (JavaScript orqali boshqariladi) */
+/* clip-path JavaScript orqali dinamik o'rnatiladi */
+
+/* Element Focus Mode - Element joylashgan hudud yoritiladi (JavaScript orqali dinamik o'zgaradi) */
+body.a11y-element-focus-mode .a11y-focus-spotlight {
+  clip-path: circle(0% at 50% 50%);
+}
+
+/* Focus Mode Banner - Pastda ko'rsatiladigan yashil banner */
+.a11y-focus-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    #10b981 0%,
+    #059669 100%
+  ); /* Yashil gradient */
+  color: #fff;
+  padding: 16px 24px;
+  z-index: 100001; /* Accessibility menu bilan bir xil z-index, lekin overlaydan yuqori */
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.a11y-focus-banner.active {
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.a11y-focus-banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.a11y-focus-banner-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.a11y-focus-banner-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.a11y-focus-banner-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.a11y-focus-banner-close:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.a11y-focus-banner-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Accessibility menu overlaydan yuqorida bo'lishi uchun */
+.a11y-menu {
+  z-index: 100000; /* Overlay (99990) va spotlight (99991) dan yuqori */
+}
+
+/* Focus mode aktiv bo'lganda body scroll ni o'chirish (ixtiyoriy) */
+body.a11y-page-focus-mode,
+body.a11y-element-focus-mode {
+  overflow: hidden;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .a11y-panel {
+    width: 100%;
+    max-width: 100%;
+    border-left: none;
+  }
+
+  .a11y-toggle {
+    border-radius: 24px 0 0 24px;
+  }
+
+  .a11y-panel-content {
+    height: calc(100vh - 81px);
+  }
+
+  /* Mobile da spotlight kichikroq bo'lsin */
+  body.a11y-page-focus-mode .a11y-focus-spotlight {
+    clip-path: ellipse(600px 400px at 50% 50%);
+  }
+
+  .a11y-focus-banner {
+    padding: 12px 16px;
+  }
+
+  .a11y-focus-banner-text {
+    font-size: 14px;
+  }
+
+  .a11y-focus-banner-close {
+    padding: 6px 10px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE STYLES FOR SPEED BUTTONS
+   ============================================ */
+@media (max-width: 767px) {
+  .a11y-speed-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 4px !important;
+  }
+
+  .a11y-speed-btn {
+    flex: 1 1 0% !important;
+    padding: 10px 2px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .a11y-speed-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+  }
+
+  .a11y-speed-btn {
+    flex: 1 1 0% !important;
+    padding: 10px 4px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .a11y-speed-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+  }
+
+  .a11y-speed-btn {
+    flex: 1 1 0% !important;
+    padding: 10px 4px !important;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  .a11y-menu {
+    display: none !important;
+  }
+
+  .a11y-focus-overlay,
+  .a11y-focus-spotlight,
+  .a11y-focus-banner {
+    display: none !important;
+  }
+}

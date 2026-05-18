@@ -1,0 +1,146 @@
+.single-process-item {
+    border: 1px solid #ddd;
+    padding: 30px;
+    h3 {
+        margin-top: 30px;
+    }
+}
+
+.process-up {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+        font-size: 40px;
+    }
+    i {
+        font-size: 25px;
+    }
+}
+
+
+.process-down {
+    padding-top: 80px;
+}
+
+.right-content span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #171717;
+    margin-right: 15px;
+}
+
+// Process # 02
+
+#process-2{
+    .process-section.pt-0 {
+        @media #{$xs} {
+            padding-top: 50px !important;
+        }    
+      }
+    
+      .process-section.pb-100 {
+        @media #{$xs} {
+            padding-bottom: 50px;
+        }
+      }
+    
+    .single-process-item{
+        border: none;
+        border-top: 1px solid #ddd;
+        padding: 30px;
+        padding-bottom: 0;
+        margin-bottom: 50px;
+        @media #{$md}{
+            padding: 30px;
+            padding-right: 90px;
+        }
+    
+        h2{
+            font-size: 50px;
+        }
+    
+        h4 {
+            margin: 30px 0 20px;
+        }
+    
+        p{
+            margin: 0;
+        }    
+        .process-num {
+            position: relative;
+            z-index: 1;
+            i {
+                color: #ddd;
+                padding-left: 30px;
+            }
+    
+            &:before {
+                position: absolute;
+                content: "";
+                top: -30px;
+                left: -30px;
+                width: 1px;
+                height: 90px;
+                background: #ddd;
+            }
+        }
+    }
+}
+
+// Process # 03
+
+
+.single-process-wrap {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 120px;    
+
+    .process-num {
+        position: absolute;
+        top: -10px;
+        left: -5px;
+
+        span {
+            font-size: 160px;
+            font-weight: 600;
+            color: #f0f0f0;
+        }
+    }
+
+    h4 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+   
+}
+
+// Owl Dots
+
+.process-wrapper .owl-dots button.owl-dot span {
+	width: 10px;
+	height: 10px;
+	background: #ddd;
+	margin-right: 10px;
+}
+
+.process-wrapper .owl-dots button.owl-dot.active span {
+	width: 35px;
+	height: 10px;
+	background: $theme_color;
+}
+
+.process-wrapper .owl-dots {
+	text-align: center;
+	margin-top: 50px;
+}
+
+#process-3 .mt-40 {
+    @media #{$md}{
+        margin-top: 100px;
+    }
+    @media #{$xs}{
+        margin-top: 100px;
+    }
+}

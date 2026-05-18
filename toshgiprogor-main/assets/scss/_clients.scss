@@ -1,0 +1,51 @@
+.clients-img-inner img {
+    width: 150px !important;
+    filter: grayscale(1);
+    opacity: .5;
+}
+
+// Client # 01  
+
+.client-area.pt-100 {
+    @media #{$xs} {
+        padding-top: 50px;
+    }
+}
+
+.single-client {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 215px;
+
+    img {
+        max-width: inherit;
+        width: 150px !important;
+        opacity: .5;
+    }
+
+    @media #{$lg} {
+        margin-left: 0;
+        width: inherit;
+    }
+
+    @media #{$md} {
+        margin-left: 0;
+        width: inherit;
+    }
+
+    @media #{$xs} {
+        margin-left: 0;
+        width: inherit;
+    }
+}
+
+.progress-bar-area{
+    @media #{$xs}{
+        margin-top: 30px;
+    }
+}
+
+.client-area .owl-dots {
+    display: none;
+}

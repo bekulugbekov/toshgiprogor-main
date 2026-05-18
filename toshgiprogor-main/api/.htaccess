@@ -1,0 +1,20 @@
+# Apache server uchun .htaccess
+# PHP fayllarni to'g'ri ishlatish uchun
+
+# PHP fayllarni ishlatish
+<Files "telegram.php">
+    SetHandler application/x-httpd-php
+</Files>
+
+# CORS headers
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# OPTIONS request'ni qaytarish
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L]
+
