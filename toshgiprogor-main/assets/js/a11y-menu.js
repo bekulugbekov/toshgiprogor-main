@@ -142,77 +142,45 @@
   window.disableElementFocusMode = disableElementFocusModeInternal;
 
   // ============================================
-  // 0. LANGUAGE SWITCHER (3 tilda: O'zbek, Rus, Ingliz)
+  // 0. LANGUAGE SWITCHER — translate.js bilan integratsiya
   // ============================================
-  // Asosiy saytning language switcher bilan integratsiya
   let currentLang =
-    localStorage.getItem("selectedLanguage") ||
-    localStorage.getItem("a11y-lang") ||
-    "uz";
-
-  function initLanguageSwitcher() {
-    // Asosiy saytning language switcher dan tilni o'qish
-    const savedLang = localStorage.getItem("selectedLanguage");
-    if (savedLang) {
-      currentLang = savedLang;
-    }
-    updateAllTexts();
-
-    // Language selector o'zgarganda accessibility menu matnlarini yangilash
-    setTimeout(function () {
-      const languageSelector = document.getElementById("languageSelector");
-      if (languageSelector) {
-        languageSelector.addEventListener("change", function () {
-          currentLang = this.value;
-          localStorage.setItem("a11y-lang", currentLang);
-          updateAllTexts();
-        });
-      }
-    }, 100);
-
-    // Storage event listener (boshqa tab/window dan til o'zgarganda)
-    window.addEventListener("storage", function (e) {
-      if (e.key === "selectedLanguage") {
-        currentLang = e.newValue || "uz";
-        updateAllTexts();
-      }
-    });
-
-    // Polling orqali til o'zgarishini kuzatish (storage event har doim ishlamaydi)
-    setInterval(function () {
-      const savedLang = localStorage.getItem("selectedLanguage");
-      if (savedLang && savedLang !== currentLang) {
-        currentLang = savedLang;
-        updateAllTexts();
-      }
-    }, 500);
-  }
+    localStorage.getItem("selectedLanguage") || "ru";
 
   function updateAllTexts() {
-    const lang = currentLang;
-    // Barcha [data-lang] elementlarni topish
-    const allLangElements = document.querySelectorAll("[data-lang]");
+    if (
+      typeof translationCache !== "undefined" &&
+      translationCache[currentLang] &&
+      typeof updateTranslations === "function"
+    ) {
+      updateTranslations(translationCache[currentLang]);
+    } else if (typeof changeLanguage === "function") {
+      changeLanguage(currentLang);
+    }
+  }
 
-    allLangElements.forEach(function (langEl) {
-      if (langEl.getAttribute("data-lang") === lang) {
-        langEl.style.display = "";
-      } else {
-        langEl.style.display = "none";
+  function initLanguageSwitcher() {
+    const savedLang = localStorage.getItem("selectedLanguage");
+    if (savedLang) currentLang = savedLang;
+
+    updateAllTexts();
+
+    // translate.js languageChanged eventini tinglash
+    document.addEventListener("languageChanged", function (e) {
+      const newLang = localStorage.getItem("selectedLanguage") || "ru";
+      if (newLang !== currentLang) {
+        currentLang = newLang;
+      }
+    });
+
+    // Boshqa tab/window dan til o'zgarganda
+    window.addEventListener("storage", function (e) {
+      if (e.key === "selectedLanguage" && e.newValue) {
+        currentLang = e.newValue;
+        updateAllTexts();
       }
     });
   }
-
-  function setLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem("a11y-lang", lang);
-    updateAllTexts();
-  }
-
-  // Global function
-  window.setA11yLanguage = setLanguage;
-  window.getA11yLanguage = function () {
-    return currentLang;
-  };
 
   // ============================================
   // 0.5. INJECT ACCESSIBILITY MENU HTML
@@ -260,9 +228,7 @@
       >
         <div class="a11y-panel-header">
           <h2 id="a11y-menu-title" class="a11y-menu-title">
-            <span data-lang="uz">Moslashuvchanlik</span>
-            <span data-lang="ru" style="display: none">Доступность</span>
-            <span data-lang="en" style="display: none">Accessibility</span>
+            <span data-translate="a11y_title">Accessibility</span>
           </h2>
           <button id="a11y-close" class="a11y-close" aria-label="Yopish">
             <svg
@@ -285,9 +251,7 @@
           <!-- 1. Mavzuni tanlash -->
           <div class="a11y-control-group">
             <label class="a11y-label">
-              <span data-lang="uz">Mavzuni tanlash</span>
-              <span data-lang="ru" style="display: none">Выберите тему</span>
-              <span data-lang="en" style="display: none">Choose theme</span>
+              <span data-translate="a11y_theme">Choose theme</span>
             </label>
             <div class="a11y-theme-buttons">
               <button
@@ -301,9 +265,7 @@
                   <div class="a11y-theme-preview-bottom"></div>
                   <div class="a11y-theme-preview-circle"></div>
                 </div>
-                <span data-lang="uz">Moslashuvchan</span>
-                <span data-lang="ru" style="display: none">Адаптивный</span>
-                <span data-lang="en" style="display: none">Adaptive</span>
+                <span data-translate="a11y_adaptive">Adaptive</span>
               </button>
               <button
                 id="a11y-theme-light"
@@ -316,9 +278,7 @@
                   <div class="a11y-theme-preview-bottom"></div>
                   <div class="a11y-theme-preview-circle"></div>
                 </div>
-                <span data-lang="uz">Kunduzgi</span>
-                <span data-lang="ru" style="display: none">Дневной</span>
-                <span data-lang="en" style="display: none">Day</span>
+                <span data-translate="a11y_day">Day</span>
               </button>
               <button
                 id="a11y-theme-dark"
@@ -331,9 +291,7 @@
                   <div class="a11y-theme-preview-bottom"></div>
                   <div class="a11y-theme-preview-circle"></div>
                 </div>
-                <span data-lang="uz">Tungi</span>
-                <span data-lang="ru" style="display: none">Ночной</span>
-                <span data-lang="en" style="display: none">Night</span>
+                <span data-translate="a11y_night">Night</span>
               </button>
             </div>
           </div>
@@ -347,19 +305,11 @@
               style="margin-top: 16px"
             >
               <span class="a11y-icon-text">Aa</span>
-              <span data-lang="uz">Matn hajmi</span>
-              <span data-lang="ru" style="display: none">Размер текста</span>
-              <span data-lang="en" style="display: none">Font size</span>
+              <span data-translate="a11y_text_size">Font size</span>
               <span id="a11y-font-scale-value" class="a11y-value">0%</span>
             </label>
             <p class="a11y-description">
-              <span data-lang="uz">Matn hajmini oshiring va kamaytiring</span>
-              <span data-lang="ru" style="display: none"
-                >Увеличьте или уменьшите размер текста</span
-              >
-              <span data-lang="en" style="display: none"
-                >Increase or decrease text size</span
-              >
+              <span data-translate="a11y_text_size_desc">Increase or decrease text size</span>
             </p>
             <div class="a11y-slider-wrapper">
               <button
@@ -393,18 +343,10 @@
           <div class="a11y-control-group">
             <label class="a11y-label">
               <span class="a11y-icon-text">Aa</span>
-              <span data-lang="uz">Shrift o'lchami</span>
-              <span data-lang="ru" style="display: none">Размер шрифта</span>
-              <span data-lang="en" style="display: none">Font size</span>
+              <span data-translate="a11y_font_size">Font size</span>
             </label>
             <p class="a11y-description">
-              <span data-lang="uz">Shrift hajmini oshiring va kamaytiring</span>
-              <span data-lang="ru" style="display: none"
-                >Увеличьте или уменьшите размер шрифта</span
-              >
-              <span data-lang="en" style="display: none"
-                >Increase or decrease font size</span
-              >
+              <span data-translate="a11y_font_size_desc">Increase or decrease font size</span>
             </p>
             <div class="a11y-word-controls">
               <button
@@ -412,18 +354,14 @@
                 class="a11y-word-btn"
                 aria-label="So'z uzunligi"
               >
-                <span data-lang="uz">So'z uzunligi</span>
-                <span data-lang="ru" style="display: none">Длина слова</span>
-                <span data-lang="en" style="display: none">Word length</span>
+                <span data-translate="a11y_word_length">Word length</span>
               </button>
               <button
                 id="a11y-word-spacing-btn"
                 class="a11y-word-btn active"
                 aria-label="So'z oralig'i"
               >
-                <span data-lang="uz">So'z oralig'i</span>
-                <span data-lang="ru" style="display: none">Интервал слов</span>
-                <span data-lang="en" style="display: none">Word spacing</span>
+                <span data-translate="a11y_word_spacing">Word spacing</span>
               </button>
             </div>
           </div>
@@ -454,22 +392,10 @@
                 </svg>
                 <div class="a11y-voice-header-text">
                   <label class="a11y-label" style="margin-bottom: 4px">
-                    <span data-lang="uz">Ekran suhandoni</span>
-                    <span data-lang="ru" style="display: none"
-                      >Голосовой помощник</span
-                    >
-                    <span data-lang="en" style="display: none"
-                      >Voice assistant</span
-                    >
+                    <span data-translate="a11y_voice_assistant">Voice assistant</span>
                   </label>
                   <p class="a11y-description" style="margin: 0">
-                    <span data-lang="uz">Zaif ko'ruvchilar uchun vosita</span>
-                    <span data-lang="ru" style="display: none"
-                      >Инструмент для слабовидящих</span
-                    >
-                    <span data-lang="en" style="display: none"
-                      >Tool for visually impaired</span
-                    >
+                    <span data-translate="a11y_voice_desc">Tool for visually impaired</span>
                   </p>
                 </div>
               </div>
@@ -496,13 +422,7 @@
               <!-- O'qish tezligi -->
               <div class="a11y-voice-option">
                 <label class="a11y-voice-label">
-                  <span data-lang="uz">O'qish tezligi</span>
-                  <span data-lang="ru" style="display: none"
-                    >Скорость чтения</span
-                  >
-                  <span data-lang="en" style="display: none"
-                    >Reading speed</span
-                  >
+                  <span data-translate="a11y_read_speed">Reading speed</span>
                 </label>
                 <div class="a11y-speed-slider-wrapper">
                   <input
@@ -528,9 +448,7 @@
               <!-- Ovoz ohangi -->
               <div class="a11y-voice-option">
                 <label class="a11y-voice-label">
-                  <span data-lang="uz">Ovoz ohangi</span>
-                  <span data-lang="ru" style="display: none">Тон голоса</span>
-                  <span data-lang="en" style="display: none">Voice tone</span>
+                  <span data-translate="a11y_voice_tone">Voice tone</span>
                 </label>
                 <div class="a11y-tone-buttons">
                   <button
@@ -539,11 +457,7 @@
                     data-tone="neutral"
                     aria-label="Betaraf"
                   >
-                    <span data-lang="uz">Betaraf</span>
-                    <span data-lang="ru" style="display: none"
-                      >Нейтральный</span
-                    >
-                    <span data-lang="en" style="display: none">Neutral</span>
+                    <span data-translate="a11y_tone_neutral">Neutral</span>
                   </button>
                   <button
                     id="a11y-tone-friendly"
@@ -551,11 +465,7 @@
                     data-tone="friendly"
                     aria-label="Samimiy"
                   >
-                    <span data-lang="uz">Samimiy</span>
-                    <span data-lang="ru" style="display: none"
-                      >Дружелюбный</span
-                    >
-                    <span data-lang="en" style="display: none">Friendly</span>
+                    <span data-translate="a11y_tone_friendly">Friendly</span>
                   </button>
                   <button
                     id="a11y-tone-formal"
@@ -563,9 +473,7 @@
                     data-tone="formal"
                     aria-label="Rasmiy"
                   >
-                    <span data-lang="uz">Rasmiy</span>
-                    <span data-lang="ru" style="display: none">Формальный</span>
-                    <span data-lang="en" style="display: none">Formal</span>
+                    <span data-translate="a11y_tone_formal">Formal</span>
                   </button>
                 </div>
               </div>
@@ -588,20 +496,10 @@
               >
                 <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"></path>
               </svg>
-              <span data-lang="uz">Ko'rsatkich</span>
-              <span data-lang="ru" style="display: none">Курсор</span>
-              <span data-lang="en" style="display: none">Cursor</span>
+              <span data-translate="a11y_cursor">Cursor</span>
             </label>
             <p class="a11y-description">
-              <span data-lang="uz"
-                >Ko'rsatkichni kattalashtiring va rangini o'zgartiring</span
-              >
-              <span data-lang="ru" style="display: none"
-                >Увеличьте курсор и измените его цвет</span
-              >
-              <span data-lang="en" style="display: none"
-                >Magnify cursor and change its color</span
-              >
+              <span data-translate="a11y_cursor_desc">Magnify cursor and change its color</span>
             </p>
             <div class="a11y-cursor-color-btns">
               <button
@@ -610,9 +508,7 @@
                 data-color="black"
                 aria-label="Qora"
               >
-                <span data-lang="uz">Qora</span>
-                <span data-lang="ru" style="display: none">Черный</span>
-                <span data-lang="en" style="display: none">Black</span>
+                <span data-translate="a11y_cursor_black">Black</span>
               </button>
               <button
                 id="a11y-cursor-white"
@@ -620,9 +516,7 @@
                 data-color="white"
                 aria-label="Oq"
               >
-                <span data-lang="uz">Oq</span>
-                <span data-lang="ru" style="display: none">Белый</span>
-                <span data-lang="en" style="display: none">White</span>
+                <span data-translate="a11y_cursor_white">White</span>
               </button>
             </div>
           </div>
@@ -649,18 +543,10 @@
                   d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"
                 ></path>
               </svg>
-              <span data-lang="uz">Maxsus rang</span>
-              <span data-lang="ru" style="display: none">Специальный цвет</span>
-              <span data-lang="en" style="display: none">Special color</span>
+              <span data-translate="a11y_special_color">Special color</span>
             </label>
             <p class="a11y-description">
-              <span data-lang="uz">Sayt ranglarini o'zgartiring</span>
-              <span data-lang="ru" style="display: none"
-                >Измените цвета сайта</span
-              >
-              <span data-lang="en" style="display: none"
-                >Change site colors</span
-              >
+              <span data-translate="a11y_color_desc">Change site colors</span>
             </p>
             <div class="a11y-color-mode-buttons">
               <button
@@ -687,9 +573,7 @@
                   ></path>
                   <line x1="15" y1="5" x2="19" y2="9"></line>
                 </svg>
-                <span data-lang="uz">Rangsiz ko'rinish</span>
-                <span data-lang="ru" style="display: none">Бесцветный вид</span>
-                <span data-lang="en" style="display: none">Colorless view</span>
+                <span data-translate="a11y_colorless">Colorless view</span>
               </button>
             </div>
             <!-- Yorug'lik slideri -->
@@ -717,23 +601,11 @@
                   <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                   <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                 </svg>
-                <span data-lang="uz">Yorug'lik</span>
-                <span data-lang="ru" style="display: none">Яркость</span>
-                <span data-lang="en" style="display: none">Brightness</span>
-                <span id="a11y-brightness-scale-value" class="a11y-value"
-                  >100%</span
-                >
+                <span data-translate="a11y_brightness">Brightness</span>
+                <span id="a11y-brightness-scale-value" class="a11y-value">100%</span>
               </label>
               <p class="a11y-description">
-                <span data-lang="uz"
-                  >Sayt yorug'ligini oshiring va kamaytiring</span
-                >
-                <span data-lang="ru" style="display: none"
-                  >Увеличьте или уменьшите яркость сайта</span
-                >
-                <span data-lang="en" style="display: none"
-                  >Increase or decrease site brightness</span
-                >
+                <span data-translate="a11y_brightness_desc">Increase or decrease site brightness</span>
               </p>
               <div class="a11y-slider-wrapper">
                 <button
@@ -771,13 +643,7 @@
               class="a11y-btn-reset"
               aria-label="Barcha sozlamalarni tiklash"
             >
-              <span data-lang="uz">Barcha sozlamalarni tiklash</span>
-              <span data-lang="ru" style="display: none"
-                >Сбросить все настройки</span
-              >
-              <span data-lang="en" style="display: none"
-                >Reset all settings</span
-              >
+              <span data-translate="a11y_reset">Reset all settings</span>
             </button>
           </div>
         </div>
@@ -810,11 +676,7 @@
     >
       <div class="a11y-focus-banner-content">
         <span class="a11y-focus-banner-text">
-          <span data-lang="uz">Diqqatni jamlash rejimini o'chirish</span>
-          <span data-lang="ru" style="display: none"
-            >Отключить режим фокусировки</span
-          >
-          <span data-lang="en" style="display: none">Disable focus mode</span>
+          <span data-translate="a11y_focus_disable">Disable focus mode</span>
         </span>
         <button
           id="a11y-focus-banner-close"

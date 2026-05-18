@@ -1,33 +1,51 @@
 const translationCache = {};
 
+const langAttrMap = { uz: "uz", ru: "ru", en: "en", zh: "zh-Hans" };
+
+function detectLanguage() {
+  var saved = localStorage.getItem("selectedLanguage");
+  if (saved && langAttrMap[saved]) return saved;
+
+  var params = new URLSearchParams(window.location.search);
+  var urlLang = params.get("lang");
+  if (urlLang && langAttrMap[urlLang]) {
+    localStorage.setItem("selectedLanguage", urlLang);
+    return urlLang;
+  }
+
+  var bl = (navigator.language || navigator.userLanguage || "").toLowerCase();
+  if (bl.startsWith("zh")) return "zh";
+  if (bl.startsWith("uz")) return "uz";
+  if (bl.startsWith("en")) return "en";
+  return "ru";
+}
+
 function updateTranslations(translations) {
-  document.querySelectorAll("[data-translate]").forEach((element) => {
-    const key = element.getAttribute("data-translate");
-    if (translations[key]) {
-      element.textContent = translations[key];
+  document.querySelectorAll("[data-translate]").forEach(function (el) {
+    var key = el.getAttribute("data-translate");
+    if (translations[key] !== undefined) {
+      el.textContent = translations[key];
     }
   });
 
-  // Select ichidagi option-larni tarjima qilish
-  const languageSelector = document.getElementById("languageSelector");
-  if (languageSelector) {
-    languageSelector.querySelectorAll("option").forEach((option) => {
-      const key = option.getAttribute("[data-translate]");
-      if (translations[key]) {
-        option.textContent = translations[key];
-      }
-    });
-  }
+  document.documentElement.removeAttribute("data-pending");
+
+  document.dispatchEvent(
+    new CustomEvent("languageChanged", {
+      detail: { lang: document.documentElement.lang },
+    })
+  );
 }
 
 async function changeLanguage(language) {
-  // Tanlangan tilni localStorage ga saqlash
-  localStorage.setItem("selectedLanguage", language);
+  if (!langAttrMap[language]) language = "ru";
 
-  const languageSelector = document.getElementById("languageSelector");
-  if (languageSelector) {
-    languageSelector.value = language; // Tanlangan tilni o‘rnatish
-  }
+  localStorage.setItem("selectedLanguage", language);
+  document.documentElement.lang = langAttrMap[language];
+
+  document.querySelectorAll("#languageSelector").forEach(function (sel) {
+    sel.value = language;
+  });
 
   if (translationCache[language]) {
     updateTranslations(translationCache[language]);
@@ -35,36 +53,26 @@ async function changeLanguage(language) {
   }
 
   try {
-    const response = await fetch(`assets/lang/${language}.json`);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
+    var response = await fetch("assets/lang/" + language + ".json");
+    if (!response.ok) throw new Error("HTTP error: " + response.status);
+    var data = await response.json();
     translationCache[language] = data;
     updateTranslations(data);
   } catch (error) {
-    console.error("Tarjima faylini yuklashda xatolik yuz berdi:", error);
+    console.error("Translation error:", error);
+    document.documentElement.removeAttribute("data-pending");
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const languageSelector = document.getElementById("languageSelector");
+document.addEventListener("DOMContentLoaded", function () {
+  var lang = detectLanguage();
 
-  if (!languageSelector) {
-    console.error("languageSelector elementi topilmadi!");
-    return;
-  }
-
-  let savedLanguage = localStorage.getItem("selectedLanguage") || "ru"; // Yangi tilni olish
-
-  // **Select qiymatini sahifa yuklanganda o‘rnatish**
-  languageSelector.value = savedLanguage;
-
-  // **Tilni yuklash**
-  changeLanguage(savedLanguage);
-
-  languageSelector.addEventListener("change", (event) => {
-    const newLanguage = event.target.value;
-    changeLanguage(newLanguage); // Tilni yangilash
+  document.querySelectorAll("#languageSelector").forEach(function (sel) {
+    sel.value = lang;
+    sel.addEventListener("change", function () {
+      changeLanguage(this.value);
+    });
   });
+
+  changeLanguage(lang);
 });

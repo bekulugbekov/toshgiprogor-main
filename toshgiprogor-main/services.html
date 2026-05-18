@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="zxx">
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -48,6 +48,9 @@
 
     <!-- jquery -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- FOUC fix + lang init -->
+    <script>(function(){var l=localStorage.getItem('selectedLanguage');if(!l){var bl=(navigator.language||'').toLowerCase();l=bl.startsWith('zh')?'zh':bl.startsWith('uz')?'uz':bl.startsWith('en')?'en':'ru';}var m={zh:'zh-Hans',uz:'uz',en:'en',ru:'ru'};document.documentElement.lang=m[l]||'ru';document.documentElement.dataset.pending='';}());</script>
+    <style>[data-pending] [data-translate]{visibility:hidden}</style>
   </head>
 
   <body>
@@ -128,20 +131,11 @@
                   </div>
                 </div>
                 <div class="col-xl-1 col-lg-1 d-none d-lg-block text-lg-end">
-                  <select
-                    default="ru"
-                    onchange="changeLanguage(this.value); window.location.reload()"
-                    id="languageSelector"
-                  >
-                    <option data-translate="option_ru" value="ru">
-                      Русский
-                    </option>
-                    <option data-translate="option_en" value="en">
-                      English
-                    </option>
-                    <option data-translate="option_uz" value="uz">
-                      O'zbekcha
-                    </option>
+                  <select id="languageSelector">
+                    <option data-translate="option_ru" value="ru">Русский</option>
+                    <option data-translate="option_en" value="en">English</option>
+                    <option data-translate="option_uz" value="uz">O'zbekcha</option>
+                    <option data-translate="option_zh" value="zh">中文</option>
                   </select>
                 </div>
                 <!-- Mobile Menu -->
@@ -228,14 +222,11 @@
                             >
                           </li>
                         </ul>
-                        <select
-                          onchange="changeLanguage(this.value); window.location.reload()"
-                          id="languageSelector"
-                          class="languageSelector"
-                        >
+                        <select id="languageSelector" class="languageSelector">
                           <option class="bg-black" value="uz">O'zbekcha</option>
                           <option class="bg-black" value="ru">Русский</option>
                           <option class="bg-black" value="en">English</option>
+                          <option class="bg-black" value="zh">中文</option>
                         </select>
                       </nav>
                       <div class="action-bar">
