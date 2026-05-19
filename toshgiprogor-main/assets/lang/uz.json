@@ -30,9 +30,9 @@
   "followUs": "Bizni kuzatib boring",
   "allRights": "© 2025 TOSHGIPROGOR. Barcha huquqlar himoyalangan",
   "privacyPolicy": "Maxfiylik siyosati | Foydalanish shartlari",
-  "option_uz": "O'zbek",
-  "option_ru": "Ruscha",
-  "option_en": "Inglizcha",
+  "option_uz": "UZ",
+  "option_ru": "RU",
+  "option_en": "EN",
   "option_zh": "中文",
   "homeMainTitle": "Vaqt sinovidan o'tgan arxitektura",
   "homeMainText": "Toshgiprogor” AJ O‘zbekistondagi yetakchi loyiha instituti bo‘lib, zamon ruhi va jamiyat ehtiyojlarini aks ettiruvchi ma’muriy, turar-joy, ijtimoiy-madaniy ob’ektlar, tarixiy timsollar va zamonaviy makonlarni yaratishga ixtisoslashgan.",
@@ -236,5 +236,7 @@
   "aboutHistoryText": "Toshgiprogor 1937 yildan beri Toshkentning shaharsozlik va arxitektura sohasida yetakchi loyihalash instituti.",
   "page_not_found": "Sahifa topilmadi",
   "page_not_found_desc": "So'ralgan sahifa mavjud emas.",
-  "back_home": "Bosh sahifaga qaytish"
+  "back_home": "Bosh sahifaga qaytish",
+  "workHours": "Du-Ju: 09:00-18:00 (UTC+5)",
+  "openMap": "Xaritada ochish"
 }

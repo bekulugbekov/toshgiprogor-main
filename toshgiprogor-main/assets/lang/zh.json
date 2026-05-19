@@ -30,9 +30,9 @@
   "followUs": "关注我们",
   "allRights": "© 2025 TOSHGIPROGOR. 版权所有",
   "privacyPolicy": "隐私政策 | 使用条款",
-  "option_uz": "乌兹别克语",
-  "option_ru": "俄语",
-  "option_en": "英语",
+  "option_uz": "UZ",
+  "option_ru": "RU",
+  "option_en": "EN",
   "option_zh": "中文",
   "homeMainTitle": "经时间检验的建筑",
   "homeMainText": "塔什甘吉普罗格尔股份公司是乌兹别克斯坦领先的设计研究院，专注于行政建筑、住宅、社会文化设施、历史标志性建筑及现代空间的规划与设计，彰显时代精神，满足社会需求。",
@@ -236,5 +236,7 @@
   "aboutMainDescShort": "自1937年起领先的设计机构。",
   "page_not_found": "页面未找到",
   "page_not_found_desc": "所请求的页面不存在。",
-  "back_home": "返回首页"
+  "back_home": "返回首页",
+  "workHours": "周一至周五 09:00-18:00 (UTC+5)",
+  "openMap": "在地图中打开"
 }

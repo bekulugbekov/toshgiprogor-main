@@ -23,7 +23,19 @@ function detectLanguage() {
 function updateTranslations(translations) {
   document.querySelectorAll("[data-translate]").forEach(function (el) {
     var key = el.getAttribute("data-translate");
-    if (translations[key] !== undefined) {
+    if (translations[key] === undefined) return;
+    var tag = el.tagName;
+    if (tag === "INPUT" || tag === "TEXTAREA") {
+      // Input/textarea uchun textContent ko'rinmaydi — placeholder yoki
+      // (submit/button uchun) value o'rnatiladi. Shu sabab forma
+      // maydonlari (kontakt, hamkorlik) tarjima qilinmay qolardi.
+      var t = el.type;
+      if (t === "submit" || t === "button" || t === "reset") {
+        el.value = translations[key];
+      } else {
+        el.setAttribute("placeholder", translations[key]);
+      }
+    } else {
       el.textContent = translations[key];
     }
   });
@@ -41,6 +53,12 @@ function updateTranslations(translations) {
       el.setAttribute("title", translations[key]);
     }
   });
+
+  // niceSelect (main.js: $("select").niceSelect()) til tanlagich KO'RINISHINI
+  // o'zi yangilamaydi — til o'zgarsa ham eski til ko'rinib turadi. Qayta quramiz.
+  if (window.jQuery && window.jQuery.fn && window.jQuery.fn.niceSelect) {
+    window.jQuery("#languageSelector").niceSelect("update");
+  }
 
   document.documentElement.removeAttribute("data-pending");
 

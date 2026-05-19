@@ -3,7 +3,9 @@
     "allow": [
       "Bash(sed -n '1,40p' api/telegram.php)",
       "Bash(sed -n '1,50p' assets/js/telegram-blog-checker.js)",
-      "Bash(sed -n '1,40p' assets/js/blogs.js)"
+      "Bash(sed -n '1,40p' assets/js/blogs.js)",
+      "Bash(export PYTHONUTF8=1)",
+      "Bash(python -c ' *)"
     ]
   }
 }

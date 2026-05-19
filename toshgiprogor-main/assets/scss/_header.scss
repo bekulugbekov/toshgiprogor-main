@@ -30,24 +30,23 @@
 .main-menu {
 	ul {
 		line-height: 1;
-		white-space: nowrap;
+		white-space: nowrap;   /* 7 band (E6 +Hamkorlik) bir qatorda qolsin */
 
 		>li {
 			display: inline-block;
 			line-height: 1;
-			margin: 0 13px;
+			margin: 0 12px;     /* asl 20px — 7 band uzun tillarda sig'masdi */
 			position: relative;
 
 			>a {
 				display: inline-block;
-				font-size: 14px;
+				font-size: 14px;   /* asl 15px */
 				font-weight: 400;
 				text-transform: capitalize;
 				line-height: 1;
 				padding: 40px 0;
-				white-space: nowrap;
-				overflow: hidden;	
-				color: $body_text;			
+				overflow: hidden;
+				color: $body_text;
 			}
 
 			&:hover {				

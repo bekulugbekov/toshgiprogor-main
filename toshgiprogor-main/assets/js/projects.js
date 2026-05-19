@@ -70,8 +70,14 @@ function initSlider() {
 // Loyiha tafsilotlarini modalga yuklash
 function renderProjectDetailsToModal(project, language) {
   const modalContainer = document.getElementById("modal-project-container");
+  // Hygraph 'Projects' modelида titleZh maydoni YO'Q. zh tanlanganда
+  // inglizchaga tushamiz (xitoy mehmoni uchun o'zbekchadan ko'ra mos).
+  // Haqiqiy xitoycha nomlar uchun: egasi Hygraph CMS 'Projects' modeliga
+  // titleZh maydonini qo'shishi va shu so'rovga titleZh ni kiritish kerak.
   const title =
-    language === "en"
+    language === "zh"
+      ? project.titleZh || project.titleEn
+      : language === "en"
       ? project.titleEn
       : language === "ru"
       ? project.titleRu
@@ -226,7 +232,9 @@ function renderCategories(categories) {
   }
 
   const title =
-    language === "en"
+    language === "zh"
+      ? "全部"
+      : language === "en"
       ? "Show All"
       : language === "ru"
       ? "Показать все"
@@ -240,7 +248,9 @@ function renderCategories(categories) {
 
   categories.forEach(({ node }) => {
     const title =
-      language === "en"
+      language === "zh"
+        ? node.titleZh || node.titleEn
+        : language === "en"
         ? node.titleEn
         : language === "ru"
         ? node.titleRu
@@ -333,7 +343,9 @@ function renderProjects(projects, isHomePage = false) {
 
   if (projects.length === 0) {
     const noProjects =
-      language === "en"
+      language === "zh"
+        ? "此分类暂无项目。"
+        : language === "en"
         ? "No projects available in this category."
         : language === "ru"
         ? "В этой категории нет доступных проектов"
@@ -354,7 +366,9 @@ function renderProjects(projects, isHomePage = false) {
   projectWrapper.innerHTML = visibleProjects
     .map((project) => {
       const title =
-        language === "en"
+        language === "zh"
+          ? project.titleZh || project.titleEn
+          : language === "en"
           ? project.titleEn
           : language === "ru"
           ? project.titleRu

@@ -30,9 +30,9 @@
   "followUs": "Follow Us",
   "allRights": "© 2025 TOSHGIPROGOR. All Rights Reserved",
   "privacyPolicy": "Privacy Policy | Terms & Conditions",
-  "option_uz": "Uzbek",
-  "option_ru": "Russian",
-  "option_en": "English",
+  "option_uz": "UZ",
+  "option_ru": "RU",
+  "option_en": "EN",
   "option_zh": "中文",
   "homeMainTitle": "Architecture tested by time",
   "homeMainText": "Tashgiprogor JSC is a leading design institute in Uzbekistan, specializing in the creation of administrative, residential, socio-cultural facilities, historical symbols, and modern spaces that reflect the spirit of the times and the needs of society.",
@@ -236,5 +236,7 @@
   "aboutMainDescShort": "Leading design institute since 1937.",
   "page_not_found": "Page not found",
   "page_not_found_desc": "The requested page does not exist.",
-  "back_home": "Return to home"
+  "back_home": "Return to home",
+  "workHours": "Mon-Fri: 09:00-18:00 (UTC+5)",
+  "openMap": "Open on map"
 }
