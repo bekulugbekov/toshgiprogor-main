@@ -28,6 +28,20 @@ function updateTranslations(translations) {
     }
   });
 
+  document.querySelectorAll("[data-translate-aria-label]").forEach(function (el) {
+    var key = el.getAttribute("data-translate-aria-label");
+    if (translations[key] !== undefined) {
+      el.setAttribute("aria-label", translations[key]);
+    }
+  });
+
+  document.querySelectorAll("[data-translate-title]").forEach(function (el) {
+    var key = el.getAttribute("data-translate-title");
+    if (translations[key] !== undefined) {
+      el.setAttribute("title", translations[key]);
+    }
+  });
+
   document.documentElement.removeAttribute("data-pending");
 
   document.dispatchEvent(

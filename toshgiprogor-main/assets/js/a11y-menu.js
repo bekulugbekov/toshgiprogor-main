@@ -211,8 +211,10 @@
       <button
         id="a11y-toggle"
         class="a11y-toggle"
-        aria-label="Ochish"
-        title="Moslashuvchanlik"
+        aria-label="Доступность"
+        data-translate-aria-label="a11y_open_aria"
+        title="Доступность"
+        data-translate-title="a11y_open_title"
         aria-expanded="false"
         aria-controls="a11y-panel"
       >

@@ -159,7 +159,6 @@
   "a11y_brightness_desc": "Increase or decrease site brightness",
   "a11y_reset": "Reset all settings",
   "a11y_focus_disable": "Disable focus mode",
-
   "cooperation": "International Cooperation",
   "coopPageTitle": "International Cooperation — Tashgiprogor JSC",
   "coopHeroTitle": "International Cooperation",
@@ -177,7 +176,6 @@
   "coopService5Desc": "Representing the project with construction authorities, municipal bodies, and land management agencies.",
   "coopService6Title": "Cost Estimation Documentation",
   "coopService6Desc": "Preparing full cost estimate documentation in accordance with Uzbekistan's state normative standards.",
-
   "coopTrustTitle": "Our Advantages",
   "coopTrustYearLabel": "Founded",
   "coopTrustYearValue": "1937",
@@ -189,7 +187,6 @@
   "coopTrustLicenseNote": "Full adherence to ShNK building codes and national technical regulations",
   "coopTrustGovLabel": "Government projects",
   "coopTrustGovNote": "Designer of landmark state facilities across Uzbekistan",
-
   "coopContactTitle": "Contact Us",
   "coopContactDesc": "Reach us through any of the channels below. Business hours: Mon–Fri, 09:00–18:00 (UTC+5).",
   "coopWechatLabel": "WeChat",
@@ -197,7 +194,6 @@
   "coopWhatsappLabel": "WhatsApp",
   "coopTimezoneNote": "Tashkent UTC+5 (Beijing UTC+8: Tashkent is 3 hours behind)",
   "coopAddressZh": "Uzbekistan, 100021, Tashkent, Shaykhantakhur district, Navoi Ave. 40",
-
   "coopInquiryTitle": "Partnership Inquiry",
   "coopInquiryName": "Company Name",
   "coopInquiryContact": "Contact Person",
@@ -209,7 +205,6 @@
   "coopInquirySubmit": "Submit Enquiry",
   "coopInquirySuccess": "Your enquiry has been submitted! We will reply within 1–2 business days.",
   "coopInquiryError": "Submission failed. Please try again later or email us directly.",
-
   "privacyPolicyLink": "Privacy Policy",
   "privacyPageTitle": "Privacy Policy — Tashgiprogor JSC",
   "privacyHeroTitle": "Privacy Policy",
@@ -225,8 +220,21 @@
   "privacyRightsText": "You may request access to, correction of, or deletion of your personal data at any time by contacting us using the details below.",
   "privacyContactTitle": "5. Contact",
   "privacyContactText": "For any privacy-related questions, email us at: info@tashgiprogor.uz",
+  "privacyAnalyticsTitle": "6. Analytics",
+  "privacyAnalyticsText": "This site uses non-Google analytics tools: Umami (cookie-free, no personal data collected) and Baidu Tongji 百度统计 (for users in China, uses cookies). Data is used solely to improve the website. You may opt out by blocking analytics scripts in your browser settings.",
   "privacyGoverningLaw": "This policy is governed by the laws of the Republic of Uzbekistan.",
-
   "yourCompany": "Company name",
-  "consentAgree": "I agree to the"
+  "consentAgree": "I agree to the",
+  "skip_to_content": "Skip to main content",
+  "a11y_open_aria": "Open accessibility menu",
+  "a11y_open_title": "Accessibility",
+  "successMessage": "Your message has been sent",
+  "servicesMainText": "We provide comprehensive architectural and urban planning services.",
+  "aboutMainTitle": "About Us",
+  "aboutSecondTitle": "Toshgiprogor History",
+  "aboutHistoryText": "Toshgiprogor has been Tashkent leading design institute for urban planning since 1937.",
+  "aboutMainDescShort": "Leading design institute since 1937.",
+  "page_not_found": "Page not found",
+  "page_not_found_desc": "The requested page does not exist.",
+  "back_home": "Return to home"
 }

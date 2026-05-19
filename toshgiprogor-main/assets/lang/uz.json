@@ -161,7 +161,6 @@
   "a11y_brightness_desc": "Sayt yorug'ligini oshiring va kamaytiring",
   "a11y_reset": "Barcha sozlamalarni tiklash",
   "a11y_focus_disable": "Diqqatni jamlash rejimini o'chirish",
-
   "cooperation": "Hamkorlik",
   "coopPageTitle": "Xalqaro hamkorlik — TOSHGIPROGOR AJ",
   "coopHeroTitle": "Xalqaro hamkorlik",
@@ -179,7 +178,6 @@
   "coopService5Desc": "Qurilish organlari, munitsipalitet va yer xizmatlari bilan loyiha manfaatlarini himoya qilish.",
   "coopService6Title": "Smeta hujjatlari",
   "coopService6Desc": "O'zbekiston davlat me'yorlari asosida to'liq loyiha-smeta hujjatlarini tayyorlash.",
-
   "coopTrustTitle": "Bizning ustunliklarimiz",
   "coopTrustYearLabel": "Tashkil etilgan yil",
   "coopTrustYearValue": "1937-yil",
@@ -191,7 +189,6 @@
   "coopTrustLicenseNote": "ШНК qurilish normalari va milliy texnik reglamentlarga to'liq rioya",
   "coopTrustGovLabel": "Davlat ob'ektlari",
   "coopTrustGovNote": "O'zbekistondagi bir qator muhim davlat ob'ektlarining loyihachisi",
-
   "coopContactTitle": "Biz bilan bog'laning",
   "coopContactDesc": "Quyidagi kanallar orqali biz bilan bog'laning. Ish vaqti: Du–Ju, 09:00–18:00 (UTC+5).",
   "coopWechatLabel": "WeChat",
@@ -199,7 +196,6 @@
   "coopWhatsappLabel": "WhatsApp",
   "coopTimezoneNote": "Toshkent UTC+5 (Pekin UTC+8 dan 3 soat orqada)",
   "coopAddressZh": "O'zbekiston, 100021, Toshkent, Shayxontohur tumani, Navoiy ko'chasi, 40",
-
   "coopInquiryTitle": "Hamkorlik so'rovi",
   "coopInquiryName": "Kompaniya nomi",
   "coopInquiryContact": "Aloqa shaxsi",
@@ -211,7 +207,6 @@
   "coopInquirySubmit": "So'rov yuborish",
   "coopInquirySuccess": "So'rovingiz yuborildi! Biz 1–2 ish kuni ichida javob beramiz.",
   "coopInquiryError": "Yuborishda xato yuz berdi. Keyinroq urinib ko'ring yoki to'g'ridan-to'g'ri elektron pochta orqali yozing.",
-
   "privacyPolicyLink": "Maxfiylik siyosati",
   "privacyPageTitle": "Maxfiylik siyosati — TOSHGIPROGOR AJ",
   "privacyHeroTitle": "Maxfiylik siyosati",
@@ -227,8 +222,19 @@
   "privacyRightsText": "Istalgan vaqtda shaxsiy ma'lumotlaringizga kirish, ularni to'g'irlash yoki o'chirish talabini qo'yishingiz mumkin. Buning uchun quyidagi aloqa ma'lumotlari orqali murojaat qiling.",
   "privacyContactTitle": "5. Aloqa",
   "privacyContactText": "Maxfiylik siyosatiga oid savollar uchun elektron pochta orqali murojaat qiling: info@tashgiprogor.uz",
+  "privacyAnalyticsTitle": "6. Tahlil vositalari",
+  "privacyAnalyticsText": "Sayt Google bog'liq bo'lmagan tahlil vositalaridan foydalanadi: Umami (cookie'siz, shaxsiy ma'lumot to'planmaydi) va Baidu Tongji 百度统计 (Xitoy foydalanuvchilari uchun, cookie ishlatadi). Ma'lumotlar faqat saytni yaxshilash maqsadida ishlatiladi. Brauzer sozlamalarida tahlil skriptlarini bloklash orqali ma'lumot yig'ilishini to'xtatishingiz mumkin.",
   "privacyGoverningLaw": "Ushbu siyosat O'zbekiston Respublikasi qonunchiligiga muvofiq tartibga solinadi.",
-
   "yourCompany": "Kompaniya nomi",
-  "consentAgree": "Roziman:"
+  "consentAgree": "Roziman:",
+  "skip_to_content": "Asosiy kontentga o'tish",
+  "a11y_open_aria": "Maxsus imkoniyatlar menyusini ochish",
+  "a11y_open_title": "Maxsus imkoniyatlar",
+  "successMessage": "Xabaringiz yuborildi",
+  "aboutMainTitle": "Biz haqimizda",
+  "aboutSecondTitle": "Toshgiprogor tarixi",
+  "aboutHistoryText": "Toshgiprogor 1937 yildan beri Toshkentning shaharsozlik va arxitektura sohasida yetakchi loyihalash instituti.",
+  "page_not_found": "Sahifa topilmadi",
+  "page_not_found_desc": "So'ralgan sahifa mavjud emas.",
+  "back_home": "Bosh sahifaga qaytish"
 }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=0"
+      content="width=device-width, initial-scale=1.0"
     />
 
     <title>TOSHGIPROGOR</title>
@@ -54,6 +54,7 @@
   </head>
 
   <body data-page="home">
+    <a href="#smooth-content" class="skip-link" data-translate="skip_to_content">Перейти к содержимому</a>
     <!-- Pre-Loader -->
     <div id="loader"></div>
 
@@ -75,8 +76,10 @@
       <button
         id="a11y-toggle"
         class="a11y-toggle"
-        aria-label="Ochish"
-        title="Moslashuvchanlik"
+        aria-label="Доступность"
+        data-translate-aria-label="a11y_open_aria"
+        title="Доступность"
+        data-translate-title="a11y_open_title"
         aria-expanded="false"
         aria-controls="a11y-panel"
       >
@@ -865,7 +868,7 @@
     </div> -->
       <div class="offcanvas-overlay"></div>
 
-      <div id="smooth-content">
+      <div id="smooth-content" role="main">
         <!-- Hero Area  -->
         <div class="hero-area">
           <div class="video-background">
@@ -1464,7 +1467,7 @@
               <div class="row gy-5">
                 <div class="col-lg-4 col-md-6 col-sm-12">
                   <a href="index.html" class="logo">
-                    <img src="assets/img/logo.png" alt="" />
+                    <img src="assets/img/logo.png" alt="TOSHGIPROGOR" />
                   </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -1639,6 +1642,8 @@
     <script src="assets/js/a11y-menu.js"></script>
     <!-- Snow Animation JavaScript -->
     <script src="assets/js/snow-animation.js"></script>
+    <!-- Analytics (E10) -->
+    <script src="assets/js/analytics.js"></script>
   </body>
 </html>
 

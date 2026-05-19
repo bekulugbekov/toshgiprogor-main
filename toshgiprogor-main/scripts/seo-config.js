@@ -158,4 +158,36 @@ export const PAGES = {
       zh: '塔什甘吉普罗格尔股份公司——乌兹别克斯坦领先建筑设计机构的领导层与管理团队。',
     },
   },
+  cooperation: {
+    file: 'cooperation.html',
+    slug: 'cooperation.html',
+    title: {
+      ru: 'Сотрудничество с Китаем | ТАШГИПРОГОР',
+      en: 'China Cooperation | TOSHGIPROGOR',
+      uz: "Xitoy bilan hamkorlik | TOSHGIPROGOR",
+      zh: '中乌合作 | 塔什甘吉普罗格尔',
+    },
+    description: {
+      ru: 'Сотрудничество АО «Ташгипрогор» с китайскими компаниями в области градостроительства и проектирования.',
+      en: "TOSHGIPROGOR's cooperation with Chinese companies in urban planning and architectural design.",
+      uz: "TOSHGIPROGOR ASJ ning xitoy kompaniyalari bilan shaharsozlik va arxitektura loyihalash sohasidagi hamkorlik.",
+      zh: '塔什甘吉普罗格尔与中国企业在城市规划与建筑设计领域的合作。',
+    },
+  },
+  privacy: {
+    file: 'privacy.html',
+    slug: 'privacy.html',
+    title: {
+      ru: 'Политика конфиденциальности | ТАШГИПРОГОР',
+      en: 'Privacy Policy | TOSHGIPROGOR',
+      uz: "Maxfiylik siyosati | TOSHGIPROGOR",
+      zh: '隐私政策 | 塔什甘吉普罗格尔',
+    },
+    description: {
+      ru: 'Политика конфиденциальности АО «Ташгипрогор»: обработка и защита персональных данных.',
+      en: "TOSHGIPROGOR's privacy policy: personal data processing and protection.",
+      uz: "TOSHGIPROGOR ASJ ning maxfiylik siyosati: shaxsiy ma'lumotlarni qayta ishlash va himoya qilish.",
+      zh: '塔什甘吉普罗格尔股份公司隐私政策：个人数据的处理与保护。',
+    },
+  },
 };

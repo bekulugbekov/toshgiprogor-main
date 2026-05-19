@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=0"
+      content="width=device-width, initial-scale=1.0"
     />
 
     <title>Corporate Management</title>
@@ -54,15 +54,13 @@
   </head>
 
   <body>
+    <a href="#smooth-content" class="skip-link" data-translate="skip_to_content">Перейти к содержимому</a>
     <!-- Pre-Loader -->
     <div id="loader"></div>
 
     <!-- Mouse Cursor  -->
     <div class="mouseCursor cursor-outer"></div>
     <div class="mouseCursor cursor-inner"><span>Drag</span></div>
-
-    <!-- Message Modal -->
-    <div id="messageContainer" class="message-container"></div>
 
     <!-- Message Modal -->
     <div id="messageContainer" class="message-container"></div>
@@ -237,7 +235,7 @@
                               data-translate="contact"
                               class="has-arrow"
                               href="contact.html"
-                              >Контакт</
+                              >Контакт</a
                             >
                           </li>
                         </ul>
@@ -296,7 +294,7 @@
 
       <div class="offcanvas-overlay"></div>
 
-      <div id="smooth-content">
+      <div id="smooth-content" role="main">
         <!-- Hero Area  -->
         <div
           id="corporate-management_page"
@@ -372,7 +370,7 @@
               <div class="row gy-5">
                 <div class="col-lg-4 col-md-6 col-sm-12">
                   <a href="index.html" class="logo">
-                    <img src="assets/img/logo.png" alt="" />
+                    <img src="assets/img/logo.png" alt="TOSHGIPROGOR" />
                   </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -545,6 +543,8 @@
     <script src="assets/js/a11y-menu.js"></script>
     <!-- Snow Animation JavaScript -->
     <script src="assets/js/snow-animation.js"></script>
+    <!-- Analytics (E10) -->
+    <script src="assets/js/analytics.js"></script>
   </body>
 </html>
 

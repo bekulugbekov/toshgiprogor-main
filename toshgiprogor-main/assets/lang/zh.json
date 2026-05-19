@@ -159,7 +159,6 @@
   "a11y_brightness_desc": "增大或降低网站亮度",
   "a11y_reset": "重置所有设置",
   "a11y_focus_disable": "关闭焦点模式",
-
   "cooperation": "中外合作",
   "coopPageTitle": "中外合作 — 塔什甘吉普罗格尔股份公司",
   "coopHeroTitle": "中外合作",
@@ -177,7 +176,6 @@
   "coopService5Desc": "代表项目方与建设主管部门、市政机构及土地管理部门进行专业协调沟通。",
   "coopService6Title": "造价预算文件",
   "coopService6Desc": "依据乌兹别克斯坦国家定额标准编制完整的工程造价预算文件。",
-
   "coopTrustTitle": "我们的优势",
   "coopTrustYearLabel": "成立年份",
   "coopTrustYearValue": "1937年",
@@ -189,7 +187,6 @@
   "coopTrustLicenseNote": "严格遵守乌兹别克斯坦ShNK建筑规范及国家技术法规",
   "coopTrustGovLabel": "国家重点项目",
   "coopTrustGovNote": "承担乌兹别克斯坦多项国家级重点建筑项目",
-
   "coopContactTitle": "联系我们",
   "coopContactDesc": "欢迎通过以下方式与我们取得联系。工作时间：周一至周五 09:00–18:00（UTC+5，北京时间 UTC+8）。",
   "coopWechatLabel": "微信",
@@ -197,7 +194,6 @@
   "coopWhatsappLabel": "WhatsApp",
   "coopTimezoneNote": "塔什干时间 UTC+5（比北京时间早3小时）",
   "coopAddressZh": "乌兹别克斯坦，100021，塔什干市，沙赫汉塔胡尔区，纳沃伊大道40号",
-
   "coopInquiryTitle": "合作咨询",
   "coopInquiryName": "公司名称",
   "coopInquiryContact": "联系人姓名",
@@ -209,7 +205,6 @@
   "coopInquirySubmit": "提交咨询",
   "coopInquirySuccess": "您的咨询已成功提交！我们将在1–2个工作日内回复。",
   "coopInquiryError": "提交失败，请稍后再试或直接发送电子邮件。",
-
   "privacyPolicyLink": "隐私政策",
   "privacyPageTitle": "隐私政策 — 塔什甘吉普罗格尔股份公司",
   "privacyHeroTitle": "隐私政策",
@@ -225,8 +220,21 @@
   "privacyRightsText": "您有权随时要求查阅、更正或删除本公司所持有的您的个人信息。如需行使上述权利，请通过以下方式与我们联系。",
   "privacyContactTitle": "五、联系方式",
   "privacyContactText": "如对本隐私政策有任何疑问，请发送电子邮件至：info@tashgiprogor.uz",
+  "privacyAnalyticsTitle": "六、数据分析工具",
+  "privacyAnalyticsText": "本网站使用非谷歌分析工具：Umami（无Cookie，不收集个人数据）和百度统计（面向中国用户，使用Cookie）。数据仅用于改善网站体验。您可通过在浏览器设置中屏蔽分析脚本来拒绝数据收集。",
   "privacyGoverningLaw": "本隐私政策依据乌兹别克斯坦共和国相关法律制定。",
-
   "yourCompany": "公司名称",
-  "consentAgree": "我同意"
+  "consentAgree": "我同意",
+  "skip_to_content": "跳转到主要内容",
+  "a11y_open_aria": "打开无障碍菜单",
+  "a11y_open_title": "无障碍功能",
+  "successMessage": "您的消息已发送",
+  "servicesMainText": "我们提供全面的建筑设计和城市规划服务。",
+  "aboutMainTitle": "关于我们",
+  "aboutSecondTitle": "塔什甘吉普罗格尔历史",
+  "aboutHistoryText": "自1937年以来，塔什甘吉普罗格尔一直是塔什干城市规划与建筑设计领域的领先设计机构。",
+  "aboutMainDescShort": "自1937年起领先的设计机构。",
+  "page_not_found": "页面未找到",
+  "page_not_found_desc": "所请求的页面不存在。",
+  "back_home": "返回首页"
 }

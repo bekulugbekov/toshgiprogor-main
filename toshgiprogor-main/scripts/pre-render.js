@@ -279,4 +279,35 @@ Sitemap: ${SITE_URL}/sitemap.xml
 writeFileSync(resolve(DIST, 'robots.txt'), robots, 'utf8');
 console.log('[pre-render] robots.txt written');
 
+// ─── 404.html ─────────────────────────────────────────────────────────────────
+
+const src404 = resolve(ROOT, '404.html');
+if (existsSync(src404)) {
+  copyFileSync(src404, resolve(DIST, '404.html'));
+  for (const lang of Object.keys(LANGS)) {
+    if (lang === 'ru') continue;
+    const langDir = resolve(DIST, lang);
+    mkdirSync(langDir, { recursive: true });
+    copyFileSync(src404, resolve(langDir, '404.html'));
+  }
+  console.log('[pre-render] 404.html copied to all language dirs');
+}
+
+// ─── .htaccess for Apache 404 routing ─────────────────────────────────────────
+
+const htaccess = `# Custom 404 page
+ErrorDocument 404 /404.html
+
+# Pretty URLs for language subdirectories
+Options -Indexes
+
+# Force HTTPS (enable when SSL is configured)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+`;
+
+writeFileSync(resolve(DIST, '.htaccess'), htaccess, 'utf8');
+console.log('[pre-render] .htaccess written');
+
 console.log('[pre-render] E4 complete.');
