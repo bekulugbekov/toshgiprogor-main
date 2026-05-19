@@ -168,3 +168,25 @@
       }
 }
 
+/* Sub-sahifa hero banneri (about/services/... — fon rasmi main.js orqali).
+   Asl shablonда compiled style.css ichida edi, partialда yo'q edi — qaytarildi. */
+.all-hero-area {
+  height: 46vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
+  top: -100px;
+}
+.all-hero-area::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+

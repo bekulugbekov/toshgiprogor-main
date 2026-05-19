@@ -5,8 +5,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && node scripts/pre-render.js",
+    "css": "sass assets/scss/style.scss assets/css/style.css --no-source-map --style=compressed --quiet",
+    "css:watch": "sass --watch assets/scss/style.scss assets/css/style.css --no-source-map --quiet",
+    "dev": "npm run css && vite",
+    "build": "npm run css && vite build && node scripts/pre-render.js",
     "preview": "vite preview",
     "images": "node scripts/optimize-images.js",
     "seo": "node scripts/pre-render.js",

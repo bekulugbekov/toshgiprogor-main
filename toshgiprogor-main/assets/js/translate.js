@@ -88,5 +88,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // niceSelect (main.js: $("select").niceSelect()) original <select> ni yashirib,
+  // o'zgarishni jQuery 'change' trigger orqali yuboradi. Native addEventListener
+  // buni ushlamaydi — shu sabab jQuery delegatsiyasi qo'shamiz (mavjud bo'lsa).
+  if (window.jQuery) {
+    window.jQuery(document).on("change", "#languageSelector", function () {
+      changeLanguage(this.value);
+    });
+  }
+
   changeLanguage(lang);
 });

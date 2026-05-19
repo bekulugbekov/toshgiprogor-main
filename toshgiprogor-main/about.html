@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
@@ -40,12 +40,9 @@
     <!-- Odometer CSS -->
     <link href="assets/css/odometer.min.css" rel="stylesheet" />
     <!-- Style CSS -->
-    <link href="assets/scss/style.scss" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
     <!-- Accessibility Menu CSS -->
     <link href="assets/css/a11y-menu.css" rel="stylesheet" />
-    <!-- Snow Animation CSS -->
-    <link href="assets/css/snow-animation.css" rel="stylesheet" />
-
     <!-- jquery -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <!-- FOUC fix + lang init -->
@@ -446,10 +443,18 @@
               <div class="col-xl-6 col-lg-6">
                 <div class="about-img-wrap">
                   <div class="image-one wow fadeInUp" data-wow-delay=".2s">
-                    <img src="assets/img/about/1.png" alt="" />
+                    <picture>
+                      <source srcset="assets/img/about/1.avif" type="image/avif">
+                      <source srcset="assets/img/about/1.webp" type="image/webp">
+                      <img src="assets/img/about/1.png" alt="" loading="lazy" width="560" height="560">
+                    </picture>
                   </div>
                   <div class="image-two wow fadeInUp" data-wow-delay=".4s">
-                    <img src="assets/img/about/2.png" alt="" />
+                    <picture>
+                      <source srcset="assets/img/about/2.avif" type="image/avif">
+                      <source srcset="assets/img/about/2.webp" type="image/webp">
+                      <img src="assets/img/about/2.png" alt="" loading="lazy" width="320" height="320">
+                    </picture>
                   </div>
                 </div>
               </div>
@@ -730,7 +735,11 @@
                   >
                     <div class="single-team-item">
                       <div class="team-img">
-                        <img src="assets/img/uchinchi.jpg" alt="" />
+                        <picture>
+                          <source srcset="assets/img/uchinchi.avif" type="image/avif">
+                          <source srcset="assets/img/uchinchi.webp" type="image/webp">
+                          <img src="assets/img/uchinchi.jpg" alt="" loading="lazy" width="400" height="500">
+                        </picture>
                       </div>
                       <div class="team-info">
                         <h5>Рахимов Шухратжон Уринбаевич</h5>
@@ -931,7 +940,11 @@
                 <div class="single-project-wrapper">
                   <div class="single-team-item">
                     <div class="team-img">
-                      <img src="assets/img/to'rtinchi.jpg" alt="" />
+                      <picture>
+                        <source srcset="assets/img/to'rtinchi.avif" type="image/avif">
+                        <source srcset="assets/img/to'rtinchi.webp" type="image/webp">
+                        <img src="assets/img/to'rtinchi.jpg" alt="" loading="lazy" width="400" height="500">
+                      </picture>
                     </div>
                     <div class="team-info">
                       <h5>Ражабов Фарход Собирович</h5>
@@ -942,7 +955,11 @@
                 <div class="single-project-wrapper">
                   <div class="single-team-item">
                     <div class="team-img">
-                      <img src="assets/img/beshinchi.jpg" alt="" />
+                      <picture>
+                        <source srcset="assets/img/beshinchi.avif" type="image/avif">
+                        <source srcset="assets/img/beshinchi.webp" type="image/webp">
+                        <img src="assets/img/beshinchi.jpg" alt="" loading="lazy" width="400" height="500">
+                      </picture>
                     </div>
                     <div class="team-info">
                       <h5>Сорокина Елена Владимировна</h5>
@@ -1129,8 +1146,6 @@
     <script src="assets/js/projects.js"></script>
     <!-- Accessibility Menu JavaScript -->
     <script src="assets/js/a11y-menu.js"></script>
-    <!-- Snow Animation JavaScript -->
-    <script src="assets/js/snow-animation.js"></script>
     <!-- Analytics (E10) -->
     <script src="assets/js/analytics.js"></script>
   </body>
