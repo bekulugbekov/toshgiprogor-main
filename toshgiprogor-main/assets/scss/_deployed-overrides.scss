@@ -1,0 +1,58 @@
+/* =============================================================================
+   ASL DEPLOY QILINGAN style.css'dagi, SCSS PARTIALLARGA TUSHMAGAN qoidalar.
+
+   Asl saytда (git adc1e98 assets/css/style.css) compiled CSS qo'lda
+   tahrirlangan, lekin _header.scss / _common.scss partiallariga
+   ko'chirilmagan. E1 inline-dump style.scss'ni buzганда bu farqlar
+   yo'qolган. Bu fayl asl ko'rinishni AYNAN tiklaydi.
+
+   Eng oxirida import qilinadi → partiallar ustidan yozadi.
+   ============================================================================= */
+
+/* --- Header: shaffof, oq logo/menyu (hero/banner ustida turadi) --------------
+   Asl: .header-area .navigation/.container { background: transparent }
+        .header-area .logo / .main-menu a   { color: #fff }
+   Partial esa #fff fon + to'q matn deydi → video/banner ko'rinmay qolardi. */
+.header-area .navigation {
+  background: transparent;
+}
+.header-area .container {
+  background: transparent;
+}
+.header-area .logo {
+  color: #fff;
+}
+.main-menu ul > li > a {
+  color: #fff;
+}
+
+/* Scroll qilinганда (main.js .header-sticky qo'shadi) — oq fon, to'q matn,
+   shunda oq kontent ustida o'qiladi. */
+.header-sticky {
+  background-color: #fff;
+}
+.header-sticky .logo {
+  color: #000;
+}
+.header-sticky .main-menu ul > li > a {
+  color: #868686;
+}
+
+/* --- Sub-sahifa hero (.all-hero-area) — sarlavha + breadcrumb OQ -------------
+   "Biz bilan bog'laning", "Xizmatlarimiz" va breadcrumb qorong'i banner
+   ustида qora bo'lib ko'rinmay qolardi. Markup h1 ga o'tган (E4 SEO),
+   shu sabab h1 ham qamraladi. */
+.section-hero-title h1,
+.section-hero-title h2,
+.section-hero-title.text-up h1,
+.section-hero-title.text-up h2,
+.all-hero-area .section-title h1,
+.all-hero-area .section-title h2 {
+  color: #fff;
+}
+.all-hero-area .breadcrumb-item,
+.all-hero-area .breadcrumb-item a,
+.all-hero-area .breadcrumb-item.active,
+.breadcrumb-item a {
+  color: #fff;
+}

@@ -5,7 +5,9 @@
       "Bash(sed -n '1,50p' assets/js/telegram-blog-checker.js)",
       "Bash(sed -n '1,40p' assets/js/blogs.js)",
       "Bash(export PYTHONUTF8=1)",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(sed -n '2762,2775p' orig_css.css)",
+      "Bash(sed -n '2792,2802p' orig_css.css)"
     ]
   }
 }

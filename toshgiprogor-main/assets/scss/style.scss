@@ -42,3 +42,6 @@
 
 /* E7 — CJK tipografika (:lang(zh) qoidalari) */
 @import 'cjk';
+
+/* Asl deploy CSS'dagi, partialга tushmagan qoidalar — ENG OXIRIDA */
+@import 'deployed-overrides';
