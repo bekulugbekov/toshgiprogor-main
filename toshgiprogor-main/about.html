@@ -135,13 +135,11 @@
                       </li>
                     </ul>
                   </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 d-none d-lg-block text-lg-end">
                   <select id="languageSelector">
-                    <option data-translate="option_ru" value="ru">RU</option>
-                    <option data-translate="option_en" value="en">EN</option>
-                    <option data-translate="option_uz" value="uz">UZ</option>
-                    <option data-translate="option_zh" value="zh">中文</option>
+                    <option value="uz">UZ</option>
+                    <option value="ru">RU</option>
+                    <option value="en">EN</option>
+                    <option value="zh">中文</option>
                   </select>
                 </div>
                 <!-- Mobile Menu -->
@@ -327,31 +325,7 @@
 
       <div id="smooth-content" role="main">
         <!-- Breadcrumb Area  -->
-        <div id="service_page" class="all-hero-area" data-page="about-us">
-          <div class="container">
-            <div class="row align-items-center mb-50">
-              <div class="section-title text-up section-hero-title">
-                <h1 data-translate="aboutus">О нас</h1>
-              </div>
-              <div class="breadcrumb-area">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                      <a href="index.html" data-translate="home">Главная</a>
-                    </li>
-                    <li
-                      class="breadcrumb-item active"
-                      aria-current="page"
-                      data-translate="aboutus"
-                    >
-                      О нас
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="service_page" class="all-hero-area" data-page="about-us"></div>
 
         <!-- History Section  -->
 
@@ -690,16 +664,13 @@
         <!-- Team Section  -->
         <div id="team-2" class="team-section section-padding pb-70">
           <div class="container">
-            <div class="row">
-              <div class="col-xl-4 col-lg-4">
-                <div class="section-title">
-                  <div>
-                    <div class="section-title text-low">
-                      <h2 data-translate="teamAboutTitle">
-                        Лидерство - Исполнительная команда
-                      </h2>
-                    </div>
-                  </div>
+            <!-- Sarlavha — to'liq kenglik -->
+            <div class="row mb-4">
+              <div class="col-12">
+                <div class="section-title text-low">
+                  <h2 data-translate="teamAboutTitle">
+                    Лидерство - Исполнительная команда
+                  </h2>
                 </div>
                 <p data-translate="teamAboutDesc">
                   Объединенная общей целью и страстью к людям, наша проектная
@@ -707,69 +678,51 @@
                   командой Tashgiprogor.
                 </p>
               </div>
-              <div class="col-xl-2 col-lg-2"></div>
-              <div class="col-xl-6 col-lg-6">
-                <div class="row">
-                  <div
-                    class="col-xl-4 col-lg-4 col-md-4 col-sm-6 wow fadeInUp"
-                    data-wow-delay=".2s"
-                  >
-                    <div class="single-team-item">
-                      <div class="team-img">
-                        <img src="assets/img/team/1.png" alt="" />
-                      </div>
-                      <div class="team-info">
-                        <h5 data-translate="teamName1">
-                          Исламов Анвар Джамолитдинович
-                        </h5>
-                        <hr />
-                        <p data-translate="teamRole1">
-                          Руководитель АО "ТашГИПроГор"
-                        </p>
-                      </div>
+            </div>
+            <!-- Barcha xodimlar bir carousel ichida -->
+            <div class="row">
+              <div class="project-slider-2 owl-carousel">
+                <!-- Rahbariyat (yuqori 3 ta xodim) -->
+                <div class="single-project-wrapper">
+                  <div class="single-team-item">
+                    <div class="team-img">
+                      <img src="assets/img/team/1.png" alt="" />
                     </div>
-                  </div>
-                  <div
-                    class="col-xl-4 col-lg-4 col-md-4 col-sm-6 wow fadeInUp"
-                    data-wow-delay=".6s"
-                  >
-                    <div class="single-team-item">
-                      <div class="team-img">
-                        <picture>
-                          <source srcset="assets/img/uchinchi.avif" type="image/avif">
-                          <source srcset="assets/img/uchinchi.webp" type="image/webp">
-                          <img src="assets/img/uchinchi.jpg" alt="" loading="lazy" width="400" height="500">
-                        </picture>
-                      </div>
-                      <div class="team-info">
-                        <h5>Рахимов Шухратжон Уринбаевич</h5>
-                        <hr />
-                        <p>Главный инженер</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="col-xl-4 col-lg-4 col-md-4 col-sm-6 wow fadeInUp"
-                    data-wow-delay=".4s"
-                  >
-                    <div class="single-team-item">
-                      <div class="team-img">
-                        <img src="assets/img/team/2.png" alt="" />
-                      </div>
-                      <div class="team-info">
-                        <h5 data-translate="teamName2">
-                          Сейтасанов Эскендер Ленмарович
-                        </h5>
-                        <hr />
-                        <p data-translate="teamRole2">[Главный архитектор]</p>
-                      </div>
+                    <div class="team-info">
+                      <h5 data-translate="teamName1">Исламов Анвар Джамолитдинович</h5>
+                      <hr />
+                      <p data-translate="teamRole1">Руководитель АО "ТашГИПроГор"</p>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="project-slider-2 owl-carousel">
+                <div class="single-project-wrapper">
+                  <div class="single-team-item">
+                    <div class="team-img team-img-trim">
+                      <picture>
+                        <source srcset="assets/img/uchinchi.avif" type="image/avif">
+                        <source srcset="assets/img/uchinchi.webp" type="image/webp">
+                        <img src="assets/img/uchinchi.jpg" alt="" loading="lazy" width="400" height="500">
+                      </picture>
+                    </div>
+                    <div class="team-info">
+                      <h5>Рахимов Шухратжон Уринбаевич</h5>
+                      <hr />
+                      <p data-translate="teamRoleChiefEngineer">Главный инженер</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-project-wrapper">
+                  <div class="single-team-item">
+                    <div class="team-img">
+                      <img src="assets/img/team/2.png" alt="" />
+                    </div>
+                    <div class="team-info">
+                      <h5 data-translate="teamName2">Сейтасанов Эскендер Ленмарович</h5>
+                      <hr />
+                      <p data-translate="teamRole2">[Главный архитектор]</p>
+                    </div>
+                  </div>
+                </div>
                 <div class="single-project-wrapper">
                   <div class="single-team-item">
                     <div class="team-img">

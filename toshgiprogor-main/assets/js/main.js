@@ -289,14 +289,10 @@
   $(".project-slider-2").owlCarousel({
     items: 1,
     dots: false,
-    nav: true,
+    nav: false,
     loop: true,
     autoplay: true,
     margin: 15,
-    navText: [
-      "<i class='las la-arrow-left'></i>",
-      "<i class='las la-arrow-right'></i>",
-    ],
     responsive: {
       0: {
         items: 1,
@@ -310,15 +306,31 @@
       },
       768: {
         items: 3,
-        nav: true,
+        nav: false,
         dots: false,
       },
       1100: {
         items: 4,
-        nav: true,
+        nav: false,
         dots: false,
       },
     },
+  });
+
+  // Team carousel: barcha h5 lar (klon ham kiritib) bir xil balandlikka tenglashtirish
+  function equalizeTeamH5() {
+    var $items = $("#team-2 .single-team-item .team-info h5");
+    $items.css("height", "auto"); // avval reset
+    var maxH = 0;
+    $items.each(function () {
+      var h = $(this).outerHeight(true);
+      if (h > maxH) maxH = h;
+    });
+    $items.css("height", maxH + "px");
+  }
+
+  $(".project-slider-2").on("initialized.owl.carousel refreshed.owl.carousel", function () {
+    setTimeout(equalizeTeamH5, 50);
   });
 
   // Client Slider

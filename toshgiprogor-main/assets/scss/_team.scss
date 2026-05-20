@@ -17,17 +17,20 @@
 #team-2{
     .single-team-item {
         margin-bottom: 50px;
-        .team-info{
-            display: block;
+
+        .team-info {
+            display: block !important;
         }
         .team-info h5 {
             font-size: 24px;
+            line-height: 1.4;
             margin-top: 15px;
+            /* balandlik JS tomonidan tenglashtiriladi */
         }
         .team-info hr {
             margin: 8px 0;
         }
-        .team-info p {    
+        .team-info p {
             margin: 0;
         }
         .social-icon {
@@ -44,9 +47,18 @@
         }
 
         .team-img img {
-            filter: grayscale(1);
+            filter: none;
         }
-        
+
+        /* Rahimov: ismi bir qator uzunroq → rasmni pastidan shu miqdorcha qisqartirish */
+        .team-img.team-img-trim {
+            overflow: hidden;
+            img, picture img {
+                display: block;
+                margin-bottom: -4px; /* pastidan 4px kesib tashlaydi */
+            }
+        }
+
     }
     
     .team-section.pb-60{
