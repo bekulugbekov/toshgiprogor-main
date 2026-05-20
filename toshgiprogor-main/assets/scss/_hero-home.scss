@@ -17,6 +17,9 @@
 }
 .languageSelector > .current {
   color: #171717 !important;
+  line-height: 1 !important;
+  position: relative !important;
+  top: 3px !important;             /* CJK vizual markazi uchun biroz pastga */
 }
 .languageSelector > .list > .selected {
   color: #fff !important;
@@ -136,6 +139,23 @@
 .hero-content h2,
 .hero-content p {
   color: white !important;
+}
+
+/* SplitText word-div lar flex ustunida yoyilib ketmasin + o'lcham */
+.hero-content .section-title h1 {
+  word-spacing: normal !important;
+  text-align: right !important;
+  width: 100% !important;
+  font-size: 52px !important;
+  line-height: 62px !important;
+  @media (max-width: 1199px) { font-size: 44px !important; line-height: 54px !important; }
+  @media (max-width: 767px)  { font-size: 30px !important; line-height: 40px !important; }
+}
+
+/* .flexEnd ichidagi h1 flex-item sifatida ham to'liq kenglikda qolsin */
+.flexEnd h1 {
+  align-self: stretch !important;
+  max-width: 100%;
 }
 
 /* Logo kvadrat qolishi uchun (img{max-width:100%} balandlikni qotirib

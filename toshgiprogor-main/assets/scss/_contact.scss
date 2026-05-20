@@ -20,7 +20,7 @@
         margin-top: 50px;
     }
 
-    .subimit-form-wrap input,
+    .subimit-form-wrap input:not([type="checkbox"]),
     .subimit-form-wrap textarea {
         border: none;
         border-bottom: 1px solid #ddd;
@@ -104,6 +104,109 @@
         width: 100%;
         height: 250px;
         object-fit: cover;
+    }
+}
+
+/* ---- Xarita kartasi (static-location-card) ---- */
+.static-location-card {
+    border: 1px solid #ddd;
+}
+
+.slc-map-visual {
+    position: relative;
+    width: 100%;
+}
+
+.slc-map-bg {
+    width: 100%;
+    display: block;
+}
+
+.slc-coords {
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+    font-size: 12px;
+    color: #777;
+}
+
+.slc-info {
+    padding: 20px 24px;
+}
+
+.slc-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+
+    span {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #444;
+    }
+}
+
+.slc-icon {
+    font-size: 20px;
+    color: #555;
+    margin-top: 1px;
+    flex-shrink: 0;
+}
+
+.slc-actions {
+    margin-top: 8px;
+    padding-top: 14px;
+    border-top: 1px solid #eee;
+}
+
+.slc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333 !important;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    i { font-size: 16px; }
+
+    &:hover { color: #C5853A !important; }
+}
+
+/* ---- Rozilik chekboks — o'ng tomonda, yirikroq ---- */
+.consent-wrap {
+    display: flex;
+    justify-content: flex-end;   /* o'ng tomonda */
+    margin-bottom: 24px;
+}
+
+.consent-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #444;
+
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        cursor: pointer;
+        accent-color: #333;
+        border: 1px solid #aaa;
+        /* _common.scss width:100% ni bekor qilish */
+        flex-shrink: 0;
+    }
+
+    a.consent-link {
+        font-size: 14px;
+        font-weight: 600;
+        color: #333 !important;
+        text-decoration: underline;
+        &:hover { color: #C5853A !important; }
     }
 }
 

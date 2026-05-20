@@ -150,7 +150,8 @@ async function fetchProjectDetailsForModal(slug, language) {
     });
 
     const result = await response.json();
-    const project = result.data.project[0];
+    // Hygraph project(where:{slug:...}) bitta object qaytaradi (array emas)
+    const project = result.data.project;
 
     if (project) {
       renderProjectDetailsToModal(project, language);
@@ -425,7 +426,8 @@ function renderProjects(projects, isHomePage = false) {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const slug = e.target.closest(".project-link").getAttribute("data-slug");
-      fetchProjectDetailsForModal(slug);
+      const lang = localStorage.getItem("selectedLanguage") || "ru";
+      fetchProjectDetailsForModal(slug, lang);
     });
   });
 }
@@ -444,3 +446,20 @@ function initializePage() {
 }
 
 initializePage();
+
+// translate.js har til o'zgarishida "languageChanged" CustomEvent yuboradi.
+// Dinamik render qilingan loyiha sarlavhalari va kategoriya tugmalarini
+// qayta chizamiz — shunda EN/RU/UZ/ZH tanlanganda karta matnlari yangilanadi.
+document.addEventListener("languageChanged", function () {
+  const page = document.body.getAttribute("data-page");
+
+  // Kategoriya tugmalarini qayta render (til nomini o'zgartiradi)
+  fetchCategory();
+
+  // Loyiha kartalarini qayta render
+  if (page === "projects") {
+    fetchProjects();
+  } else if (page === "home" || page === "about-us") {
+    fetchProjects(null, true);
+  }
+});

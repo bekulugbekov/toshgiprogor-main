@@ -14,12 +14,13 @@
 		height: 100px;
 		display: flex;
 		align-items: center;
-		text-transform: uppercase;			
+		text-transform: uppercase;
 		font-family: $grotesk;
-		font-size: 26px;
-		font-weight: 500;
-		letter-spacing: 2px;
-		color: $theme_color;		
+		font-size: 20px;      /* col-xl-2 (181px) ga sig'shi uchun 26→20 */
+		font-weight: 600;
+		letter-spacing: 1px;
+		color: $theme_color;
+		white-space: nowrap;  /* hech qachon qator bo'lmasin */
 	}
 
 }
@@ -27,15 +28,44 @@
 
 /* Menu Area  */
 
+/* Nav + language: birlashgan col-xl-10 ichida markazlash */
+.nav-lang-wrap {
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 100px;
+
+	.main-menu {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 5;
+	}
+
+	.nice-select {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+	}
+}
+
 .main-menu {
 	ul {
 		line-height: 1;
 		white-space: nowrap;   /* 7 band (E6 +Hamkorlik) bir qatorda qolsin */
+		text-align: center;    /* nav bandlarni gorizontal markazga */
 
 		>li {
 			display: inline-block;
 			line-height: 1;
-			margin: 0 12px;     /* asl 20px — 7 band uzun tillarda sig'masdi */
+			margin: 0 9px;      /* col-xl-8 bilan 7 ta nav band sig'adi */
 			position: relative;
 
 			>a {
@@ -188,6 +218,33 @@
 	padding: 20px;
 	z-index: 9999;
 	box-shadow: 0 13px 35px -12px rgba(35, 35, 35, .15);
+
+	/* Til tanlagich — qora fonga mos, bitta ko'rinsin */
+	.nice-select {
+		background: #1a1a1a;
+		border: 1px solid #444;
+		color: #fff;
+		width: 100%;
+		margin-top: 20px;
+
+		.current { color: #fff; line-height: 40px; }
+
+		&::after { border-color: #aaa; }
+
+		.list {
+			background: #1a1a1a;
+			border: 1px solid #444;
+			width: 100%;
+			z-index: 99999;
+
+			.option {
+				color: #ccc;
+				background: #1a1a1a;
+				&:hover, &.focus { color: #fff; background: #2d2d2d; }
+				&.selected       { color: #fff; background: #333; }
+			}
+		}
+	}
 
 	&.show {
 		right: 0px;

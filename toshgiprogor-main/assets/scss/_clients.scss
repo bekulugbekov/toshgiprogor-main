@@ -49,3 +49,62 @@
 .client-area .owl-dots {
     display: none;
 }
+
+/* ---------------------------------------------------------------
+   Partners logo ticker  (.feature_slider_wrap > .slider > .slide-track > .slide)
+   JS (slider.js) clones slides ×2 for seamless loop.
+   Animation: translateX(0→-50%) so we scroll through the original
+   set, then instantly reset — user sees uninterrupted motion.
+--------------------------------------------------------------- */
+.feature_slider_wrap {
+    overflow: hidden;
+    padding: 30px 0;
+    background: #fff;
+}
+
+.feature_slider_wrap .slider {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.feature_slider_wrap .slide-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 60px;
+    animation: infinite-scroll 25s linear infinite;
+    will-change: transform;
+}
+
+.feature_slider_wrap .slide {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 200px;
+    padding: 0 20px;
+}
+
+.feature_slider_wrap .slide img {
+    max-width: 200px;
+    max-height: 100px;
+    object-fit: contain;
+    filter: grayscale(0);
+    opacity: 1;
+    transition: opacity .3s, filter .3s;
+}
+
+.feature_slider_wrap .slide img:hover {
+    opacity: 1;
+    filter: grayscale(0);
+}
+
+/* Hover pauses the ticker */
+.feature_slider_wrap:hover .slide-track {
+    animation-play-state: paused;
+}
+
+@keyframes infinite-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}

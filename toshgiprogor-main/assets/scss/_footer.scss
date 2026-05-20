@@ -13,15 +13,22 @@
 		margin-top: 0;
 	}
     .logo {
-        height: 90px;
+        height: auto;
         display: flex;
         align-items: center;
-        padding-right: 30px;
+        padding: 20px 30px 20px 0;
         font-size: 26px;
         font-weight: 500;
         color: #fff;
         letter-spacing: 2px;
 		text-transform: uppercase;
+
+        img {
+            max-height: 220px;
+            max-width: 280px;
+            width: auto;
+            object-fit: contain;
+        }
     }
 	h5 {
 		font-size: 20px;
@@ -54,6 +61,38 @@
 		color: #eee;
 		font-size: 20px;
 		margin-right: 10px;
+	}
+
+	/* Ijtimoiy tarmoqlar — gorizontal qator, yaqin */
+	.social-area {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 10px;
+		align-items: center;
+		margin-top: 10px;
+
+		a {
+			display: inline-flex !important;  /* ul li a { display:block } ni bekor qilish */
+			align-items: center;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.1);
+			transition: background 0.25s;
+			padding: 8px;
+
+			svg {
+				display: block;
+				flex-shrink: 0;
+			}
+
+			&:hover {
+				background: rgba(255, 255, 255, 0.25);
+				opacity: 1;
+			}
+		}
 	}
 	@media #{$md} {
 		padding-bottom: 0;	

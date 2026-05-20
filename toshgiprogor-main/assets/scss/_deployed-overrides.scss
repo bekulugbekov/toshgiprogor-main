@@ -9,6 +9,40 @@
    Eng oxirida import qilinadi → partiallar ustidan yozadi.
    ============================================================================= */
 
+/* --- Universal font override — asl sayt kabi Montserrat barcha elementga --- */
+* {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/* --- Icon fontlarni Montserrat'dan himoya --- */
+/* Line Awesome — har qanday .las/.lar/.lab yoki la- prefiksi */
+.las, .lar, .lal, .lad {
+  font-family: 'Line Awesome Free' !important;
+}
+.lab {
+  font-family: 'Line Awesome Brands' !important;
+}
+/* Font Awesome Pro */
+.fa, .fas, .far, .fal, .fad {
+  font-family: 'Font Awesome 5 Pro' !important;
+}
+.fab {
+  font-family: 'Font Awesome 5 Brands' !important;
+}
+/* Flaticon */
+[class^="flaticon-"], [class*=" flaticon-"] {
+  font-family: 'Flaticon' !important;
+}
+
+/* --- Checkbox uchun width:100% reset (_common.scss input override) --- */
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto !important;
+  padding: 0 !important;
+  border: revert !important;
+  background: revert !important;
+}
+
 /* --- Header: shaffof, oq logo/menyu (hero/banner ustida turadi) --------------
    Asl: .header-area .navigation/.container { background: transparent }
         .header-area .logo / .main-menu a   { color: #fff }

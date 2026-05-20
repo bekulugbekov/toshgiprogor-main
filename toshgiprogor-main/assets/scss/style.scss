@@ -8,7 +8,10 @@
   HTML faqat kompilyatsiya qilingan assets/css/style.css ni ulaydi.
 */
 
-/* Self-hosted fonts (E5 — Google Fonts o'rniga, Xitoyda/GFW ortida ishlaydi) */
+/* Google Fonts — Montserrat (asl sayt bilan bir xil, CDN orqali tezroq yuklanadi) */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Self-hosted fonts (E5 — GFW/Xitoy uchun fallback; yuqoridagi Google yuklamasa ishlaydi) */
 @import url("../css/self-hosted-fonts.css");
 
 @import 'variables';
