@@ -2,11 +2,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     const VIDEO_DB = "videoCacheDB";
     const STORE_NAME = "videos";
     const VIDEO_KEY = "cachedVideo";
-    const VIDEO_URL = "./assets/video/tashkent.mp4";
-
-  
     const video = document.getElementById("bg-video");
     const source = document.getElementById("video-source");
+    const VIDEO_URL = source.getAttribute("src");
     const overlay = document.querySelector(".video-overlay");
   
     async function openDB() {
