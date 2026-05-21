@@ -1,11 +1,22 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 const root = resolve(__dirname)
 
 export default defineConfig({
   root,
   base: '/',
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        { src: 'assets/js',    dest: '.' },
+        { src: 'assets/css',   dest: '.' },
+        { src: 'assets/fonts', dest: '.' },
+        { src: 'assets/img',   dest: '.' },
+      ],
+    }),
+  ],
   build: {
     outDir: resolve(root, 'dist'),
     emptyOutDir: true,
