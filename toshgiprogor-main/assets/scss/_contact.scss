@@ -39,9 +39,7 @@
     iframe {
         max-width: calc(100% - 40px);
         height: 600px;
-        filter: grayscale(1);
-        position: relative;
-        z-index: -1;
+        filter: none;
 
         @media #{$xs} {
             max-width: calc(100% - 0px);
@@ -178,6 +176,8 @@
 /* ---- Rozilik chekboks — o'ng tomonda, yirikroq ---- */
 .consent-wrap {
     display: flex;
+    align-items: center;
+    gap: 6px;
     justify-content: flex-end;   /* o'ng tomonda */
     margin-bottom: 24px;
 }
@@ -200,13 +200,13 @@
         /* _common.scss width:100% ni bekor qilish */
         flex-shrink: 0;
     }
+}
 
-    a.consent-link {
-        font-size: 14px;
-        font-weight: 600;
-        color: #333 !important;
-        text-decoration: underline;
-        &:hover { color: #C5853A !important; }
-    }
+.consent-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333 !important;
+    text-decoration: underline;
+    &:hover { color: #C5853A !important; }
 }
 

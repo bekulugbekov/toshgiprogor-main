@@ -168,21 +168,23 @@
         <!-- Hero -->
         <div id="cooperation_page" class="all-hero-area" data-page="cooperation">
           <div class="container">
-            <div class="row align-items-center mb-50">
-              <div class="section-title text-up section-hero-title">
-                <h1 data-translate="coopHeroTitle">中外合作</h1>
-              </div>
-              <div class="breadcrumb-area">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                      <a href="index.html" data-translate="home">Главная</a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page" data-translate="cooperation">
-                      Сотрудничество
-                    </li>
-                  </ol>
-                </nav>
+            <div class="row">
+              <div class="col-12">
+                <div class="section-title text-up section-hero-title">
+                  <h1 data-translate="coopHeroTitle">Международное сотрудничество</h1>
+                </div>
+                <div class="breadcrumb-area">
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                      <li class="breadcrumb-item">
+                        <a href="index.html" data-translate="home">Главная</a>
+                      </li>
+                      <li class="breadcrumb-item active" aria-current="page" data-translate="cooperation">
+                        Сотрудничество
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
               </div>
             </div>
           </div>
@@ -624,17 +626,42 @@
           var privacyCb = document.getElementById('coop-privacy');
           if (!privacyCb || !privacyCb.checked) {
             var msgBox = document.getElementById('coopMessageBox');
-            if (msgBox) { msgBox.style.display = 'block'; msgBox.className = 'message-box mb-30 error'; msgBox.textContent = 'Пожалуйста, примите политику конфиденциальности.'; }
+            var lang = localStorage.getItem('selectedLanguage') || 'ru';
+            var consentMsgs = {
+              zh: '请同意隐私政策以继续。',
+              en: 'Please agree to the privacy policy to continue.',
+              uz: 'Davom etish uchun maxfiylik siyosatiga rozilik bering.',
+              ru: 'Необходимо согласие с политикой конфиденциальности.'
+            };
+            if (msgBox) {
+              msgBox.style.display = 'block';
+              msgBox.className = 'message-box mb-30 error';
+              msgBox.textContent = consentMsgs[lang] || consentMsgs.ru;
+            }
             return;
           }
 
           var btn = document.getElementById('coopSubmitBtn');
           if (btn) btn.disabled = true;
 
-          var data = new FormData(form);
-          data.append('source', 'cooperation');
+          // JSON body sifatida yuborish (api/cooperation.php JSON kutadi)
+          var payload = {
+            company:     form.querySelector('[name="company"]')?.value || '',
+            contact:     form.querySelector('[name="contact"]')?.value || '',
+            projectType: form.querySelector('[name="projectType"]')?.value || '',
+            phone:       form.querySelector('[name="phone"]')?.value || '',
+            email:       form.querySelector('[name="email"]')?.value || '',
+            message:     form.querySelector('[name="message"]')?.value || '',
+            privacy:     privacyCb.checked ? '1' : '',
+            lang:        localStorage.getItem('selectedLanguage') || 'ru',
+            website:     '' // honeypot
+          };
 
-          fetch('api/telegram.php', { method: 'POST', body: data })
+          fetch('api/cooperation.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          })
             .then(function (r) { return r.json(); })
             .then(function (res) {
               var msgBox = document.getElementById('coopMessageBox');
@@ -647,7 +674,7 @@
                   uz: "So'rovingiz yuborildi! Biz 1–2 ish kuni ichida javob beramiz.",
                   ru: 'Ваш запрос успешно отправлен! Мы ответим в течение 1–2 рабочих дней.'
                 };
-                if (res && res.ok) {
+                if (res && res.success) {
                   msgBox.className = 'message-box mb-30 success';
                   msgBox.textContent = successMsgs[lang] || successMsgs.ru;
                   form.reset();

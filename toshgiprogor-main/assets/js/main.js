@@ -13,6 +13,8 @@
       "corporate-management": "url('/assets/img/corporation.png')",
       news: "url('/assets/img/news.png')",
       contact: "url('/assets/img/contact.png')",
+      privacy: "url('/assets/img/news.png')",
+      cooperation: "url('/assets/img/corporation.png')",
     };
 
     // Sahifaning nomini olish
