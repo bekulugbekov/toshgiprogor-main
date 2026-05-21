@@ -1,6 +1,7 @@
 [build]
+  base    = "toshgiprogor-main"
   command = "npm run build"
-  publish = "dist"
+  publish = "toshgiprogor-main/dist"
 
 [build.environment]
   NODE_VERSION = "20"
