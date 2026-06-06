@@ -14,6 +14,8 @@ export default defineConfig({
         { src: 'assets/css',   dest: '.' },
         { src: 'assets/fonts', dest: '.' },
         { src: 'assets/img',   dest: '.' },
+        { src: 'assets/docs',  dest: '.' },
+        { src: 'assets/video', dest: '.' },
       ],
     }),
   ],

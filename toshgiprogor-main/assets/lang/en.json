@@ -239,5 +239,7 @@
   "page_not_found_desc": "The requested page does not exist.",
   "back_home": "Return to home",
   "workHours": "Mon-Fri: 09:00-18:00 (UTC+5)",
-  "openMap": "Open on map"
+  "openMap": "Open on map",
+  "corpSections": "Sections",
+  "corpIntro": "Below are the corporate documents of JSC TASHGIPROGOR subject to disclosure: charter, business plan, annual and quarterly reports, audit reports and material facts."
 }

@@ -239,5 +239,7 @@
   "page_not_found_desc": "So'ralgan sahifa mavjud emas.",
   "back_home": "Bosh sahifaga qaytish",
   "workHours": "Du-Ju: 09:00-18:00 (UTC+5)",
-  "openMap": "Xaritada ochish"
+  "openMap": "Xaritada ochish",
+  "corpSections": "Bo'limlar",
+  "corpIntro": "Quyida «TASHGIPROGOR» AJ ning oshkor qilinishi lozim bo'lgan korporativ hujjatlari keltirilgan: ustav, biznes-reja, yillik va choraklik hisobotlar, auditorlik xulosalari va muhim faktlar."
 }

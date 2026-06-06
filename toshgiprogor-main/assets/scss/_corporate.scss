@@ -1,0 +1,195 @@
+/* Korporativ boshqaruv — hujjatlar ko'rsatkichi (uzex.uz uslubida) */
+
+.corp-intro {
+  p {
+    color: $body_text;
+    max-width: 900px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
+
+.corp-wrap {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+
+  @media #{$md} { flex-direction: column; }
+  @media #{$xs} { flex-direction: column; }
+}
+
+/* Sidebar — toifalar */
+.corp-sidebar {
+  flex: 0 0 300px;
+  width: 300px;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  position: sticky;
+  top: 20px;
+
+  @media #{$md} { width: 100%; flex: none; position: static; }
+  @media #{$xs} { width: 100%; flex: none; position: static; }
+}
+
+.corp-sidebar-head {
+  padding: 16px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: $theme_color;
+}
+
+.corp-cats {
+  display: flex;
+  flex-direction: column;
+}
+
+.corp-cat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 15px 20px;
+  border: 0;
+  border-bottom: 1px solid #f1f1f1;
+  border-left: 3px solid transparent;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1.35;
+  color: $text_dark;
+  transition: all 0.2s ease;
+
+  i {
+    font-size: 20px;
+    color: $body_text;
+    transition: color 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  &:last-child { border-bottom: 0; }
+  &:hover { background: #f7f7f7; }
+
+  &.active {
+    background: #f4f4f5;
+    border-left-color: $theme_color;
+    font-weight: 600;
+    i { color: $theme_color; }
+  }
+}
+
+/* Hujjatlar paneli */
+.corp-panel {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.corp-panel-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: $text_dark;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #ececec;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+
+  @media #{$xs} { font-size: 18px; }
+}
+
+.corp-year {
+  margin-bottom: 28px;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+.corp-year-title {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  color: $theme_color;
+  margin: 0 0 14px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid $theme_color;
+}
+
+/* Bitta hujjat qatori */
+.corp-doc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 18px;
+  margin-bottom: 10px;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  background: #fff;
+  text-decoration: none;
+  color: $text_dark;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #dcdcdc;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+  }
+
+  @media #{$xs} { flex-wrap: wrap; }
+}
+
+.corp-doc-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.4;
+
+  .la-file-pdf { color: #e74c3c; }
+  .la-file-excel { color: #27ae60; }
+  .la-file-word { color: #2e6cdb; }
+
+  @media #{$xs} { flex: 1 1 100%; }
+}
+
+.corp-doc-ic {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.corp-doc-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+
+  &.is-pdf { color: #e74c3c; background: rgba(231, 76, 60, 0.08); }
+  &.is-xls { color: #27ae60; background: rgba(39, 174, 96, 0.08); }
+  &.is-doc { color: #2e6cdb; background: rgba(46, 108, 219, 0.08); }
+  &.is-file { color: $body_text; background: #f2f2f2; }
+}
+
+.corp-doc-size {
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.corp-dl-ic {
+  font-size: 16px;
+}
+
+.corp-empty {
+  color: $body_text;
+  padding: 20px 0;
+}

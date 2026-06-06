@@ -8,7 +8,7 @@
       content="width=device-width, initial-scale=1.0"
     />
 
-    <title>Corporate Management</title>
+    <title data-translate="management">Корпоративное управление — ТАШГИПРОГОР</title>
 
     <!--Favicon-->
     <link rel="icon" href="assets/img/favicon.png" type="image/png" />
@@ -41,8 +41,6 @@
     <link href="assets/css/odometer.min.css" rel="stylesheet" />
     <!-- Style CSS -->
     <link href="assets/css/style.css" rel="stylesheet" />
-    <!-- Tailwind subset (file-explorer uchun) -->
-    <link href="assets/css/tailwind-subset.css" rel="stylesheet" />
     <!-- Accessibility Menu CSS -->
     <link href="assets/css/a11y-menu.css" rel="stylesheet" />
     <!-- jquery -->
@@ -299,66 +297,59 @@
           data-page="corporate-management"
         >
           <div class="container">
-            <div class="row align-items-center mb-50">
-              <div class="section-title text-up section-hero-title">
-                <h1 data-translate="management">Корпоративное управление</h1>
-              </div>
-              <div class="breadcrumb-area">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                      <a href="index.html" data-translate="home">Главная</a>
-                    </li>
-                    <li
-                      class="breadcrumb-item active"
-                      aria-current="page"
-                      data-translate="services"
-                    >
-                      Наши услуги
-                    </li>
-                  </ol>
-                </nav>
+            <div class="row">
+              <div class="col-12">
+                <div class="section-title text-up section-hero-title">
+                  <h1 data-translate="management">Корпоративное управление</h1>
+                </div>
+                <div class="breadcrumb-area">
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                      <li class="breadcrumb-item">
+                        <a href="index.html" data-translate="home">Главная</a>
+                      </li>
+                      <li
+                        class="breadcrumb-item active"
+                        aria-current="page"
+                        data-translate="management"
+                      >
+                        Корпоративное управление
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- File Explorer -->
-        <div class="file-explorer pb-20">
+        <!-- Corporate documents (uzex.uz uslubida) -->
+        <section class="corp-section section-padding pt-0">
           <div class="container">
-            <div
-              class="flex flex-col lg:flex-row h-auto bg-[#f5f5f5] rounded-xl"
-            >
-              <!-- Sidebar -->
-              <div
-                id="sidebar"
-                class="w-full lg:w-1/4 p-4 space-y-2 overflow-auto border-r border-[#ccc] lg:pb-0 pb-4"
-              >
-                <h2 class="text-lg font-bold mb-4">Folders</h2>
-                <!-- Sidebar content will be rendered here -->
-              </div>
-
-              <!-- Main Content -->
-              <div class="flex-1 flex flex-col">
-                <!-- Breadcrumb -->
-                <div
-                  id="breadcrumb"
-                  class="p-4 mb-4 flex flex-col lg:flex-row items-start space-x-0 sm:space-x-0 border-b border-[#ccc]"
-                >
-                  <span>Home</span>
+            <div class="corp-intro">
+              <p data-translate="corpIntro">
+                Ниже представлены корпоративные документы АО «ТАШГИПРОГОР»,
+                подлежащие раскрытию: устав, бизнес-план, годовые и квартальные
+                отчёты, аудиторские заключения и существенные факты.
+              </p>
+            </div>
+            <div class="corp-wrap">
+              <!-- Toifalar (sidebar) -->
+              <aside class="corp-sidebar">
+                <div class="corp-sidebar-head" data-translate="corpSections">
+                  Разделы
                 </div>
+                <div id="corp-categories" class="corp-cats"></div>
+              </aside>
 
-                <!-- File Grid -->
-                <div
-                  id="fileGrid"
-                  class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 p-4 overflow-auto"
-                >
-                  <!-- Files and Folders will be rendered here -->
-                </div>
+              <!-- Hujjatlar paneli -->
+              <div id="corp-panel" class="corp-panel">
+                <h3 id="corp-cat-title" class="corp-panel-title"></h3>
+                <div id="corp-docs" class="corp-docs"></div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         <!-- Footer Area -->
         <footer class="footer-area">
@@ -537,7 +528,8 @@
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/translate.js"></script>
-    <script src="assets/js/projects.js"></script>
+    <!-- Korporativ hujjatlar (mahalliy data + renderer) -->
+    <script src="assets/js/corporate-docs.js"></script>
     <script src="assets/js/management.js"></script>
 
     <!-- Accessibility Menu JavaScript -->

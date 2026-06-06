@@ -239,5 +239,7 @@
   "page_not_found_desc": "所请求的页面不存在。",
   "back_home": "返回首页",
   "workHours": "周一至周五 09:00-18:00 (UTC+5)",
-  "openMap": "在地图中打开"
+  "openMap": "在地图中打开",
+  "corpSections": "栏目",
+  "corpIntro": "以下是 TASHGIPROGOR 股份公司须披露的公司文件：公司章程、商业计划、年度及季度报告、审计报告和重大事实。"
 }
