@@ -24,7 +24,7 @@ window.CORP_DOCS = {
       label: { uz: "Biznes-reja", ru: "Бизнес-план", en: "Business plan", zh: "商业计划" },
       grouped: false,
       docs: [
-        { kind: "business-plan", year: 2026, file: "assets/docs/Бизнес План на 2026.doc", ext: "doc", size: 11477504 },
+        { kind: "business-plan", year: 2026, file: "assets/docs/Бизнес План на 2026.pdf", ext: "pdf", size: 2147374 },
       ],
     },
 
@@ -83,15 +83,15 @@ window.CORP_DOCS = {
       },
       grouped: true,
       docs: [
-        // 2025 (.doc — sana bilan)
-        { kind: "fact", year: 2025, num: 36, date: "25.12.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№36 (25.12.2025).doc", ext: "doc", size: 164352 },
-        { kind: "fact", year: 2025, num: 36, date: "20.03.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№36 (20.03.2025).doc", ext: "doc", size: 168960 },
-        { kind: "fact", year: 2025, num: 8, date: "25.12.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№08 (25.12.2025).doc", ext: "doc", size: 190464 },
-        { kind: "fact", year: 2025, num: 8, date: "25.06.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№08 (25.06.2025).doc", ext: "doc", size: 269824 },
-        { kind: "fact", year: 2025, num: 8, date: "20.03.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№08 (20.03.2025).doc", ext: "doc", size: 269824 },
-        { kind: "fact", year: 2025, num: 6, date: "25.12.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№06 (25.12.2025).doc", ext: "doc", size: 148992 },
-        { kind: "fact", year: 2025, num: 6, date: "25.06.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№06 (25.06.2025).doc", ext: "doc", size: 196608 },
-        { kind: "fact", year: 2025, num: 6, date: "20.03.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№06 (20.03.2025).doc", ext: "doc", size: 163840 },
+        // 2025 (Word'dan PDF'ga aylantirildi — sana bilan)
+        { kind: "fact", year: 2025, num: 36, date: "25.12.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№36 (25.12.2025).pdf", ext: "pdf", size: 267058 },
+        { kind: "fact", year: 2025, num: 36, date: "20.03.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№36 (20.03.2025).pdf", ext: "pdf", size: 259217 },
+        { kind: "fact", year: 2025, num: 8, date: "25.12.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№08 (25.12.2025).pdf", ext: "pdf", size: 289182 },
+        { kind: "fact", year: 2025, num: 8, date: "25.06.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№08 (25.06.2025).pdf", ext: "pdf", size: 335348 },
+        { kind: "fact", year: 2025, num: 8, date: "20.03.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№08 (20.03.2025).pdf", ext: "pdf", size: 335348 },
+        { kind: "fact", year: 2025, num: 6, date: "25.12.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№06 (25.12.2025).pdf", ext: "pdf", size: 238668 },
+        { kind: "fact", year: 2025, num: 6, date: "25.06.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№06 (25.06.2025).pdf", ext: "pdf", size: 282826 },
+        { kind: "fact", year: 2025, num: 6, date: "20.03.2025", file: "assets/docs/Muhim faktlar/2025/существенный_факт_№06 (20.03.2025).pdf", ext: "pdf", size: 248343 },
         // 2024 (.pdf)
         { kind: "fact", year: 2024, num: 41, file: "assets/docs/Muhim faktlar/2024/open info dan skachat qilingan/41-muhim fakt.pdf", ext: "pdf", size: 56980 },
         { kind: "fact", year: 2024, num: 38, file: "assets/docs/Muhim faktlar/2024/open info dan skachat qilingan/38-muhim fakt.pdf", ext: "pdf", size: 55901 },
