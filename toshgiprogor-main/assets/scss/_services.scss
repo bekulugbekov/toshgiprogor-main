@@ -64,7 +64,9 @@
     .cp-custom-accordion .accordion-buttons {
         display: flex;
         align-items: center;
-        padding: 30px 0 30px 30px;        
+        /* o'ngdan 90px — strelka tugmasi (::after, right:30px + 45px) bilan
+           ustma-ust bo'lmasligi uchun joy ajratamiz (uzun ruscha sarlavhalar) */
+        padding: 30px 90px 30px 30px;
     }
 
     .cp-custom-accordion .accordion-buttons {
@@ -77,6 +79,7 @@
         @media #{$xs} {
             font-size: 24px;
             padding-left: 5px;
+            padding-right: 55px; /* mobil: strelka right:0 + 45px uchun joy */
         }
     }
 
@@ -153,6 +156,116 @@
 
         @media #{$xs} {
             padding: 0;
+        }
+    }
+
+    /* serviceSeven — rasm yonida 2 ustun (vizual balans) */
+    .accordion-body.service-detail {
+        display: flex;
+        align-items: center;        /* vertikal markaz — muvozanat */
+        gap: 50px;
+        overflow: visible;
+
+        img {
+            float: none;
+            width: 50%;
+            max-width: 560px;
+            margin: 0;
+            flex: 0 0 auto;
+
+            @media #{$md} {
+                width: 45%;
+                margin: 0;
+            }
+            @media #{$xs} {
+                width: 100%;
+                margin: 0 0 24px 0;
+            }
+        }
+
+        @media #{$md} {
+            gap: 30px;
+        }
+        @media #{$xs} {
+            display: block;
+            gap: 0;
+        }
+
+        .service-detail__content {
+            flex: 1 1 auto;
+            padding-right: 30px;
+            @media #{$xs} {
+                padding-right: 0;
+            }
+        }
+
+        .service-detail__intro {
+            padding: 0;
+            margin: 0 0 18px;
+            font-weight: 500;
+            line-height: 30px;
+        }
+
+        .service-detail__list {
+            list-style: none;
+            margin: 0 0 26px;
+            padding: 0;
+
+            li {
+                position: relative;
+                padding-left: 24px;
+                margin-bottom: 9px;
+                line-height: 28px;
+                color: $body_text;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 11px;
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background: #185fa5; /* CTA bilan bir xil korporativ ko'k */
+                }
+            }
+        }
+
+        .service-detail__contact {
+            border-top: 1px solid #eee;
+            padding-top: 18px;
+        }
+
+        .service-detail__contact-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: $body_text;
+        }
+
+        .service-detail__contact-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #185fa5;
+            text-decoration: none;
+
+            i {
+                font-size: 18px;
+            }
+
+            &:hover {
+                color: #0c447c;
+            }
+        }
+
+        .service-detail__contact-name {
+            display: block;
+            margin-top: 5px;
+            font-size: 15px;
+            color: $text_dark;
         }
     }
 }

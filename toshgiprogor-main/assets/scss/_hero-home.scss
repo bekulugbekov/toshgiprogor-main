@@ -131,7 +131,7 @@
   content: "";
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.2); /* video biroz yoritildi (0.3 → 0.2), oq matn o'qilishi saqlandi */
 }
 
 /* Sarlavha <h1> — oq (asl CSS faqat h2/p ni qamragan edi) */

@@ -672,21 +672,56 @@
                         aria-labelledby="headingSeven"
                         data-bs-parent="#accordionExample"
                       >
-                        <div class="accordion-body">
+                        <div class="accordion-body service-detail">
                           <img src="assets/img/service/7.png" alt="" />
-                          <p>
-                            <span data-translate="serviceSevenText"
-                              >Диагностика состояния несущих конструкций зданий
-                              и сооружений.
-                            </span>
-                            <br />
-                            <br />
-                            <span data-translate="serviceSevenTwoText"
-                              >Оптимизация проектных решений на основе
-                              результатов обследований для сокращения сроков и
-                              затрат.
-                            </span>
-                          </p>
+                          <div class="service-detail__content">
+                            <p
+                              class="service-detail__intro"
+                              data-translate="serviceSevenText"
+                            >
+                              Техническое инструментальное и визуальное
+                              обследование следующих объектов:
+                            </p>
+                            <ul class="service-detail__list">
+                              <li data-translate="serviceSevenObj1">
+                                жилых домов
+                              </li>
+                              <li data-translate="serviceSevenObj2">
+                                административных зданий
+                              </li>
+                              <li data-translate="serviceSevenObj3">
+                                общественных зданий
+                              </li>
+                              <li data-translate="serviceSevenObj4">
+                                промышленных зданий и сооружений
+                              </li>
+                              <li data-translate="serviceSevenObj5">
+                                спортивных сооружений
+                              </li>
+                            </ul>
+                            <div class="service-detail__contact">
+                              <span
+                                class="service-detail__contact-label"
+                                data-translate="serviceSevenContact"
+                              >
+                                Для получения подробной информации или заказа
+                                услуги:
+                              </span>
+                              <a
+                                class="service-detail__contact-row"
+                                href="tel:+998903570036"
+                              >
+                                <i class="las la-phone" aria-hidden="true"></i>
+                                <span>+998 90 357 00 36</span>
+                              </a>
+                              <span
+                                class="service-detail__contact-name"
+                                data-translate="serviceSevenContactName"
+                              >
+                                Xujanov Bobomurod Majidovich
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1189,6 +1224,53 @@
     <script src="assets/js/a11y-menu.js"></script>
     <!-- Analytics (E10) -->
     <script src="assets/js/analytics.js"></script>
+
+    <!--
+      Bosh sahifadagi "Texnik ekspertiza" tugmasi services.html#serviceSeven
+      bilan keladi. Akkordeonni ochib, ScrollSmoother yordamida shu bo'limga
+      suzib boramiz (oddiy hash scroll ScrollSmoother transformi sabab ishlamaydi).
+    -->
+    <script>
+      (function () {
+        function goToServiceSeven() {
+          var hash = window.location.hash;
+          if (hash !== "#serviceSeven" && hash !== "#headingSeven") return;
+
+          var heading = document.getElementById("headingSeven");
+          var collapseEl = document.getElementById("serviceSeven");
+          if (!heading || !collapseEl) return;
+
+          // Akkordeon yopiq bo'lsa — Bootstrap tugmasi orqali ochamiz
+          if (!collapseEl.classList.contains("show")) {
+            var btn = heading.querySelector("[data-bs-target='#serviceSeven']");
+            if (btn) btn.click();
+          }
+
+          // Akkordeon ochilib bo'lgach (balandlik o'zgargach) suzib boramiz
+          setTimeout(function () {
+            var smoother =
+              window.ScrollSmoother && window.ScrollSmoother.get
+                ? window.ScrollSmoother.get()
+                : null;
+            if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+            if (smoother) {
+              smoother.scrollTo(heading, true, "top 140px");
+            } else {
+              heading.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+            heading.classList.add("service-highlight");
+            setTimeout(function () {
+              heading.classList.remove("service-highlight");
+            }, 2500);
+          }, 500);
+        }
+
+        window.addEventListener("load", function () {
+          // ScrollSmoother yaratilishini kutamiz
+          setTimeout(goToServiceSeven, 700);
+        });
+      })();
+    </script>
   </body>
 </html>
 

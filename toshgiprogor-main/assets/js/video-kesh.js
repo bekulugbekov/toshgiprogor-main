@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", async function () {
   const VIDEO_DB = "videoCacheDB";
   const STORE_NAME = "videos";
-  const VIDEO_KEY = "cachedVideo";
+  // Video almashtirilganda kesh kalitini ham yangilash SHART — aks holda
+  // qaytgan tashrifchilar IndexedDB'dagi eski videoni ko'rishda davom etadi.
+  const VIDEO_KEY = "cachedVideo_v2"; // tashkent2.mp4 (sifatliroq)
   const video = document.getElementById("bg-video");
   const source = document.getElementById("video-source");
   if (!video || !source) return;

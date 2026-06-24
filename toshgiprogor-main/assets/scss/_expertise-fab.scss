@@ -1,0 +1,212 @@
+/*
+  Floating action zona (bosh sahifa, o'ng past) — VARIANT 1: vertikal stack.
+  Premium-minimal: birlamchi "Texnik ekspertiza" CTA pastda (anchor),
+  ikkilamchi "yuqoriga" tugmasi (.progress-wrap) uning ustida, bir o'qda.
+  CTA bosilganda services.html#serviceSeven bo'limiga olib boradi.
+
+  Ierarxiya: faqat CTA aksentli (korporativ ko'k) + sekin/yumshoq puls;
+  scroll-to-top neytral, kam og'irlikdagi yordamchi element.
+*/
+
+$fab-accent: #185fa5;       // korporativ ko'k (ishonch/davlat)
+$fab-accent-dark: #0c447c;  // hover / progress strelka
+
+// ---------- Birlamchi CTA ----------
+.expertise-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 20px 0 11px;
+  border-radius: 50px;
+  background: $fab-accent;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(24, 95, 165, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  will-change: transform;
+
+  // Yumshoq, sekin "attention" halqasi (neon emas — premium)
+  &__pulse {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: -1;
+    box-shadow: 0 0 0 0 rgba(24, 95, 165, 0.4);
+    animation: expertiseFabRing 3.6s ease-out infinite;
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+
+    svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+  }
+
+  &__label {
+    font-family: $grotesk;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    // sentence case — text-transform yo'q (premium, davlat uslubi)
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: #fff;
+    background: $fab-accent-dark;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(24, 95, 165, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(24, 95, 165, 0.55);
+    outline-offset: 3px;
+  }
+
+  @media #{$md} {
+    right: 20px;
+  }
+
+  // Mobil: matn yashiriladi, 52px dumaloq belgi
+  @media #{$xs} {
+    right: 16px;
+    bottom: 20px;
+    gap: 0;
+    width: 52px;
+    height: 52px;
+    min-height: 0;
+    padding: 0;
+    justify-content: center;
+
+    .expertise-fab__icon {
+      width: auto;
+      height: auto;
+      background: transparent;
+
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    .expertise-fab__label {
+      display: none;
+    }
+  }
+}
+
+@keyframes expertiseFabRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(24, 95, 165, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(24, 95, 165, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(24, 95, 165, 0);
+  }
+}
+
+// ---------- Ikkilamchi: "yuqoriga" tugmasi ----------
+// backToTop.css ni override qilamiz (style.css keyin yuklanadi).
+// CTA bilan bir o'qda (right:24px), uning ustida 12px oraliq bilan.
+.progress-wrap {
+  right: 24px;
+  bottom: 88px; // CTA (bottom 24 + h 52 + gap 12)
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: none;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  z-index: 999; // CTA dan past
+
+  &::after {
+    height: 44px;
+    width: 44px;
+    line-height: 44px;
+    font-size: 17px;
+    color: #6b6b6b; // neytral kulrang strelka
+  }
+
+  svg.progress-circle path {
+    stroke: $fab-accent-dark; // brend bilan bog'liq, nozik progress
+    stroke-width: 4;
+  }
+
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.22);
+
+    &::after {
+      color: #333;
+    }
+  }
+
+  @media #{$md} {
+    right: 20px;
+    bottom: 88px;
+  }
+
+  @media #{$xs} {
+    right: 16px;
+    bottom: 84px; // CTA mobil (bottom 20 + h 52 + gap 12)
+  }
+}
+
+// Harakatni kamaytirish rejimi
+@media (prefers-reduced-motion: reduce) {
+  .expertise-fab {
+    transition: none;
+  }
+  .expertise-fab__pulse {
+    animation: none;
+    display: none;
+  }
+}
+
+/*
+  services.html — hash bilan kelinganda maqsadli akkordeon sarlavhasini
+  qisqa vaqt ajratib ko'rsatish (e'tibor uchun).
+*/
+.service-highlight {
+  animation: serviceHighlight 2.4s ease-out 1;
+  border-radius: 6px;
+}
+
+@keyframes serviceHighlight {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(24, 95, 165, 0);
+  }
+  20%,
+  60% {
+    box-shadow: 0 0 0 3px rgba(24, 95, 165, 0.55);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-highlight {
+    animation: none;
+  }
+}
