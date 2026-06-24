@@ -25,6 +25,9 @@ window.CORP_DOCS = {
       grouped: false,
       docs: [
         { kind: "business-plan", year: 2026, file: "assets/docs/Бизнес План на 2026.pdf", ext: "pdf", size: 2147374 },
+        { kind: "business-plan", year: 2025, file: "assets/docs/Бизнес План на 2025.pdf", ext: "pdf", size: 1595350 },
+        { kind: "business-plan", year: 2024, file: "assets/docs/Бизнес План на 2024.pdf", ext: "pdf", size: 2774869 },
+        { kind: "business-plan", year: 2023, file: "assets/docs/Бизнес План на 2023.pdf", ext: "pdf", size: 4073507 },
       ],
     },
 
