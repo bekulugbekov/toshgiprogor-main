@@ -5,6 +5,9 @@
 <Files "contact.php">
     SetHandler application/x-httpd-php
 </Files>
+<Files "cooperation.php">
+    SetHandler application/x-httpd-php
+</Files>
 
 # Logs katalogiga to'g'ridan-to'g'ri kirish taqiqlanadi
 <IfModule mod_rewrite.c>
